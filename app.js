@@ -1,4 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Fullscreen behavior on first user interaction
+    const enterFullscreen = () => {
+        const elem = document.documentElement;
+        if (!document.fullscreenElement) {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen().catch(err => console.log("Fullscreen API error:", err));
+            } else if (elem.webkitRequestFullscreen) { /* Safari */
+                elem.webkitRequestFullscreen().catch(err => console.log("Fullscreen API error:", err));
+            } else if (elem.msRequestFullscreen) { /* IE11 */
+                elem.msRequestFullscreen().catch(err => console.log("Fullscreen API error:", err));
+            }
+        }
+        // Remove listeners after first trigger attempt to avoid repeated prompt if user exits fullscreen
+        document.removeEventListener('click', enterFullscreen);
+        document.removeEventListener('touchstart', enterFullscreen);
+    };
+
+    document.addEventListener('click', enterFullscreen);
+    document.addEventListener('touchstart', enterFullscreen, { passive: true });
+
     const navBtns = document.querySelectorAll('.nav-btn');
     const sections = document.querySelectorAll('.menu-section');
 
