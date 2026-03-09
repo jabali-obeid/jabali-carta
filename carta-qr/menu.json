@@ -596,7 +596,6 @@
               "desc": "Fernet Branca y Coca",
               "beerCard": true,
               "image": "img/licores/Fernet.png",
-              "abv": "39%",
               "style": "Amaro italiano",
               "tags": []
             },
@@ -604,6 +603,9 @@
               "name": "Tintelo",
               "price": "$8.000",
               "desc": "Vino tinto, gaseosa de pomelo y rodaja de pomelo",
+              "beerCard": true,
+              "image": "img/licores/Tintelo.png",
+              "style": "Vino tinto",
               "tags": []
             },
             {
