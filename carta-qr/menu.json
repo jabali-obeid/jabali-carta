@@ -279,43 +279,57 @@
               "name": "Malcriada",
               "price": "$14.000",
               "desc": "Medallón de carne vacuna y queso",
-              "tags": []
+              "tags": [
+                "vegetariano"
+              ]
             },
             {
               "name": "Mac Grande",
               "price": "$17.000",
               "desc": "Medallón de carne vacuna, queso cheddar, lechuga, pepino, salsa Utah (mayonesa, ketchup, ajo, aceite de oliva, ciboulette, reducción de pepino en almíbar)",
-              "tags": []
+              "tags": [
+                "vegetariano"
+              ]
             },
             {
               "name": "Tercio de Libra",
               "price": "$17.000",
               "desc": "Medallón de carne vacuna, queso cheddar, pepino, salsa españa (cebolla, ketchup, mostaza)",
-              "tags": []
+              "tags": [
+                "vegetariano"
+              ]
             },
             {
               "name": "4-4-2",
               "price": "$17.000",
               "desc": "Medallón de carne vacuna, queso dambo, jamón cocido, lechuga, tomate y huevo frito",
-              "tags": []
+              "tags": [
+                "vegetariano"
+              ]
             },
             {
               "name": "Ricky Fort",
               "price": "$17.000",
               "desc": "Medallón de carne vacuna, manteca de roquefort y cebolla caramelizada",
-              "tags": []
+              "tags": [
+                "vegetariano"
+              ]
             },
             {
               "name": "Crispy",
               "price": "$18.000",
               "desc": "Medallón de carne vacuna, queso cheddar, panceta ahumada, cebolla crispy y salsa Utah",
-              "tags": []
+              "tags": [
+                "vegetariano"
+              ]
             },
             {
               "name": "Maradona",
               "price": "$17.000",
               "desc": "Medallón de carne vacuna, provoleta, salsa criolla, tomate y lechuga",
-              "tags": []
+              "tags": [
+                "vegetariano"
+              ]
             }
           ]
         },
@@ -580,6 +594,10 @@
               "name": "Fernet con Coca",
               "price": "$10.000",
               "desc": "Fernet Branca y Coca",
+              "beerCard": true,
+              "image": "img/licores/Fernet.png",
+              "abv": "39%",
+              "style": "Amaro italiano",
               "tags": []
             },
             {
@@ -925,18 +943,12 @@
             {
               "name": "Café Chico",
               "price": "$4.000",
-              "tags": [
-                "sin-alcohol",
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Café Doble",
               "price": "$5.000",
-              "tags": [
-                "sin-alcohol",
-                "vegetariano"
-              ]
+              "tags": []
             }
           ]
         }
