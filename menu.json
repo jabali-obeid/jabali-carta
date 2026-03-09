@@ -925,18 +925,12 @@
             {
               "name": "Café Chico",
               "price": "$4.000",
-              "tags": [
-                "sin-alcohol",
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Café Doble",
               "price": "$5.000",
-              "tags": [
-                "sin-alcohol",
-                "vegetariano"
-              ]
+              "tags": []
             }
           ]
         }
