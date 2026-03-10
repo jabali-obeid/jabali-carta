@@ -621,6 +621,9 @@
               "name": "Garibaldi",
               "price": "$11.000",
               "desc": "Campari, jugo de naranja y rodaja de naranja, naranja/tónica",
+              "beerCard": true,
+              "image": "img/licores/Garibaldi.png",
+              "style": "Campari",
               "tags": []
             },
             {
