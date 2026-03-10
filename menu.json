@@ -647,7 +647,8 @@
             {
               "name": "Carpano Orange",
               "price": "$10.000",
-              "desc": "Vermouth Carpano, soda/tónica/pomelo y rodaja de naranja""beerCard": true,
+              "desc": "Vermouth Carpano, soda/tónica/pomelo y rodaja de naranja",
+              "beerCard": true,
               "image": "img/licores/Carpano.png",
               "style": "Carpano",
               "tags": []
