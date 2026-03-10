@@ -611,8 +611,10 @@
             {
               "name": "Cuba Libre",
               "price": "$11.000",
-              "desc": "Ron dorado, Coca y rodaja de naranja",
-              "tags": []
+              "desc": "Ron dorado, Coca y rodaja de limon",
+              "beerCard": true,
+              "image": "img/licores/Cuba Libre.png",
+              "style": "Ron dorado""tags": []
             },
             {
               "name": "Garibaldi",
