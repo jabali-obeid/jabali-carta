@@ -193,6 +193,109 @@
           ]
         },
         {
+          "title": "Bebidas sin Alcohol",
+          "gridClass": "grid-2col",
+          "items": [
+            {
+              "name": "Agua s/gas",
+              "price": "$4.000",
+              "tags": [
+                "sin-alcohol",
+                "vegano"
+              ]
+            },
+            {
+              "name": "Agua c/gas",
+              "price": "$4.000",
+              "tags": [
+                "sin-alcohol",
+                "vegano"
+              ]
+            },
+            {
+              "name": "Pepsi 500ml",
+              "price": "$4.500",
+              "tags": [
+                "sin-alcohol",
+                "vegano"
+              ]
+            },
+            {
+              "name": "Pepsi Black 500ml",
+              "price": "$4.500",
+              "tags": [
+                "sin-alcohol",
+                "vegano"
+              ]
+            },
+            {
+              "name": "7up 500ml",
+              "price": "$4.500",
+              "tags": [
+                "sin-alcohol",
+                "vegano"
+              ]
+            },
+            {
+              "name": "Mirinda 500ml",
+              "price": "$4.500",
+              "tags": [
+                "sin-alcohol",
+                "vegano"
+              ]
+            },
+            {
+              "name": "Paso de los Toros 500ml",
+              "price": "$4.500",
+              "tags": [
+                "sin-alcohol",
+                "vegano"
+              ]
+            },
+            {
+              "name": "H2o agua saborizada 500ml",
+              "price": "$4.500",
+              "tags": [
+                "sin-alcohol",
+                "vegano"
+              ]
+            },
+            {
+              "name": "Corona s/alcohol 330ml",
+              "price": "$7.000",
+              "tags": [
+                "sin-alcohol"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Bebidas con Alcohol",
+          "gridClass": "grid-2col",
+          "items": [
+            {
+              "name": "Andes 1L",
+              "price": "$11.000",
+              "tags": []
+            },
+            {
+              "name": "Patagonia 730cm³",
+              "price": "$13.000",
+              "tags": []
+            },
+            {
+              "name": "Corona 330ml",
+              "price": "$7.000",
+              "tags": []
+            },
+            {
+              "name": "Michelob lata",
+              "price": "$7.000",
+              "tags": []
+            }
+          ]
+        },
+        {
           "title": "🍺 Cervezas Tiradas",
           "gridClass": "",
           "desc": "Cervezas artesanales <span class=\"highlight\">Manush</span> · Pinta 500ml",
@@ -514,6 +617,109 @@
           ]
         },
         {
+          "title": "Bebidas sin Alcohol",
+          "gridClass": "grid-2col",
+          "items": [
+            {
+              "name": "Agua s/gas",
+              "price": "$4.000",
+              "tags": [
+                "sin-alcohol",
+                "vegano"
+              ]
+            },
+            {
+              "name": "Agua c/gas",
+              "price": "$4.000",
+              "tags": [
+                "sin-alcohol",
+                "vegano"
+              ]
+            },
+            {
+              "name": "Pepsi 500ml",
+              "price": "$4.500",
+              "tags": [
+                "sin-alcohol",
+                "vegano"
+              ]
+            },
+            {
+              "name": "Pepsi Black 500ml",
+              "price": "$4.500",
+              "tags": [
+                "sin-alcohol",
+                "vegano"
+              ]
+            },
+            {
+              "name": "7up 500ml",
+              "price": "$4.500",
+              "tags": [
+                "sin-alcohol",
+                "vegano"
+              ]
+            },
+            {
+              "name": "Mirinda 500ml",
+              "price": "$4.500",
+              "tags": [
+                "sin-alcohol",
+                "vegano"
+              ]
+            },
+            {
+              "name": "Paso de los Toros 500ml",
+              "price": "$4.500",
+              "tags": [
+                "sin-alcohol",
+                "vegano"
+              ]
+            },
+            {
+              "name": "H2o agua saborizada 500ml",
+              "price": "$4.500",
+              "tags": [
+                "sin-alcohol",
+                "vegano"
+              ]
+            },
+            {
+              "name": "Corona s/alcohol 330ml",
+              "price": "$7.000",
+              "tags": [
+                "sin-alcohol"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Bebidas con Alcohol",
+          "gridClass": "grid-2col",
+          "items": [
+            {
+              "name": "Andes 1L",
+              "price": "$11.000",
+              "tags": []
+            },
+            {
+              "name": "Patagonia 730cm³",
+              "price": "$13.000",
+              "tags": []
+            },
+            {
+              "name": "Corona 330ml",
+              "price": "$7.000",
+              "tags": []
+            },
+            {
+              "name": "Michelob lata",
+              "price": "$7.000",
+              "tags": []
+            }
+          ]
+        },
+        {
           "title": "🍺 Cervezas Tiradas",
           "gridClass": "",
           "desc": "Cervezas artesanales <span class=\"highlight\">Manush</span> · Pinta 500ml",
@@ -657,6 +863,9 @@
               "name": "Ferroviario",
               "price": "$10.000",
               "desc": "Fernet Branca, Carpano y soda",
+              "beerCard": true,
+              "image": "img/licores/Ferroviario.png",
+              "style": "Carpano",
               "tags": []
             },
             {

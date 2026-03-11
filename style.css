@@ -204,11 +204,23 @@ header {
 
 .grid-2col {
     grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
+}
+
+.grid-2col .menu-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 @media (max-width: 450px) {
     .grid-2col {
         grid-template-columns: 1fr;
+        align-items: initial;
+    }
+    .grid-2col .menu-item {
+        height: auto;
     }
 }
 
@@ -265,6 +277,11 @@ header {
     display: flex;
     align-items: center;
     height: 100%;
+}
+
+.beer-card .item-name {
+    color: #c8c8c8;
+    font-weight: 300;
 }
 
 .item-price {
@@ -529,9 +546,9 @@ header {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(5, 5, 5, 0.92) 0%, rgba(5, 5, 5, 0.55) 100%);
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
+    background: linear-gradient(to right, rgba(5, 5, 5, 0.97) 0%, rgba(5, 5, 5, 0.82) 100%);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
     z-index: 0;
 }
 
@@ -610,4 +627,30 @@ header {
     font-size: 0.7rem;
     color: rgba(161, 161, 170, 0.4);
     font-style: italic;
+}
+
+/* Mocktail gradient backgrounds */
+.mocktail-limonada {
+    background: linear-gradient(135deg, rgba(255, 235, 59, 0.18) 0%, rgba(255, 193, 7, 0.10) 60%, rgba(5,5,5,0.01) 100%) !important;
+    border-color: rgba(255, 235, 59, 0.2) !important;
+}
+
+.mocktail-pomelada {
+    background: linear-gradient(135deg, rgba(255, 152, 0, 0.18) 0%, rgba(255, 87, 34, 0.10) 60%, rgba(5,5,5,0.01) 100%) !important;
+    border-color: rgba(255, 152, 0, 0.2) !important;
+}
+
+.mocktail-limonada-roja {
+    background: linear-gradient(135deg, rgba(233, 30, 99, 0.18) 0%, rgba(255, 80, 80, 0.10) 60%, rgba(5,5,5,0.01) 100%) !important;
+    border-color: rgba(233, 30, 99, 0.2) !important;
+}
+
+.mocktail-natural-mystic {
+    background: linear-gradient(135deg, rgba(255, 80, 100, 0.18) 0%, rgba(255, 152, 0, 0.10) 60%, rgba(5,5,5,0.01) 100%) !important;
+    border-color: rgba(255, 80, 100, 0.2) !important;
+}
+
+.mocktail-aljaba {
+    background: linear-gradient(135deg, rgba(130, 80, 200, 0.18) 0%, rgba(80, 160, 255, 0.10) 60%, rgba(5,5,5,0.01) 100%) !important;
+    border-color: rgba(130, 80, 200, 0.2) !important;
 }

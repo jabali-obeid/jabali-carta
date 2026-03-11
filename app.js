@@ -18,12 +18,24 @@ document.addEventListener('DOMContentLoaded', () => {
     let searchTerm = '';
 
     // ── Render helpers ───────────────────────────────────────────────────────
-    function renderItem(item) {
+    function renderItem(item, sectionId) {
         const tags = (item.tags || []).join(' ');
         const isBeer = !!item.beerCard;
 
         let classes = 'menu-item';
         if (isBeer) classes += ' beer-card';
+
+        // Mocktail gradient class mapping
+        const mocktailGradients = {
+            'Limonada': 'mocktail-limonada',
+            'Pomelada': 'mocktail-pomelada',
+            'Limonada Frutos Rojos': 'mocktail-limonada-roja',
+            'Natural Mystic': 'mocktail-natural-mystic',
+            'Aljaba': 'mocktail-aljaba'
+        };
+        if (mocktailGradients[item.name]) {
+            classes += ' ' + mocktailGradients[item.name];
+        }
 
         let styleAttr = isBeer ? ` style="background-image:url('${item.image}')"` : '';
 
@@ -43,9 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
             inner += `<p class="item-desc">${item.desc}</p>`;
         }
 
-        // Diet tag badges on the item
+        // Diet tag badges — skip for Tragos section
+        const isTragos = sectionId === 'tragos';
         const dietBadges = [];
-        if (item.tags) {
+        if (item.tags && !isTragos) {
             if (item.tags.includes('vegano')) dietBadges.push('<span class="diet-tag tag-vegano">🌱 Vegano</span>');
             if (item.tags.includes('vegetariano') && !item.tags.includes('vegano')) dietBadges.push('<span class="diet-tag tag-vegetariano">🥦 Vegetariano</span>');
             if (item.tags.includes('sin-tacc') && !isBeer) dietBadges.push('<span class="diet-tag tag-sin-tacc">🌾 Sin TACC</span>');
@@ -63,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return `<div class="${classes}"${styleAttr} data-tags="${tags}">${inner}</div>`;
     }
 
-    function renderCategory(cat, index) {
+    function renderCategory(cat, index, sectionId) {
         const gridClass = cat.gridClass ? ` ${cat.gridClass}` : '';
         const descHtml = cat.desc ? `<p class="category-desc">${cat.desc}</p>` : '';
 
@@ -72,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             extrasHtml = `<div class="item-extras">${cat.extras.map(e => `<p>${e}</p>`).join('')}</div>`;
         }
 
-        const itemsHtml = cat.items.map(renderItem).join('\n');
+        const itemsHtml = cat.items.map(item => renderItem(item, sectionId)).join('\n');
 
         return `
         <div class="menu-category" style="animation-delay:${(index + 1) * 0.1}s">
@@ -88,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderSection(section) {
-        const categoriesHtml = section.categories.map((cat, i) => renderCategory(cat, i)).join('\n');
+        const categoriesHtml = section.categories.map((cat, i) => renderCategory(cat, i, section.id)).join('\n');
         return `
         <section id="${section.id}" class="menu-section">
             ${categoriesHtml}
