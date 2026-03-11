@@ -148,7 +148,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Activate first section
             const firstSection = menuRoot.querySelector('.menu-section');
-            if (firstSection) firstSection.classList.add('active');
+            if (firstSection) {
+                firstSection.classList.add('active');
+                document.body.setAttribute('data-active-section', firstSection.id);
+            }
 
             // ── Navigation ───────────────────────────────────────────────────
             const navBtns = document.querySelectorAll('.nav-btn');
@@ -158,8 +161,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.querySelectorAll('.menu-section').forEach(s => s.classList.remove('active'));
 
                     btn.classList.add('active');
-                    const targetSection = document.getElementById(btn.dataset.target);
+                    const targetId = btn.dataset.target;
+                    const targetSection = document.getElementById(targetId);
                     targetSection.classList.add('active');
+
+                    // Set body attribute for CSS targeting
+                    document.body.setAttribute('data-active-section', targetId);
+
+                    // Reset filter if switching to tragos and vegan/veg is active
+                    if (targetId === 'tragos' && (activeFilter === 'vegano' || activeFilter === 'vegetariano')) {
+                        activeFilter = 'all';
+                        document.querySelectorAll('.diet-btn').forEach(b => b.classList.remove('active'));
+                        document.querySelector('.diet-btn[data-filter="all"]').classList.add('active');
+                    }
 
                     // Re-trigger stagger animation
                     targetSection.querySelectorAll('.menu-category').forEach((cat, i) => {
