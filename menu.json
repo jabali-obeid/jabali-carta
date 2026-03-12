@@ -855,7 +855,7 @@
               "price": "$9.000",
               "available": true,
               "desc": "Oscura y cremosa con notas de café, chocolate y caramelo. Cuerpo lleno",
-              "beerCard": true,
+              "beerCard": false,
               "image": "img/cervezas/Milk-Stout.png",
               "abv": "4.2%",
               "style": "Stout",
@@ -1332,6 +1332,7 @@
   ]
 
 }
+
 
 
 
