@@ -71,7 +71,7 @@
             {
               "name": "Rúcula y Crudo",
               "price": "$32.000",
-              "available": true,
+              "available": false,
               "tags": []
             },
             {
@@ -181,7 +181,7 @@
             {
               "name": "Fainá",
               "price": "$3.000",
-              "available": true,
+              "available": false,
               "tags": [
                 "vegetariano"
               ]
@@ -211,7 +211,7 @@
             {
               "name": "Flan casero con DDL",
               "price": "$8.000",
-              "available": true,
+              "available": false,
               "tags": [
                 "vegetariano"
               ]
@@ -676,7 +676,7 @@
             {
               "name": "Flan casero con DDL",
               "price": "$8.000",
-              "available": true,
+              "available": false,
               "tags": [
                 "vegetariano"
               ]
@@ -1333,4 +1333,5 @@
   ]
 
 }
+
 
