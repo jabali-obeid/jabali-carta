@@ -25,6 +25,7 @@
             {
               "name": "Fugazzetta Rellena",
               "price": "$42.000",
+              "available": false,
               "tags": [
                 "vegetariano"
               ]
@@ -381,6 +382,7 @@
             {
               "name": "Mac Grande",
               "price": "$17.000",
+              "available": false,
               "desc": "Medallón de carne vacuna, queso cheddar, lechuga, pepino, salsa Utah (mayonesa, ketchup, ajo, aceite de oliva, ciboulette, reducción de pepino en almíbar)",
               "tags": [
                 "vegetariano"
