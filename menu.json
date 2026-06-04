@@ -71,13 +71,13 @@
             {
               "name": "Rúcula y Crudo",
               "price": "$32.000",
-              "available": true,
+              "available": false,
               "tags": []
             },
             {
               "name": "Champiñones y Panceta",
               "price": "$32.000",
-              "available": true,
+              "available": false,
               "tags": []
             }
           ]
@@ -89,25 +89,25 @@
             {
               "name": "Carne",
               "price": "$4.500",
-              "available": true,
+              "available": false,
               "tags": []
             },
             {
               "name": "Bondiola con Barbacoa",
               "price": "$4.500",
-              "available": true,
+              "available": false,
               "tags": []
             },
             {
               "name": "Jamón y Queso",
               "price": "$4.500",
-              "available": true,
+              "available": false,
               "tags": []
             },
             {
               "name": "Cuatro Quesos",
               "price": "$4.500",
-              "available": true,
+              "available": false,
               "tags": [
                 "vegetariano"
               ]
@@ -115,7 +115,7 @@
             {
               "name": "Caprese",
               "price": "$4.500",
-              "available": true,
+              "available": false,
               "tags": [
                 "vegetariano"
               ]
@@ -123,7 +123,7 @@
             {
               "name": "Humita",
               "price": "$4.500",
-              "available": true,
+              "available": false,
               "tags": [
                 "vegetariano"
               ]
@@ -131,14 +131,14 @@
             {
               "name": "Verdura",
               "price": "$4.500",
-              "available": true,
+              "available": false,
               "tags": [
                 "vegetariano"
               ]
             },
             {
               "name": "Pollo al verdeo",
-              "available": true,
+              "available": false,
               "price": "$4.500",
               "tags": []
             }
