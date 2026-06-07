@@ -57,7 +57,7 @@
             {
               "name": "Peperoni",
               "price": "$26.000",
-              "available": false,
+              "available": true,
               "tags": []
             },
             {
@@ -71,13 +71,13 @@
             {
               "name": "Rúcula y Crudo",
               "price": "$32.000",
-              "available": false,
+              "available": true,
               "tags": []
             },
             {
               "name": "Champiñones y Panceta",
               "price": "$32.000",
-              "available": false,
+              "available": true,
               "tags": []
             }
           ]
@@ -321,7 +321,7 @@
             {
               "name": "Michelob lata",
               "price": "$7.000",
-              "available": true,
+              "available": false,
               "tags": []
             }
           ]
@@ -389,7 +389,7 @@
             {
               "name": "Milk / Extra Stout",
               "price": "$9.000",
-              "available": true,
+              "available": false,
               "desc": "Oscura y cremosa con notas de café, chocolate y caramelo. Cuerpo lleno",
               "beerCard": true,
               "image": "img/cervezas/Milk-Stout.png",
