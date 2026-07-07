@@ -40,7 +40,7 @@
             },
             {
               "name": "Cuatro Quesos",
-              "price": "29000",
+              "price": "$29000",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -48,7 +48,7 @@
             },
             {
               "name": "Tomate y Huevo",
-              "price": "27000",
+              "price": "$27000",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -56,13 +56,13 @@
             },
             {
               "name": "Peperoni",
-              "price": "27000",
+              "price": "$27000",
               "available": true,
               "tags": []
             },
             {
               "name": "Provolone",
-              "price": "29000",
+              "price": "$29000",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -70,7 +70,7 @@
             },
             {
               "name": "Rúcula y Crudo",
-              "price": "33000",
+              "price": "$33000",
               "available": true,
               "tags": []
             },
@@ -94,19 +94,19 @@
             },
             {
               "name": "Bondiola con Barbacoa",
-              "price": "4800",
+              "price": "#4800",
               "available": true,
               "tags": []
             },
             {
               "name": "Jamón y Queso",
-              "price": "4800",
+              "price": "$4800",
               "available": true,
               "tags": []
             },
             {
               "name": "Cuatro Quesos",
-              "price": "4800",
+              "price": "$4800",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -114,7 +114,7 @@
             },
             {
               "name": "Caprese",
-              "price": "4800",
+              "price": "$4800",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -122,7 +122,7 @@
             },
             {
               "name": "Humita",
-              "price": "4800",
+              "price": "$4800",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -130,7 +130,7 @@
             },
             {
               "name": "Verdura",
-              "price": "4800",
+              "price": "$4800",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -139,7 +139,7 @@
             {
               "name": "Pollo al verdeo",
               "available": true,
-              "price": "4800",
+              "price": "$4800",
               "tags": []
             }
           ]
