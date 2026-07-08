@@ -10,7 +10,7 @@
           "items": [
             {
               "name": "Muzzarella",
-              "price": "$24000",
+              "price": "$24.000",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -18,7 +18,7 @@
             },
             {
               "name": "Napolitana",
-              "price": "$27000",
+              "price": "$27.000",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -26,7 +26,7 @@
             },
             {
               "name": "Fugazzetta Rellena",
-              "price": "43000",
+              "price": "$43.000",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -34,13 +34,13 @@
             },
             {
               "name": "Jamón y Morrón",
-              "price": "29000",
+              "price": "$29.000",
               "available": true,
               "tags": []
             },
             {
               "name": "Cuatro Quesos",
-              "price": "$29000",
+              "price": "$29.000",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -48,7 +48,7 @@
             },
             {
               "name": "Tomate y Huevo",
-              "price": "$27000",
+              "price": "$27.000",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -56,13 +56,13 @@
             },
             {
               "name": "Peperoni",
-              "price": "$27000",
+              "price": "$27.000",
               "available": true,
               "tags": []
             },
             {
               "name": "Provolone",
-              "price": "$29000",
+              "price": "$29.000",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -70,13 +70,13 @@
             },
             {
               "name": "Rúcula y Crudo",
-              "price": "$33000",
+              "price": "$33.000",
               "available": true,
               "tags": []
             },
             {
               "name": "Champiñones y Panceta",
-              "price": "$33000",
+              "price": "$33.000",
               "available": true,
               "tags": []
             }
@@ -88,25 +88,25 @@
           "items": [
             {
               "name": "Carne",
-              "price": "$4800",
+              "price": "$4.800",
               "available": true,
               "tags": []
             },
             {
               "name": "Bondiola con Barbacoa",
-              "price": "#4800",
+              "price": "$4.800",
               "available": true,
               "tags": []
             },
             {
               "name": "Jamón y Queso",
-              "price": "$4800",
+              "price": "$4.800",
               "available": true,
               "tags": []
             },
             {
               "name": "Cuatro Quesos",
-              "price": "$4800",
+              "price": "$4.800",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -114,7 +114,7 @@
             },
             {
               "name": "Caprese",
-              "price": "$4800",
+              "price": "$4.800",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -122,7 +122,7 @@
             },
             {
               "name": "Humita",
-              "price": "$4800",
+              "price": "$4.800",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -130,7 +130,7 @@
             },
             {
               "name": "Verdura",
-              "price": "$4800",
+              "price": "$4.800",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -139,7 +139,7 @@
             {
               "name": "Pollo al verdeo",
               "available": true,
-              "price": "$4800",
+              "price": "$4.800",
               "tags": []
             }
           ]
@@ -150,7 +150,7 @@
           "items": [
             {
               "name": "Muzzarella",
-              "price": "5000",
+              "price": "$5.000",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -158,7 +158,7 @@
             },
             {
               "name": "Napolitana",
-              "price": "6000",
+              "price": "$6.000",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -166,7 +166,7 @@
             },
             {
               "name": "Fugazzetta Rellena",
-              "price": "10000",
+              "price": "$10.000",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -174,13 +174,13 @@
             },
             {
               "name": "Jamón y Morrón",
-              "price": "6000",
+              "price": "$6.000",
               "available": true,
               "tags": []
             },
             {
               "name": "Fainá",
-              "price": "4000",
+              "price": "$4.000",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -210,7 +210,7 @@
             },
             {
               "name": "Flan casero con DDL",
-              "price": "9000",
+              "price": "$9.000",
               "available": true,
               "tags": [
                 "vegetariano"
