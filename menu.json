@@ -417,7 +417,7 @@
           "items": [
             {
               "name": "Malcriada",
-              "price": "$14.000",
+              "price": "$15.000",
               "available": true,
               "desc": "Medallón de carne vacuna y queso",
               "tags": [
@@ -426,7 +426,7 @@
             },
             {
               "name": "Mac Grande",
-              "price": "$17.000",
+              "price": "$18.000",
               "available": true,
               "desc": "Medallón de carne vacuna, queso cheddar, lechuga, pepino, salsa Utah (mayonesa, ketchup, ajo, aceite de oliva, ciboulette, reducción de pepino en almíbar)",
               "tags": [
@@ -435,7 +435,7 @@
             },
             {
               "name": "Tercio de Libra",
-              "price": "$17.000",
+              "price": "$18.000",
               "available": true,
               "desc": "Medallón de carne vacuna, queso cheddar, pepino, salsa españa (cebolla, ketchup, mostaza)",
               "tags": [
@@ -444,7 +444,7 @@
             },
             {
               "name": "4-4-2",
-              "price": "$17.000",
+              "price": "$18.000",
               "available": true,
               "desc": "Medallón de carne vacuna, queso dambo, jamón cocido, lechuga, tomate y huevo frito",
               "tags": [
@@ -453,7 +453,7 @@
             },
             {
               "name": "Ricky Fort",
-              "price": "$17.000",
+              "price": "$18.000",
               "available": true,
               "desc": "Medallón de carne vacuna, manteca de roquefort y cebolla caramelizada",
               "tags": [
@@ -462,7 +462,7 @@
             },
             {
               "name": "Crispy",
-              "price": "$18.000",
+              "price": "$19.000",
               "available": true,
               "desc": "Medallón de carne vacuna, queso cheddar, panceta ahumada, cebolla crispy y salsa Utah",
               "tags": [
@@ -471,7 +471,7 @@
             },
             {
               "name": "Maradona",
-              "price": "$17.000",
+              "price": "$18.000",
               "available": true,
               "desc": "Medallón de carne vacuna, provoleta, salsa criolla, tomate y lechuga",
               "tags": [
@@ -487,28 +487,28 @@
           "items": [
             {
               "name": "Trucha al limón",
-              "price": "$21.000",
+              "price": "$29.000",
               "available": true,
               "desc": "Trucha a la plancha, lechuga, cebolla morada y salsa de queso crema, ciboulette y limón",
               "tags": []
             },
             {
               "name": "Bondiola",
-              "price": "$20.000",
+              "price": "$21.000",
               "available": true,
               "desc": "Pan ciabatta, bondiola de cerdo desmechada, salsa barbacoa, cebolla caramelizada y queso gratinado",
               "tags": []
             },
             {
               "name": "Brie y Crudo",
-              "price": "$20.000",
+              "price": "$21.000",
               "available": true,
               "desc": "Pan baguette, queso brie, jamón crudo, rúcula, aceite de oliva y pesto de tomates asados",
               "tags": []
             },
             {
               "name": "Vegano",
-              "price": "$18.000",
+              "price": "$19.000",
               "available": true,
               "desc": "Pan ciabatta, tofu a la plancha, ensalada mixta, hummus de garbanzos y veganesa de chimichurri",
               "tags": [
@@ -517,14 +517,14 @@
             },
             {
               "name": "Tostado clásico",
-              "price": "$12.000",
+              "price": "$13.000",
               "available": true,
               "desc": "Pan de molde, queso dambo y jamón cocido",
               "tags": []
             },
             {
               "name": "Vegetariano caliente o tostado",
-              "price": "$14.000",
+              "price": "$15.000",
               "available": true,
               "desc": "Lechuga, tomate, zanahoria, palmitos, huevo duro y queso",
               "tags": [
@@ -540,28 +540,28 @@
           "items": [
             {
               "name": "Ricky fort",
-              "price": "$12.000",
+              "price": "$13.000",
               "available": true,
               "desc": "Con manteca de roquefort y cebolla caramelizada",
               "tags": []
             },
             {
               "name": "Criollo",
-              "price": "$11.000",
+              "price": "$12.000",
               "available": true,
               "desc": "Con salsa criolla (cebolla, tomate, morrón, ajo, perejil y vinagre)",
               "tags": []
             },
             {
               "name": "Cheddar",
-              "price": "$11.000",
+              "price": "$12.000",
               "available": true,
               "desc": "Con queso cheddar cremoso",
               "tags": []
             },
             {
               "name": "Pelado",
-              "price": "$9.000",
+              "price": "$10.000",
               "available": true,
               "desc": "Sin nada",
               "tags": []
@@ -574,7 +574,7 @@
           "items": [
             {
               "name": "Papas fritas",
-              "price": "$11.000",
+              "price": "$12.000",
               "available": true,
               "tags": [
                 "vegano"
@@ -582,7 +582,7 @@
             },
             {
               "name": "Papas a caballo",
-              "price": "$13.000",
+              "price": "$14.000",
               "available": true,
               "desc": "Papas fritas con huevo frito",
               "tags": [
@@ -591,14 +591,14 @@
             },
             {
               "name": "Papas con cheddar",
-              "price": "$15.000",
+              "price": "$16.000",
               "available": true,
               "desc": "Papas fritas con cheddar, panceta y cebolla de verdeo",
               "tags": []
             },
             {
               "name": "Chips de batata",
-              "price": "$10.000",
+              "price": "$11.000",
               "available": true,
               "desc": "Rodajas finas de batatas fritas",
               "tags": [
@@ -607,7 +607,7 @@
             },
             {
               "name": "Provoleta con vegetales asados",
-              "price": "$16.000",
+              "price": "$17.000",
               "available": true,
               "desc": "A la plancha con puerro, tomates cherry y vinagreta de aceite de oliva, miel, vinagre, sal y pimienta",
               "tags": [
@@ -616,7 +616,7 @@
             },
             {
               "name": "Provoleta con morcilla",
-              "price": "$16.000",
+              "price": "$17.000",
               "available": true,
               "desc": "A la plancha con morcilla cortada en rodajas",
               "tags": []
@@ -629,7 +629,7 @@
           "items": [
             {
               "name": "Tropitango",
-              "price": "$17.000",
+              "price": "$18.000",
               "available": true,
               "desc": "Rúcula, queso brie, queso roquefort, tomates cherry, manzana verde, nueces y vinagreta de mostaza y miel",
               "tags": [
@@ -638,14 +638,14 @@
             },
             {
               "name": "Ensalada Cesar",
-              "price": "$18.000",
+              "price": "$19.000",
               "available": true,
               "desc": "Lechuga, rúcula, pollo, parmesano, croutones y aderezo",
               "tags": []
             },
             {
               "name": "Ensalada Serrana",
-              "price": "$18.000",
+              "price": "$19.000",
               "available": true,
               "desc": "Lechuga, rúcula, jamón crudo, croutones, parmesano, tomate y palta",
               "tags": []
@@ -658,7 +658,7 @@
           "items": [
             {
               "name": "Panqueques con dulce de leche",
-              "price": "$8.000",
+              "price": "$9.000",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -674,7 +674,7 @@
             },
             {
               "name": "Flan casero con DDL",
-              "price": "$8.000",
+              "price": "$9.000",
               "available": true,
               "tags": [
                 "vegetariano"
@@ -875,7 +875,7 @@
           "items": [
             {
               "name": "Fernet con Coca",
-              "price": "$10.000",
+              "price": "$11.000",
               "available": true,
               "desc": "Fernet Branca y Coca",
               "beerCard": true,
@@ -885,7 +885,7 @@
             },
             {
               "name": "Tintelo",
-              "price": "$8.000",
+              "price": "$9.000",
               "available": true,
               "desc": "Vino tinto, gaseosa de pomelo y rodaja de pomelo",
               "beerCard": true,
@@ -895,7 +895,7 @@
             },
             {
               "name": "Cuba Libre",
-              "price": "$11.000",
+              "price": "$12.000",
               "available": true,
               "desc": "Ron dorado, Coca y rodaja de limon",
               "beerCard": true,
@@ -905,7 +905,7 @@
             },
             {
               "name": "Garibaldi",
-              "price": "$11.000",
+              "price": "$12.000",
               "available": true,
               "desc": "Campari, jugo de naranja y rodaja de naranja, naranja/tónica",
               "beerCard": true,
@@ -915,7 +915,7 @@
             },
             {
               "name": "Aperol Spritz",
-              "price": "$14.000",
+              "price": "$15.000",
               "available": true,
               "desc": "Aperol, soda, espumante y rodaja de naranja",
               "beerCard": true,
@@ -925,7 +925,7 @@
             },
             {
               "name": "Cynar Julep",
-              "price": "$12.000",
+              "price": "$13.000",
               "available": true,
               "desc": "Cynar, jugo de limón, almíbar, jugo de pomelo y menta",
               "beerCard": true,
@@ -935,7 +935,7 @@
             },
             {
               "name": "Carpano Orange",
-              "price": "$10.000",
+              "price": "$11.000",
               "available": true,
               "desc": "Vermouth Carpano, soda/tónica/pomelo y rodaja de naranja",
               "beerCard": true,
@@ -945,7 +945,7 @@
             },
             {
               "name": "Ferroviario",
-              "price": "$10.000",
+              "price": "$11.000",
               "available": true,
               "desc": "Fernet Branca, Carpano y soda",
               "beerCard": true,
@@ -955,7 +955,7 @@
             },
             {
               "name": "Cóctel Americano",
-              "price": "$11.000",
+              "price": "$12.000",
               "available": true,
               "desc": "Campari, Carpano Rosso, soda y piel de naranja",
               "beerCard": true,
@@ -965,7 +965,7 @@
             },
             {
               "name": "Mint Tonic",
-              "price": "$10.000",
+              "price": "$11.000",
               "available": true,
               "desc": "Branca Menta Ricetta Italiana, tónica, limón y menta",
               "beerCard": true,
@@ -975,7 +975,7 @@
             },
             {
               "name": "Gin Tonic Blu",
-              "price": "$11.000",
+              "price": "$12.000",
               "available": true,
               "desc": "Gin Blu, tónica, rodaja a elección: limón, pepino, naranja o pomelo",
               "beerCard": true,
@@ -985,7 +985,7 @@
             },
             {
               "name": "Sangría",
-              "price": "$10.000",
+              "price": "$11.000",
               "available": true,
               "desc": "Vino Malbec, jugo de naranja, jugo de limón, almíbar de frutos rojos, limón y menta",
               "beerCard": true,
@@ -995,7 +995,7 @@
             },
             {
               "name": "Malibú",
-              "price": "$12.000",
+              "price": "$13.000",
               "available": true,
               "desc": "Ron Malibú, naranja/7up/Coca",
               "beerCard": true,
@@ -1005,7 +1005,7 @@
             },
             {
               "name": "Vodka Veloz",
-              "price": "$15.000",
+              "price": "$16.000",
               "available": true,
               "desc": "Red Bull y vodka Sernova",
               "beerCard": true,
@@ -1015,7 +1015,7 @@
             },
             {
               "name": "Jäger Power",
-              "price": "$18.000",
+              "price": "$19.000",
               "available": true,
               "desc": "Red Bull y Jägermeister",
               "beerCard": true,
@@ -1025,7 +1025,7 @@
             },
             {
               "name": "Red Bull",
-              "price": "$7.000",
+              "price": "$8.000",
               "available": true,
               "tags": []
             }
@@ -1037,132 +1037,132 @@
           "items": [
             {
               "name": "Caipirinha",
-              "price": "$12.000",
+              "price": "$13.000",
               "available": true,
               "desc": "Cachaça, lima, jugo de limón y almíbar simple",
               "tags": []
             },
             {
               "name": "Caipijäger",
-              "price": "$15.000",
+              "price": "$16.000",
               "desc": "Jägermeister, lima, jugo de limón y almíbar simple",
               "tags": []
             },
             {
               "name": "Caipiroska",
-              "price": "$12.000",
+              "price": "$13.000",
               "available": true,
               "desc": "Vodka Sernova, lima, jugo de limón y almíbar simple",
               "tags": []
             },
             {
               "name": "Maycaipi",
-              "price": "$14.000",
+              "price": "$15.000",
               "available": true,
               "desc": "Vodka Sernova/Cachaça, lima, maracuyá, jugo de limón y almíbar simple",
               "tags": []
             },
             {
               "name": "Mojito",
-              "price": "$13.000",
+              "price": "$14.000",
               "available": true,
               "desc": "Ron o Malibú, jugo de limón, menta, almíbar simple y soda",
               "tags": []
             },
             {
               "name": "Tom Collins",
-              "price": "$11.000",
+              "price": "$12.000",
               "available": true,
               "desc": "Gin Blu, limón, soda y almíbar simple",
               "tags": []
             },
             {
               "name": "Old Fashioned",
-              "price": "$15.000",
+              "price": "$16.000",
               "available": true,
               "desc": "Bourbon, dash de Bitter Angostura, azúcar y rodaja de naranja",
               "tags": []
             },
             {
               "name": "Negroni",
-              "price": "$15.000",
+              "price": "$16.000",
               "available": true,
               "desc": "Campari, gin, Carpano Rosso y rodaja de naranja",
               "tags": []
             },
             {
               "name": "Negrol",
-              "price": "$15.000",
+              "price": "$16.000",
               "available": true,
               "desc": "Gin, Aperol y Carpano Rosso",
               "tags": []
             },
             {
               "name": "Boulevardier",
-              "price": "$15.000",
+              "price": "$16.000",
               "available": true,
               "desc": "Bourbon, Campari y Carpano Rosso",
               "tags": []
             },
             {
               "name": "Pisco Sour",
-              "price": "$13.000",
+              "price": "$14.000",
               "available": true,
               "desc": "Pisco, almíbar, limón, clara de huevo y Bitter Angostura",
               "tags": []
             },
             {
               "name": "Pisco Maracuyá",
-              "price": "$14.000",
+              "price": "$15.000",
               "available": true,
               "desc": "Pisco, almíbar, limón, clara de huevo, Bitter Angostura y maracuyá",
               "tags": []
             },
             {
               "name": "Martini Dry",
-              "price": "$15.000",
+              "price": "$16.000",
               "available": true,
               "desc": "Gin, Carpano Dry, limón y/o aceitunas",
               "tags": []
             },
             {
               "name": "Manhattan",
-              "price": "$15.000",
+              "price": "$16.000",
               "available": true,
               "desc": "Bourbon, Carpano Rosso y dash de Bitter Angostura",
               "tags": []
             },
             {
               "name": "Espresso Martini",
-              "price": "$15.000",
+              "price": "$16.000",
               "available": true,
               "desc": "Café espresso, licor de café, vodka Sernova y almíbar simple",
               "tags": []
             },
             {
               "name": "Penicillin",
-              "price": "$18.000",
+              "price": "$19.000",
               "available": true,
               "desc": "Whisky Scotch, almíbar de miel, almíbar de jengibre y jugo de limón",
               "tags": []
             },
             {
               "name": "New York Sour",
-              "price": "$18.000",
+              "price": "$19.000",
               "available": true,
               "desc": "Whisky Scotch, clara de huevo, almíbar simple, jugo de limón y vino Malbec",
               "tags": []
             },
             {
               "name": "Aperol Sour",
-              "price": "$15.000",
+              "price": "$16.000",
               "available": true,
               "desc": "Aperol, clara de huevo, jugo de limón y almíbar simple",
               "tags": []
             },
             {
               "name": "Margarita",
-              "price": "$14.000",
+              "price": "$15.000",
               "available": true,
               "desc": "Tequila, triple sec, limón, almíbar y sal/azúcar",
               "tags": []
@@ -1175,37 +1175,37 @@
           "items": [
             {
               "name": "Jim Beam",
-              "price": "$14.000",
+              "price": "$15.000",
               "available": true,
               "tags": []
             },
             {
               "name": "Jameson",
-              "price": "$15.000",
+              "price": "$16.000",
               "available": true,
               "tags": []
             },
             {
               "name": "Jack Daniel's",
-              "price": "$18.000",
-              "available": true,
-              "tags": []
-            },
-            {
-              "name": "Johnnie Walker Red Label",
-              "price": "$14.000",
-              "available": true,
-              "tags": []
-            },
-            {
-              "name": "Johnnie Walker Black Label",
               "price": "$19.000",
               "available": true,
               "tags": []
             },
             {
-              "name": "Baileys",
+              "name": "Johnnie Walker Red Label",
               "price": "$15.000",
+              "available": true,
+              "tags": []
+            },
+            {
+              "name": "Johnnie Walker Black Label",
+              "price": "$20.000",
+              "available": true,
+              "tags": []
+            },
+            {
+              "name": "Baileys",
+              "price": "$16.000",
               "available": true,
               "tags": []
             }
@@ -1217,25 +1217,25 @@
           "items": [
             {
               "name": "Tequila",
-              "price": "$11.000",
-              "available": true,
-              "tags": []
-            },
-            {
-              "name": "Jäger",
               "price": "$12.000",
               "available": true,
               "tags": []
             },
             {
+              "name": "Jäger",
+              "price": "$13.000",
+              "available": true,
+              "tags": []
+            },
+            {
               "name": "Esquí con 4 vasos de Tequila",
-              "price": "$40.000",
+              "price": "$41.000",
               "available": true,
               "tags": []
             },
             {
               "name": "Esquí con 4 vasos de Jäger",
-              "price": "$42.000",
+              "price": "$43.000",
               "available": true,
               "tags": []
             }
@@ -1247,7 +1247,7 @@
           "items": [
             {
               "name": "Limonada",
-              "price": "$7.000",
+              "price": "$8.000",
               "available": true,
               "desc": "Jugo de limón, almíbar, rodajas de limón y agua (opcionales: menta, jengibre o pepino)",
               "tags": [
@@ -1256,7 +1256,7 @@
             },
             {
               "name": "Pomelada",
-              "price": "$7.000",
+              "price": "$8.000",
               "available": true,
               "desc": "Jugo de pomelo, almíbar, rodajas de pomelo y agua",
               "tags": [
@@ -1265,7 +1265,7 @@
             },
             {
               "name": "Limonada Frutos Rojos",
-              "price": "$9.000",
+              "price": "$10.000",
               "available": true,
               "desc": "Jugo de limón, frutos rojos, almíbar de frutos rojos y agua",
               "tags": [
@@ -1274,7 +1274,7 @@
             },
             {
               "name": "Natural Mystic",
-              "price": "$10.000",
+              "price": "$11.000",
               "available": true,
               "desc": "Frutilla, limón, jugo de naranja, almíbar y agua",
               "tags": [
@@ -1283,7 +1283,7 @@
             },
             {
               "name": "Aljaba",
-              "price": "$10.000",
+              "price": "$11.000",
               "available": true,
               "desc": "Jarabe de saúco, limón, almíbar, agua tónica, menta y rodaja de limón",
               "tags": [
@@ -1311,13 +1311,13 @@
             {
               "name": "Café Chico",
               "price": "$4.000",
-              "available": true,
+              "available": false,
               "tags": []
             },
             {
               "name": "Café Doble",
               "price": "$5.000",
-              "available": true,
+              "available": false,
               "tags": []
             }
           ]
