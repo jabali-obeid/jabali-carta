@@ -138,7 +138,7 @@
             },
             {
               "name": "Pollo al verdeo",
-              "available": false,
+              "available": true,
               "price": "$4.800",
               "tags": []
             }
