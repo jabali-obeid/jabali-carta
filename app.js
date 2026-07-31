@@ -511,6 +511,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateItemCardUI(itemId) {
         const containers = document.querySelectorAll(`.item-cart-actions[data-item-id="${itemId}"]`);
+        if (!containers || containers.length === 0) {
+            renderAllSections();
+            applyFilters();
+            return;
+        }
         containers.forEach(container => {
             const currentQty = (cart[itemId] && cart[itemId].qty) ? cart[itemId].qty : 0;
             const btnLabel = translations[currentLang].cart_add;
@@ -538,9 +543,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function addToCart(itemId) {
-        const itemData = menuItemMap[itemId];
+    function addToCart(itemIdOrName) {
+        if (!itemIdOrName) return;
+        let itemData = menuItemMap[itemIdOrName];
+        if (!itemData) {
+            itemData = Object.values(menuItemMap).find(i => i.name === itemIdOrName);
+        }
         if (!itemData) return;
+
+        const itemId = itemData.id || itemIdOrName;
 
         if (!cart[itemId]) {
             cart[itemId] = {
@@ -559,7 +570,14 @@ document.addEventListener('DOMContentLoaded', () => {
         updateItemCardUI(itemId);
     }
 
-    function updateQty(itemId, delta) {
+    function updateQty(itemIdOrName, delta) {
+        if (!itemIdOrName) return;
+        let itemId = itemIdOrName;
+        if (!cart[itemId]) {
+            const foundKey = Object.keys(cart).find(k => k === itemIdOrName || (cart[k] && cart[k].name === itemIdOrName));
+            if (foundKey) itemId = foundKey;
+        }
+
         if (cart[itemId]) {
             cart[itemId].qty += delta;
             if (cart[itemId].qty <= 0) {
@@ -729,20 +747,22 @@ document.addEventListener('DOMContentLoaded', () => {
             menuRoot.addEventListener('click', e => {
                 const addBtn = e.target.closest('.add-item-btn');
                 if (addBtn) {
-                    const id = addBtn.dataset.itemId;
+                    const id = addBtn.dataset.itemId || addBtn.dataset.itemName;
                     addToCart(id);
                     return;
                 }
 
                 const minusBtn = e.target.closest('.cart-minus-btn');
                 if (minusBtn) {
-                    updateQty(minusBtn.dataset.itemId, -1);
+                    const id = minusBtn.dataset.itemId || minusBtn.dataset.itemName;
+                    updateQty(id, -1);
                     return;
                 }
 
                 const plusBtn = e.target.closest('.cart-plus-btn');
                 if (plusBtn) {
-                    updateQty(plusBtn.dataset.itemId, 1);
+                    const id = plusBtn.dataset.itemId || plusBtn.dataset.itemName;
+                    updateQty(id, 1);
                     return;
                 }
 
