@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const dietBadges = [];
         if (item.tags && !isTragos) {
             if (item.tags.includes('vegano')) dietBadges.push('<span class="diet-tag tag-vegano">🌱 Vegano</span>');
-            if (item.tags.includes('vegetariano') && !item.tags.includes('vegano')) dietBadges.push('<span class="diet-tag tag-vegetariano">🥦 Vegetariano</span>');
             if (item.tags.includes('sin-tacc') && !isBeer) dietBadges.push('<span class="diet-tag tag-sin-tacc">🌾 Sin TACC</span>');
             if (item.tags.includes('sin-alcohol')) dietBadges.push('<span class="diet-tag tag-sin-alcohol">🚫 Sin Alcohol</span>');
         }
@@ -172,8 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Set body attribute for CSS targeting
                     document.body.setAttribute('data-active-section', targetId);
 
-                    // Reset filter if switching to tragos and vegan/veg is active
-                    if (targetId === 'tragos' && (activeFilter === 'vegano' || activeFilter === 'vegetariano')) {
+                    // Reset filter if switching to tragos and vegan is active
+                    if (targetId === 'tragos' && activeFilter === 'vegano') {
                         activeFilter = 'all';
                         document.querySelectorAll('.diet-btn').forEach(b => b.classList.remove('active'));
                         document.querySelector('.diet-btn[data-filter="all"]').classList.add('active');

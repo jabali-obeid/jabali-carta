@@ -12,25 +12,19 @@
               "name": "Muzzarella",
               "price": "$24.000",
               "available": true,
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Napolitana",
               "price": "$27.000",
               "available": true,
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Fugazzetta Rellena",
               "price": "$43.000",
               "available": true,
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Jamón y Morrón",
@@ -42,17 +36,13 @@
               "name": "Cuatro Quesos",
               "price": "$29.000",
               "available": true,
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Tomate y Huevo",
               "price": "$27.000",
               "available": true,
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Peperoni",
@@ -64,9 +54,7 @@
               "name": "Provolone",
               "price": "$29.000",
               "available": true,
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Rúcula y Crudo",
@@ -108,33 +96,25 @@
               "name": "Cuatro Quesos",
               "price": "$4.800",
               "available": true,
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Caprese",
               "price": "$4.800",
               "available": true,
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Humita",
               "price": "$4.800",
               "available": true,
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Verdura",
               "price": "$4.800",
               "available": true,
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Pollo al verdeo",
@@ -152,25 +132,19 @@
               "name": "Muzzarella",
               "price": "$5.000",
               "available": true,
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Napolitana",
               "price": "$6.000",
               "available": true,
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Fugazzetta Rellena",
               "price": "$10.000",
               "available": true,
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Jamón y Morrón",
@@ -182,9 +156,7 @@
               "name": "Fainá",
               "price": "$4.000",
               "available": true,
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             }
           ]
         },
@@ -196,25 +168,19 @@
               "name": "Panqueques con dulce de leche",
               "price": "$9000",
               "available": true,
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Vigilante",
               "price": "$8.000",
               "available": false,
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Flan casero con DDL",
               "price": "$9.000",
               "available": true,
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             }
           ]
         },
@@ -412,7 +378,7 @@
           "extras": [
             "Medallón vegetariano y pan sin tacc disponible para todas las opciones",
             "Opción pan sin tacc: <strong>+$3.500</strong>",
-            "Doble medallón: <strong>+$4.000</strong>"
+            "Doble medallón: <strong>+$5.000</strong>"
           ],
           "items": [
             {
@@ -420,63 +386,49 @@
               "price": "$15.000",
               "available": true,
               "desc": "Medallón de carne vacuna y queso",
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Mac Grande",
               "price": "$18.000",
               "available": true,
               "desc": "Medallón de carne vacuna, queso cheddar, lechuga, pepino, salsa Utah (mayonesa, ketchup, ajo, aceite de oliva, ciboulette, reducción de pepino en almíbar)",
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Tercio de Libra",
               "price": "$18.000",
               "available": true,
               "desc": "Medallón de carne vacuna, queso cheddar, pepino, salsa españa (cebolla, ketchup, mostaza)",
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "4-4-2",
               "price": "$18.000",
               "available": true,
               "desc": "Medallón de carne vacuna, queso dambo, jamón cocido, lechuga, tomate y huevo frito",
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Ricky Fort",
               "price": "$18.000",
               "available": true,
               "desc": "Medallón de carne vacuna, manteca de roquefort y cebolla caramelizada",
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Crispy",
               "price": "$19.000",
               "available": true,
               "desc": "Medallón de carne vacuna, queso cheddar, panceta ahumada, cebolla crispy y salsa Utah",
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Maradona",
               "price": "$18.000",
               "available": true,
               "desc": "Medallón de carne vacuna, provoleta, salsa criolla, tomate y lechuga",
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             }
           ]
         },
@@ -527,9 +479,7 @@
               "price": "$15.000",
               "available": true,
               "desc": "Lechuga, tomate, zanahoria, palmitos, huevo duro y queso",
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             }
           ]
         },
@@ -585,9 +535,7 @@
               "price": "$14.000",
               "available": true,
               "desc": "Papas fritas con huevo frito",
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Papas con cheddar",
@@ -610,9 +558,7 @@
               "price": "$17.000",
               "available": true,
               "desc": "A la plancha con puerro, tomates cherry y vinagreta de aceite de oliva, miel, vinagre, sal y pimienta",
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Provoleta con morcilla",
@@ -632,9 +578,7 @@
               "price": "$18.000",
               "available": true,
               "desc": "Rúcula, queso brie, queso roquefort, tomates cherry, manzana verde, nueces y vinagreta de mostaza y miel",
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Ensalada Cesar",
@@ -660,25 +604,19 @@
               "name": "Panqueques con dulce de leche",
               "price": "$9.000",
               "available": true,
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Vigilante",
               "price": "$8.000",
               "available": false,
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             },
             {
               "name": "Flan casero con DDL",
               "price": "$9.000",
               "available": true,
-              "tags": [
-                "vegetariano"
-              ]
+              "tags": []
             }
           ]
         },

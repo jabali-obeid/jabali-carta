@@ -31,6 +31,103 @@ body {
     min-height: 100vh;
 }
 
+/* Review Banner (Coqueto & Bonito) */
+.review-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.09) 0%, rgba(255, 105, 180, 0.08) 50%, rgba(212, 175, 55, 0.06) 100%);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 16px;
+    padding: 0.7rem 1rem;
+    margin-bottom: 1.5rem;
+    text-decoration: none;
+    color: var(--text-white);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.review-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+    transform: rotate(30deg);
+    animation: shimmer 3.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) rotate(30deg); }
+    100% { transform: translateX(100%) rotate(30deg); }
+}
+
+.review-banner:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 215, 0, 0.6);
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.25);
+}
+
+.review-banner:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.review-banner-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.review-header-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.google-icon {
+    flex-shrink: 0;
+}
+
+.review-stars {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.review-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-white);
+    letter-spacing: 0.2px;
+}
+
+.review-banner-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--gold-gradient);
+    color: #000;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.45rem 0.85rem;
+    border-radius: 100px;
+    white-space: nowrap;
+    box-shadow: 0 3px 12px rgba(212, 175, 55, 0.3);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.review-banner:hover .review-banner-btn {
+    transform: scale(1.05);
+}
+
 /* Header Elements */
 header {
     text-align: center;
@@ -460,11 +557,7 @@ header {
     color: #6fcf7f;
 }
 
-.tag-vegetariano {
-    background: rgba(80, 200, 90, 0.1);
-    border: 1px solid rgba(80, 200, 90, 0.3);
-    color: #82d492;
-}
+
 
 .tag-sin-tacc {
     background: rgba(230, 180, 60, 0.1);
@@ -660,9 +753,8 @@ header {
     border-color: rgba(130, 80, 200, 0.2) !important;
 }
 
-/* Hide vegan and vegetarian filters on Tragos section */
-body[data-active-section="tragos"] .diet-btn[data-filter="vegano"],
-body[data-active-section="tragos"] .diet-btn[data-filter="vegetariano"] {
+/* Hide vegan filter on Tragos section */
+body[data-active-section="tragos"] .diet-btn[data-filter="vegano"] {
     display: none !important;
 }
 
