@@ -45,17 +45,20 @@ document.addEventListener('DOMContentLoaded', () => {
             wifi_copy: "Copiar contraseña",
             wifi_copied: "¡Copiada con éxito! 🎉",
             dev_tagline: "¿Querés una carta QR para tu negocio? ¡Escribime!",
-            hh_title_active: "Happy Hour 2 x $14.000",
-            hh_deal_active: "En tragos seleccionados de la barra",
+            hh_title_active: "Happy Hour Cerveza Tirada",
+            hh_deal_active: "2 Pintas 500ml x $14.000 (18:00 a 21:00 hs)",
             hh_tag_active: "ACTIVO HASTA 21:00 HS",
-            hh_title_expired: "Happy Hour Finalizado",
-            hh_deal_expired: "Todos los días HH 18:00 a 21:00 hs | Miércoles 2x1 Fernet hasta 22:00 hs",
-            hh_tag_expired: "HASTA LAS 21:00 HS",
+            hh_title_expired: "Happy Hour Cerveza Tirada",
+            hh_deal_expired: "Todos los días HH 18:00 a 21:00 hs | 2 Pintas x $14.000",
+            hh_tag_expired: "DE 18:00 A 21:00 HS",
             fernet_promo_badge_active: "🔥 2X1 (Miércoles hasta 22:00 hs)",
             fernet_promo_badge_info: "🍹 2X1 sólo Miércoles hasta 22:00 hs",
             fernet_banner_active_title: "2X1 en Fernet con Coca",
             fernet_banner_active_deal: "¡Promo de Miércoles activa hasta las 22:00 hs!",
             fernet_banner_active_tag: "ACTIVO HASTA 22:00 HS",
+            fernet_banner_expired_title: "2X1 en Fernet con Coca",
+            fernet_banner_expired_deal: "Promo especial todos los Miércoles de 18:00 a 22:00 hs",
+            fernet_banner_expired_tag: "SÓLO MIÉRCOLES",
         },
         en: {
             review_text: "Don't forget to leave us a review! 💕✨",
@@ -87,17 +90,20 @@ document.addEventListener('DOMContentLoaded', () => {
             wifi_copy: "Copy password",
             wifi_copied: "Copied successfully! 🎉",
             dev_tagline: "Want a QR menu for your business? Contact me!",
-            hh_title_active: "Happy Hour 2 x $14,000",
-            hh_deal_active: "On selected cocktails",
+            hh_title_active: "Draft Beer Happy Hour",
+            hh_deal_active: "2 Pints 500ml for $14,000 (6:00 to 9:00 PM)",
             hh_tag_active: "ACTIVE UNTIL 9:00 PM",
-            hh_title_expired: "Happy Hour Ended",
-            hh_deal_expired: "Every day HH 6:00 to 9:00 PM | Wednesdays 2x1 Fernet until 10:00 PM",
-            hh_tag_expired: "UNTIL 9:00 PM",
+            hh_title_expired: "Draft Beer Happy Hour",
+            hh_deal_expired: "Every day HH 6:00 to 9:00 PM | 2 Pints x $14,000",
+            hh_tag_expired: "6:00 TO 9:00 PM",
             fernet_promo_badge_active: "🔥 2X1 (Wednesdays until 10:00 PM)",
             fernet_promo_badge_info: "🍹 2X1 Wednesdays only (until 10:00 PM)",
             fernet_banner_active_title: "2X1 on Fernet con Coca",
             fernet_banner_active_deal: "Wednesday promo active until 10:00 PM!",
             fernet_banner_active_tag: "ACTIVE UNTIL 10:00 PM",
+            fernet_banner_expired_title: "2X1 on Fernet con Coca",
+            fernet_banner_expired_deal: "Special promo every Wednesday 6:00 to 10:00 PM",
+            fernet_banner_expired_tag: "WEDNESDAYS ONLY",
         }
     };
 
@@ -233,51 +239,74 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function getCatId(sectionId, catTitle) {
+        const slug = catTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+        return `cat-${sectionId}-${slug}`;
+    }
+
     function renderHappyHourBanner() {
         const bannerContainer = document.getElementById('happyHourBanner');
         if (!bannerContainer) return;
 
-        const isActive = isHappyHourActive();
+        const activeSecId = document.body.getAttribute('data-active-section') || 'pizzeria';
+        const isHappyHour = isHappyHourActive();
         const isFernetActive = isFernetPromoActive();
         const t = translations[currentLang];
 
-        if (isFernetActive && !isActive) {
-            bannerContainer.innerHTML = `
-                <div class="hh-card active-hh fernet-banner">
-                    <div class="hh-left">
-                        <span class="hh-fire-icon">🍹</span>
-                        <div class="hh-info">
-                            <span class="hh-title">${t.fernet_banner_active_title}</span>
-                            <span class="hh-deal">${t.fernet_banner_active_deal}</span>
+        if (activeSecId === 'tragos') {
+            // Exclusive 2x1 Fernet promo banner in Tragos section
+            if (isFernetActive) {
+                bannerContainer.innerHTML = `
+                    <div class="hh-card active-hh fernet-banner">
+                        <div class="hh-left">
+                            <span class="hh-fire-icon">🍹</span>
+                            <div class="hh-info">
+                                <span class="hh-title">${t.fernet_banner_active_title}</span>
+                                <span class="hh-deal">${t.fernet_banner_active_deal}</span>
+                            </div>
                         </div>
-                    </div>
-                    <span class="hh-time-tag">${t.fernet_banner_active_tag}</span>
-                </div>`;
-        } else if (isActive) {
-            const dealText = isFernetActive ? `${t.hh_deal_active} | 2X1 Fernet` : t.hh_deal_active;
-            bannerContainer.innerHTML = `
-                <div class="hh-card active-hh">
-                    <div class="hh-left">
-                        <span class="hh-fire-icon">🔥</span>
-                        <div class="hh-info">
-                            <span class="hh-title">${t.hh_title_active}</span>
-                            <span class="hh-deal">${dealText}</span>
+                        <span class="hh-time-tag">${t.fernet_banner_active_tag}</span>
+                    </div>`;
+            } else {
+                bannerContainer.innerHTML = `
+                    <div class="hh-card expired-hh fernet-banner">
+                        <div class="hh-left">
+                            <span class="hh-fire-icon">🍹</span>
+                            <div class="hh-info">
+                                <span class="hh-title">${t.fernet_banner_expired_title}</span>
+                                <span class="hh-deal">${t.fernet_banner_expired_deal}</span>
+                            </div>
                         </div>
-                    </div>
-                    <span class="hh-time-tag">${t.hh_tag_active}</span>
-                </div>`;
+                        <span class="hh-time-tag">${t.fernet_banner_expired_tag}</span>
+                    </div>`;
+            }
         } else {
-            bannerContainer.innerHTML = `
-                <div class="hh-card expired-hh">
-                    <div class="hh-left">
-                        <span class="hh-fire-icon">⏳</span>
-                        <div class="hh-info">
-                            <span class="hh-title">${t.hh_title_expired}</span>
-                            <span class="hh-deal">${t.hh_deal_expired}</span>
+            // Pizzería & Hamburguesería: Exclusive Cerveza Tirada Happy Hour
+            if (isHappyHour) {
+                bannerContainer.innerHTML = `
+                    <div class="hh-card active-hh">
+                        <div class="hh-left">
+                            <span class="hh-fire-icon">🍺</span>
+                            <div class="hh-info">
+                                <span class="hh-title">${t.hh_title_active}</span>
+                                <span class="hh-deal">${t.hh_deal_active}</span>
+                            </div>
                         </div>
-                    </div>
-                    <span class="hh-time-tag">${t.hh_tag_expired}</span>
-                </div>`;
+                        <span class="hh-time-tag">${t.hh_tag_active}</span>
+                    </div>`;
+            } else {
+                bannerContainer.innerHTML = `
+                    <div class="hh-card expired-hh">
+                        <div class="hh-left">
+                            <span class="hh-fire-icon">⏳</span>
+                            <div class="hh-info">
+                                <span class="hh-title">${t.hh_title_expired}</span>
+                                <span class="hh-deal">${t.hh_deal_expired}</span>
+                            </div>
+                        </div>
+                        <span class="hh-time-tag">${t.hh_tag_expired}</span>
+                    </div>`;
+            }
         }
     }
 
@@ -312,12 +341,170 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCartUI();
     }
 
+    // ── Subcategory Floating Index & ScrollSpy ──────────────────────────────
+    function enablePillsDragScroll() {
+        const container = document.getElementById('subcategoryPills');
+        if (!container || container.dataset.dragBound) return;
+        container.dataset.dragBound = 'true';
+
+        let isDown = false;
+        let startX, scrollLeft;
+
+        container.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+        });
+        container.addEventListener('mouseleave', () => { isDown = false; });
+        container.addEventListener('mouseup', () => { isDown = false; });
+        container.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX) * 1.5;
+            container.scrollLeft = scrollLeft - walk;
+        });
+    }
+
+    function renderSubcategoryNav(sectionId) {
+        const pillsContainer = document.getElementById('subcategoryPills');
+        if (!pillsContainer || !menuData) return;
+
+        const activeSecId = sectionId || document.body.getAttribute('data-active-section') || 'pizzeria';
+        const currentSection = menuData.sections.find(s => s.id === activeSecId);
+        if (!currentSection || !currentSection.categories) {
+            pillsContainer.innerHTML = '';
+            return;
+        }
+
+        const pillsHtml = currentSection.categories.map((cat, idx) => {
+            const catId = getCatId(activeSecId, cat.title);
+            let rawTitle = (currentLang === 'en' && (cat.title_en || categoryTranslations.en[cat.title]))
+                ? (cat.title_en || categoryTranslations.en[cat.title])
+                : cat.title;
+
+            // Clean leading emojis from rawTitle if present to avoid duplicates
+            const cleanTitle = rawTitle.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}\s]+/gu, '').trim();
+
+            let icon = '';
+            const tLower = rawTitle.toLowerCase();
+            if (tLower.includes('pizza')) icon = '🍕 ';
+            else if (tLower.includes('empanada')) icon = '🥟 ';
+            else if (tLower.includes('hamburguesa')) icon = '🍔 ';
+            else if (tLower.includes('sandwich')) icon = '🥪 ';
+            else if (tLower.includes('pancho')) icon = '🌭 ';
+            else if (tLower.includes('picar')) icon = '🍟 ';
+            else if (tLower.includes('ensalada')) icon = '🥗 ';
+            else if (tLower.includes('postre')) icon = '🍰 ';
+            else if (tLower.includes('trago') || tLower.includes('clásico')) icon = '🍹 ';
+            else if (tLower.includes('cerveza')) icon = '🍺 ';
+            else if (tLower.includes('vino')) icon = '🍷 ';
+            else if (tLower.includes('whisky')) icon = '🥃 ';
+            else if (tLower.includes('shot')) icon = '🥂 ';
+            else if (tLower.includes('mocktail')) icon = '🍹 ';
+            else if (tLower.includes('café')) icon = '☕ ';
+
+            const isFirst = idx === 0 ? ' active' : '';
+
+            return `<button class="sub-pill sub-pill-entry${isFirst}" data-cat-id="${catId}" style="animation-delay:${idx * 0.04}s">
+                <span class="pill-icon">${icon}</span><span class="pill-text">${cleanTitle}</span>
+            </button>`;
+        }).join('\n');
+
+        pillsContainer.innerHTML = pillsHtml;
+
+        pillsContainer.querySelectorAll('.sub-pill').forEach(pill => {
+            pill.addEventListener('click', () => {
+                const catId = pill.dataset.catId;
+                const targetElem = document.getElementById(catId);
+                if (!targetElem) return;
+
+                targetElem.classList.remove('collapsed');
+
+                const headerOffset = 135;
+                const elementPosition = targetElem.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+
+                pillsContainer.querySelectorAll('.sub-pill').forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+                pill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            });
+        });
+
+        enablePillsDragScroll();
+    }
+
+    let scrollSpySetup = false;
+    function setupSubcategoryScrollSpy() {
+        if (scrollSpySetup) return;
+        scrollSpySetup = true;
+
+        let isScrollingTimeout;
+        window.addEventListener('scroll', () => {
+            window.clearTimeout(isScrollingTimeout);
+            isScrollingTimeout = setTimeout(() => {
+                const activeSecId = document.body.getAttribute('data-active-section');
+                if (!activeSecId) return;
+
+                const activeSectionElem = document.getElementById(activeSecId);
+                if (!activeSectionElem) return;
+
+                const categories = Array.from(activeSectionElem.querySelectorAll('.menu-category'));
+                const pillsContainer = document.getElementById('subcategoryPills');
+                if (!pillsContainer || categories.length === 0) return;
+
+                const headerOffset = 150;
+                let currentCatId = null;
+
+                for (let i = 0; i < categories.length; i++) {
+                    const rect = categories[i].getBoundingClientRect();
+                    if (rect.top <= headerOffset && rect.bottom > headerOffset) {
+                        currentCatId = categories[i].id;
+                        break;
+                    }
+                }
+
+                if (!currentCatId && categories.length > 0) {
+                    const firstRect = categories[0].getBoundingClientRect();
+                    if (firstRect.top > headerOffset) {
+                        currentCatId = categories[0].id;
+                    } else {
+                        const lastRect = categories[categories.length - 1].getBoundingClientRect();
+                        if (lastRect.bottom <= window.innerHeight) {
+                            currentCatId = categories[categories.length - 1].id;
+                        }
+                    }
+                }
+
+                if (currentCatId) {
+                    const pills = pillsContainer.querySelectorAll('.sub-pill');
+                    pills.forEach(p => {
+                        if (p.dataset.catId === currentCatId) {
+                            if (!p.classList.contains('active')) {
+                                pills.forEach(other => other.classList.remove('active'));
+                                p.classList.add('active');
+                                p.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                            }
+                        }
+                    });
+                }
+            }, 60);
+        }, { passive: true });
+    }
+
     // ── Render Helpers ───────────────────────────────────────────────────────
     function renderItem(item, sectionId) {
         const tags = (item.tags || []).join(' ');
         const isBeer = !!item.beerCard;
         const isTragos = sectionId === 'tragos';
-        const hhActive = isTragos && isHappyHourActive() && item.available !== false && item.price;
+        const isBeerSection = sectionId === 'pizzeria' || sectionId === 'hamburgueseria';
+
+        const hhActive = isBeerSection && isBeer && isHappyHourActive() && item.available !== false && item.price;
         const isFernet = isTragos && (item.wednesdayPromo || (item.name && item.name.toLowerCase().includes('fernet')));
         const fernetPromoActive = isFernet && isFernetPromoActive() && item.available !== false;
 
@@ -360,8 +547,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3 class="item-name">
                     ${displayName}
                     ${item.available === false ? `<span class="agotado-badge">${soldOutBadge}</span>` : ''}
-                    ${hhBadgeHtml}
-                    ${fernetBadgeHtml}
                 </h3>
                 ${item.price ? `<span class="item-price">${item.price}</span>` : ''}
             </div>`;
@@ -376,7 +561,7 @@ document.addEventListener('DOMContentLoaded', () => {
             inner += `<p class="item-desc">${displayDesc}</p>`;
         }
 
-        // Diet badges
+        // Diet & Promo badges (placed below description/style tag like Amaro italiano & Pilsen)
         const dietBadges = [];
         if (item.tags) {
             if (item.tags.includes('vegano') && !isTragos) dietBadges.push(`<span class="diet-tag tag-vegano">${currentLang === 'en' ? '🌱 Vegan' : '🌱 Vegano'}</span>`);
@@ -387,9 +572,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isBeer) {
             const abvBadge = item.abv ? `<span class="beer-badge">${item.abv} ABV</span>` : '';
             const styleBadge = item.style ? `<span class="beer-badge">${item.style}</span>` : '';
-            inner += `<div class="beer-badges">${abvBadge}${styleBadge}</div>`;
-        } else if (dietBadges.length > 0) {
-            inner += `<div class="diet-tags-row">${dietBadges.join('')}</div>`;
+            inner += `<div class="beer-badges">${abvBadge}${styleBadge}${hhBadgeHtml}${fernetBadgeHtml}</div>`;
+        } else if (hhBadgeHtml || fernetBadgeHtml || dietBadges.length > 0) {
+            inner += `<div class="diet-tags-row">${dietBadges.join('')}${hhBadgeHtml}${fernetBadgeHtml}</div>`;
         }
 
         // Cart Actions per item
@@ -437,9 +622,10 @@ document.addEventListener('DOMContentLoaded', () => {
             : cat.title;
 
         const itemsHtml = cat.items.map(item => renderItem(item, sectionId)).join('\n');
+        const catId = getCatId(sectionId, cat.title);
 
         return `
-        <div class="menu-category" style="animation-delay:${(index + 1) * 0.1}s">
+        <div id="${catId}" class="menu-category" style="animation-delay:${(index + 1) * 0.1}s">
             <div class="category-header">
                 <h2 class="category-title">${catTitle}</h2><span class="toggle-icon"></span>
             </div>
@@ -471,6 +657,10 @@ document.addEventListener('DOMContentLoaded', () => {
             activeSec.classList.add('active');
             document.body.setAttribute('data-active-section', activeSecId);
         }
+
+        renderSubcategoryNav(activeSecId);
+        renderHappyHourBanner();
+        setupSubcategoryScrollSpy();
     }
 
     // ── Filter logic ─────────────────────────────────────────────────────────
@@ -712,6 +902,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (targetSection) targetSection.classList.add('active');
 
                     document.body.setAttribute('data-active-section', targetId);
+                    renderHappyHourBanner();
+                    renderSubcategoryNav(targetId);
 
                     // Reset filter if switching section to where active filter is not visible
                     if (targetId === 'tragos' && activeFilter === 'vegano') {

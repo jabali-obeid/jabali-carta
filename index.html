@@ -85,6 +85,13 @@
             <button class="nav-btn" data-target="tragos" data-i18n="nav_tragos">Tragos</button>
         </nav>
 
+        <!-- Subcategory Floating / Sticky Index Bar -->
+        <nav id="subcategoryNav" class="subcategory-nav" aria-label="Navegación por subcategorías">
+            <div id="subcategoryPills" class="subcategory-pills">
+                <!-- Rendered by JS -->
+            </div>
+        </nav>
+
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="🔍 Buscar plato, trago o bebida..." autocomplete="off">
             <button id="clearSearchBtn" class="clear-search-btn hidden" aria-label="Limpiar búsqueda">&times;</button>
@@ -102,25 +109,26 @@
             <div id="menu-root"></div>
         </main>
 
-        <!-- Floating Cart Button -->
-        <button id="floatingCartBtn" class="floating-cart-btn" title="Ver mi cuenta">
-            <div class="cart-icon-wrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="9" cy="21" r="1"></circle>
-                    <circle cx="20" cy="21" r="1"></circle>
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                </svg>
-                <span id="cartBadge" class="cart-badge">0</span>
-            </div>
-            <div class="cart-btn-info">
-                <span data-i18n="cart_button">Mi Cuenta</span>
-                <strong id="cartTotalHeader">$0</strong>
-            </div>
-        </button>
+        <!-- Floating Actions Bar (Cart + Back to Top side-by-side) -->
+        <div class="floating-actions-bar">
+            <button id="floatingCartBtn" class="floating-cart-btn" title="Ver mi cuenta">
+                <div class="cart-icon-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span id="cartBadge" class="cart-badge">0</span>
+                </div>
+                <div class="cart-btn-info">
+                    <strong id="cartTotalHeader">$0</strong>
+                </div>
+            </button>
 
-        <!-- Back to top button -->
-        <button id="backToTopBtn" title="Volver arriba">↑</button>
+            <!-- Back to top button -->
+            <button id="backToTopBtn" title="Volver arriba">↑</button>
+        </div>
 
         <!-- Wi-Fi Modal -->
         <div id="wifiModal" class="modal-overlay hidden">
