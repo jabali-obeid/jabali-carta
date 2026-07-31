@@ -366,6 +366,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function setupSubcategoryNavArrows() {
+        const subNavPrev = document.getElementById('subNavPrev');
+        const subNavNext = document.getElementById('subNavNext');
+        const pillsContainer = document.getElementById('subcategoryPills');
+
+        if (!pillsContainer) return;
+
+        const updateArrowVisibility = () => {
+            if (!subNavPrev || !subNavNext) return;
+            const scrollLeft = pillsContainer.scrollLeft;
+            const maxScrollLeft = pillsContainer.scrollWidth - pillsContainer.clientWidth;
+
+            subNavPrev.classList.toggle('disabled', scrollLeft <= 5);
+            subNavNext.classList.toggle('disabled', scrollLeft >= maxScrollLeft - 5);
+        };
+
+        if (subNavPrev && !subNavPrev.dataset.bound) {
+            subNavPrev.dataset.bound = 'true';
+            subNavPrev.addEventListener('click', (e) => {
+                e.stopPropagation();
+                pillsContainer.scrollBy({ left: -160, behavior: 'smooth' });
+            });
+        }
+
+        if (subNavNext && !subNavNext.dataset.bound) {
+            subNavNext.dataset.bound = 'true';
+            subNavNext.addEventListener('click', (e) => {
+                e.stopPropagation();
+                pillsContainer.scrollBy({ left: 160, behavior: 'smooth' });
+            });
+        }
+
+        pillsContainer.removeEventListener('scroll', updateArrowVisibility);
+        pillsContainer.addEventListener('scroll', updateArrowVisibility, { passive: true });
+        setTimeout(updateArrowVisibility, 80);
+    }
+
     function renderSubcategoryNav(sectionId) {
         const pillsContainer = document.getElementById('subcategoryPills');
         if (!pillsContainer || !menuData) return;
@@ -439,6 +476,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         enablePillsDragScroll();
+        setupSubcategoryNavArrows();
     }
 
     // Happy Hour Banner Click Shortcut to Cervezas Tiradas / Fernet
