@@ -15,6 +15,18 @@
 
 <body>
     <div class="app-container">
+        <!-- Top Utility Bar: WiFi & Language -->
+        <div class="top-utility-bar">
+            <button id="wifiBtn" class="utility-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+                <span>Wi-Fi</span>
+            </button>
+            <button id="langBtn" class="utility-btn lang-btn" data-lang="es">
+                <span class="lang-flag">🇦🇷</span>
+                <span class="lang-text">ES / EN</span>
+            </button>
+        </div>
+
         <!-- Banner Reseña -->
         <a href="https://maps.app.goo.gl/3cimkMsdgdtfZPni6" target="_blank" rel="noopener noreferrer" class="review-banner">
             <div class="review-banner-left">
@@ -27,13 +39,18 @@
                     </svg>
                     <span class="review-stars">⭐⭐⭐⭐⭐</span>
                 </div>
-                <span class="review-text">¡No olvides dejar tu reseña! 💕✨</span>
+                <span class="review-text" data-i18n="review_text">¡No olvides dejar tu reseña! 💕✨</span>
             </div>
             <div class="review-banner-btn">
-                <span>Dejar reseña</span>
+                <span data-i18n="review_btn">Dejar reseña</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </div>
         </a>
+
+        <!-- Dynamic Happy Hour Banner -->
+        <div id="happyHourBanner" class="happy-hour-banner">
+            <!-- Rendered by JS -->
+        </div>
 
         <header>
             <div class="header-brand">
@@ -42,31 +59,120 @@
                 </div>
                 <h1 class="logo">JABALÍ</h1>
             </div>
-            <p class="subtitle">Elegí una de las tres barras</p>
+            <p class="subtitle" data-i18n="subtitle">Elegí una de las tres barras</p>
         </header>
 
         <nav class="category-nav">
-            <button class="nav-btn active" data-target="pizzeria">Pizzería</button>
-            <button class="nav-btn" data-target="hamburgueseria">Hamburguesería</button>
-            <button class="nav-btn" data-target="tragos">Tragos</button>
+            <button class="nav-btn active" data-target="pizzeria" data-i18n="nav_pizzeria">Pizzería</button>
+            <button class="nav-btn" data-target="hamburgueseria" data-i18n="nav_hamburgueseria">Hamburguesería</button>
+            <button class="nav-btn" data-target="tragos" data-i18n="nav_tragos">Tragos</button>
         </nav>
 
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="🔍 Buscar plato, trago o bebida..." autocomplete="off">
+            <button id="clearSearchBtn" class="clear-search-btn hidden" aria-label="Limpiar búsqueda">&times;</button>
         </div>
 
         <div class="diet-filters">
-            <button class="diet-btn active" data-filter="all">Todos</button>
-            <button class="diet-btn" data-filter="vegano">🌱 Vegano</button>
-            <button class="diet-btn" data-filter="sin-alcohol">🚫 Sin Alcohol</button>
+            <button class="diet-btn active" data-filter="all" data-i18n="filter_all">Todos</button>
+            <button class="diet-btn" data-filter="vegano" data-i18n="filter_vegan">🌱 Vegano</button>
+            <button class="diet-btn" data-filter="sin-tacc" data-i18n="filter_sintacc">🌾 Sin TACC (No apto celíaco)</button>
+            <button class="diet-btn" data-filter="sin-alcohol" data-i18n="filter_noalcohol">🚫 Sin Alcohol</button>
         </div>
 
         <main class="menu-content">
             <div id="menu-root"></div>
         </main>
 
+        <!-- Floating Cart Button -->
+        <button id="floatingCartBtn" class="floating-cart-btn" title="Ver mi cuenta">
+            <div class="cart-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                <span id="cartBadge" class="cart-badge">0</span>
+            </div>
+            <div class="cart-btn-info">
+                <span data-i18n="cart_button">Mi Cuenta</span>
+                <strong id="cartTotalHeader">$0</strong>
+            </div>
+        </button>
+
         <!-- Back to top button -->
         <button id="backToTopBtn" title="Volver arriba">↑</button>
+
+        <!-- Wi-Fi Modal -->
+        <div id="wifiModal" class="modal-overlay hidden">
+            <div class="modal-card">
+                <button class="modal-close-btn" id="closeWifiModal">&times;</button>
+                <div class="wifi-header">
+                    <div class="wifi-icon-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+                    </div>
+                    <h3 data-i18n="wifi_title">Wi-Fi del Local</h3>
+                    <p data-i18n="wifi_subtitle">Conectate gratis en Jabalí</p>
+                </div>
+                <div class="wifi-details">
+                    <div class="wifi-field">
+                        <span class="wifi-label" data-i18n="wifi_network">Red (SSID):</span>
+                        <strong class="wifi-value">jabali</strong>
+                    </div>
+                    <div class="wifi-field">
+                        <span class="wifi-label" data-i18n="wifi_password">Contraseña:</span>
+                        <strong class="wifi-value" id="wifiPassText">barandino</strong>
+                    </div>
+                </div>
+                <button id="copyWifiBtn" class="copy-wifi-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    <span id="copyWifiLabel" data-i18n="wifi_copy">Copiar contraseña</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Cart Drawer / Modal -->
+        <div id="cartModal" class="modal-overlay hidden">
+            <div class="modal-card cart-drawer-card">
+                <div class="cart-header">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                        <span data-i18n="cart_modal_title">Simulador de Cuenta</span>
+                    </h3>
+                    <button class="modal-close-btn" id="closeCartModal">&times;</button>
+                </div>
+
+                <div id="cartItemsList" class="cart-items-list">
+                    <!-- Rendered by JS -->
+                </div>
+
+                <div class="cart-summary">
+                    <div class="cart-split-calculator">
+                        <label for="splitPeopleInput" data-i18n="cart_split_label">Dividir cuenta entre:</label>
+                        <div class="split-controls">
+                            <button id="splitMinusBtn" class="split-qty-btn">-</button>
+                            <input type="number" id="splitPeopleInput" value="1" min="1" max="20" readonly>
+                            <button id="splitPlusBtn" class="split-qty-btn">+</button>
+                            <span data-i18n="cart_people_text">pers.</span>
+                        </div>
+                    </div>
+
+                    <div class="cart-totals">
+                        <div class="total-row">
+                            <span data-i18n="cart_total">Total estimado:</span>
+                            <strong id="cartTotalPrice">$0</strong>
+                        </div>
+                        <div id="splitTotalRow" class="split-total-row hidden">
+                            <span data-i18n="cart_per_person">Por persona:</span>
+                            <strong id="cartPerPersonPrice">$0</strong>
+                        </div>
+                    </div>
+
+                    <p class="cart-note" data-i18n="cart_note">💡 Este simulador te ayuda a calcular tu cuenta. Hacé tu pedido al mozo.</p>
+
+                    <div class="cart-actions">
+                        <button id="clearCartBtn" class="clear-cart-btn" data-i18n="cart_clear">Vaciar borrador</button>
+                        <button id="closeCartActionBtn" class="primary-cart-btn" data-i18n="cart_close">Entendido</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Developer footer -->
         <footer class="dev-footer">
@@ -79,7 +185,7 @@
                 </svg>
                 @nicogomezp10
             </a>
-            <span class="dev-tagline">¿Querés una carta QR para tu negocio? ¡Escribime!</span>
+            <span class="dev-tagline" data-i18n="dev_tagline">¿Querés una carta QR para tu negocio? ¡Escribime!</span>
         </footer>
 
     </div>

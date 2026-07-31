@@ -156,7 +156,10 @@
               "name": "Fainá",
               "price": "$4.000",
               "available": true,
-              "tags": []
+              "tags": [
+                "sin-tacc",
+                "vegano"
+              ]
             }
           ]
         },
@@ -386,49 +389,63 @@
               "price": "$15.000",
               "available": true,
               "desc": "Medallón de carne vacuna y queso",
-              "tags": []
+              "tags": [
+                "sin-tacc"
+              ]
             },
             {
               "name": "Mac Grande",
               "price": "$18.000",
               "available": true,
               "desc": "Medallón de carne vacuna, queso cheddar, lechuga, pepino, salsa Utah (mayonesa, ketchup, ajo, aceite de oliva, ciboulette, reducción de pepino en almíbar)",
-              "tags": []
+              "tags": [
+                "sin-tacc"
+              ]
             },
             {
               "name": "Tercio de Libra",
               "price": "$18.000",
               "available": true,
               "desc": "Medallón de carne vacuna, queso cheddar, pepino, salsa españa (cebolla, ketchup, mostaza)",
-              "tags": []
+              "tags": [
+                "sin-tacc"
+              ]
             },
             {
               "name": "4-4-2",
               "price": "$18.000",
               "available": true,
               "desc": "Medallón de carne vacuna, queso dambo, jamón cocido, lechuga, tomate y huevo frito",
-              "tags": []
+              "tags": [
+                "sin-tacc"
+              ]
             },
             {
               "name": "Ricky Fort",
               "price": "$18.000",
               "available": true,
               "desc": "Medallón de carne vacuna, manteca de roquefort y cebolla caramelizada",
-              "tags": []
+              "tags": [
+                "sin-tacc"
+              ]
             },
             {
               "name": "Crispy",
               "price": "$19.000",
               "available": true,
               "desc": "Medallón de carne vacuna, queso cheddar, panceta ahumada, cebolla crispy y salsa Utah",
-              "tags": []
+              "tags": [
+                "sin-tacc"
+              ]
             },
             {
               "name": "Maradona",
               "price": "$18.000",
               "available": true,
               "desc": "Medallón de carne vacuna, provoleta, salsa criolla, tomate y lechuga",
-              "tags": []
+              "tags": [
+                "sin-tacc"
+              ]
             }
           ]
         },
@@ -527,7 +544,8 @@
               "price": "$12.000",
               "available": true,
               "tags": [
-                "vegano"
+                "vegano",
+                "sin-tacc"
               ]
             },
             {
@@ -550,7 +568,8 @@
               "available": true,
               "desc": "Rodajas finas de batatas fritas",
               "tags": [
-                "vegano"
+                "vegano",
+                "sin-tacc"
               ]
             },
             {
@@ -819,7 +838,8 @@
               "beerCard": true,
               "image": "img/licores/Fernet.png",
               "style": "Amaro italiano",
-              "tags": []
+              "tags": [],
+              "wednesdayPromo": true
             },
             {
               "name": "Tintelo",
