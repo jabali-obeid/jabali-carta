@@ -226,6 +226,93 @@
           "title_en": "Pizza by the Slice"
         },
         {
+          "title": "🍺 Cervezas Tiradas",
+          "gridClass": "",
+          "desc": "Cervezas artesanales <span class=\"highlight\">Manush</span> · Pinta 500ml",
+          "items": [
+            {
+              "name": "Pilsen",
+              "price": "$9.000",
+              "available": true,
+              "desc": "Rubia liviana y refrescante, con amargor suave y aroma a lúpulo floral",
+              "beerCard": true,
+              "image": "img/cervezas/Easy-Pilsen.png",
+              "abv": "4.3%",
+              "style": "Lager",
+              "tags": [],
+              "name_en": "Pilsen",
+              "desc_en": "Light and refreshing blonde lager, with mild bitterness and floral hop aroma"
+            },
+            {
+              "name": "APA Born & Released",
+              "price": "$9.000",
+              "available": true,
+              "desc": "American Pale Ale con lúpulos cítricos, cuerpo medio y final seco",
+              "beerCard": true,
+              "image": "img/cervezas/APA.png",
+              "abv": "5.2%",
+              "style": "Pale Ale",
+              "tags": [],
+              "name_en": "APA Born & Released",
+              "desc_en": "American Pale Ale with citrus hops, medium body, and a dry finish"
+            },
+            {
+              "name": "Irish Cream Ale",
+              "price": "$9.000",
+              "available": true,
+              "desc": "Cream Ale estilo irlandés, suave y cremosa con notas tostadas y dulces",
+              "beerCard": true,
+              "image": "img/cervezas/Irish-Cream-Ale.png",
+              "abv": "4.9%",
+              "style": "Cream Ale",
+              "tags": [],
+              "name_en": "Irish Cream Ale",
+              "desc_en": "Irish-style Cream Ale, smooth and creamy with sweet toasted notes"
+            },
+            {
+              "name": "Session IPA",
+              "price": "$9.000",
+              "available": true,
+              "desc": "IPA de baja graduación, muy lupulada con notas tropicales y cítricas",
+              "beerCard": true,
+              "image": "img/cervezas/Session-IPA.png",
+              "abv": "5%",
+              "style": "Session IPA",
+              "tags": [],
+              "name_en": "Session IPA",
+              "desc_en": "Low ABV IPA, highly hopped with tropical and citrus notes"
+            },
+            {
+              "name": "Old Garage IPA",
+              "price": "$9.000",
+              "available": true,
+              "desc": "IPA intensa con resina, pino y cítricos; amargor pronunciado y aroma potente",
+              "beerCard": true,
+              "image": "img/cervezas/Old-Garage-IPA.png",
+              "abv": "6.5%",
+              "style": "IPA",
+              "tags": [],
+              "name_en": "Old Garage IPA",
+              "desc_en": "Intense IPA with pine resin and citrus notes; bold bitterness and powerful aroma"
+            },
+            {
+              "name": "Milk / Extra Stout",
+              "price": "$9.000",
+              "available": true,
+              "desc": "Oscura y cremosa con notas de café, chocolate y caramelo. Cuerpo lleno",
+              "beerCard": true,
+              "image": "img/cervezas/Milk-Stout.png",
+              "abv": "4.2%",
+              "style": "Stout",
+              "tags": [],
+              "name_en": "Milk / Extra Stout",
+              "desc_en": "Dark and creamy stout with coffee, chocolate, and caramel notes. Full body"
+            }
+          ],
+          "title_en": "🍺 Draft Beer",
+          "desc_en": "Craft beers <span class=\"highlight\">Manush</span> · Pint 500ml"
+        },
+        {
           "title": "Postres",
           "gridClass": "grid-2col",
           "items": [
@@ -375,93 +462,6 @@
             }
           ],
           "title_en": "Alcoholic Beverages"
-        },
-        {
-          "title": "🍺 Cervezas Tiradas",
-          "gridClass": "",
-          "desc": "Cervezas artesanales <span class=\"highlight\">Manush</span> · Pinta 500ml",
-          "items": [
-            {
-              "name": "Pilsen",
-              "price": "$9.000",
-              "available": true,
-              "desc": "Rubia liviana y refrescante, con amargor suave y aroma a lúpulo floral",
-              "beerCard": true,
-              "image": "img/cervezas/Easy-Pilsen.png",
-              "abv": "4.3%",
-              "style": "Lager",
-              "tags": [],
-              "name_en": "Pilsen",
-              "desc_en": "Light and refreshing blonde lager, with mild bitterness and floral hop aroma"
-            },
-            {
-              "name": "APA Born & Released",
-              "price": "$9.000",
-              "available": true,
-              "desc": "American Pale Ale con lúpulos cítricos, cuerpo medio y final seco",
-              "beerCard": true,
-              "image": "img/cervezas/APA.png",
-              "abv": "5.2%",
-              "style": "Pale Ale",
-              "tags": [],
-              "name_en": "APA Born & Released",
-              "desc_en": "American Pale Ale with citrus hops, medium body, and a dry finish"
-            },
-            {
-              "name": "Irish Cream Ale",
-              "price": "$9.000",
-              "available": true,
-              "desc": "Cream Ale estilo irlandés, suave y cremosa con notas tostadas y dulces",
-              "beerCard": true,
-              "image": "img/cervezas/Irish-Cream-Ale.png",
-              "abv": "4.9%",
-              "style": "Cream Ale",
-              "tags": [],
-              "name_en": "Irish Cream Ale",
-              "desc_en": "Irish-style Cream Ale, smooth and creamy with sweet toasted notes"
-            },
-            {
-              "name": "Session IPA",
-              "price": "$9.000",
-              "available": true,
-              "desc": "IPA de baja graduación, muy lupulada con notas tropicales y cítricas",
-              "beerCard": true,
-              "image": "img/cervezas/Session-IPA.png",
-              "abv": "5%",
-              "style": "Session IPA",
-              "tags": [],
-              "name_en": "Session IPA",
-              "desc_en": "Low ABV IPA, highly hopped with tropical and citrus notes"
-            },
-            {
-              "name": "Old Garage IPA",
-              "price": "$9.000",
-              "available": true,
-              "desc": "IPA intensa con resina, pino y cítricos; amargor pronunciado y aroma potente",
-              "beerCard": true,
-              "image": "img/cervezas/Old-Garage-IPA.png",
-              "abv": "6.5%",
-              "style": "IPA",
-              "tags": [],
-              "name_en": "Old Garage IPA",
-              "desc_en": "Intense IPA with pine resin and citrus notes; bold bitterness and powerful aroma"
-            },
-            {
-              "name": "Milk / Extra Stout",
-              "price": "$9.000",
-              "available": true,
-              "desc": "Oscura y cremosa con notas de café, chocolate y caramelo. Cuerpo lleno",
-              "beerCard": true,
-              "image": "img/cervezas/Milk-Stout.png",
-              "abv": "4.2%",
-              "style": "Stout",
-              "tags": [],
-              "name_en": "Milk / Extra Stout",
-              "desc_en": "Dark and creamy stout with coffee, chocolate, and caramel notes. Full body"
-            }
-          ],
-          "title_en": "🍺 Draft Beer",
-          "desc_en": "Craft beers <span class=\"highlight\">Manush</span> · Pint 500ml"
         }
       ]
     },
@@ -775,6 +775,93 @@
           "title_en": "Salads"
         },
         {
+          "title": "🍺 Cervezas Tiradas",
+          "gridClass": "",
+          "desc": "Cervezas artesanales <span class=\"highlight\">Manush</span> · Pinta 500ml",
+          "items": [
+            {
+              "name": "Pilsen",
+              "price": "$9.000",
+              "available": true,
+              "desc": "Rubia liviana y refrescante, con amargor suave y aroma a lúpulo floral",
+              "beerCard": true,
+              "image": "img/cervezas/Easy-Pilsen.png",
+              "abv": "4.3%",
+              "style": "Lager",
+              "tags": [],
+              "name_en": "Pilsen",
+              "desc_en": "Light and refreshing blonde lager, with mild bitterness and floral hop aroma"
+            },
+            {
+              "name": "APA Born & Released",
+              "price": "$9.000",
+              "available": true,
+              "desc": "American Pale Ale con lúpulos cítricos, cuerpo medio y final seco",
+              "beerCard": true,
+              "image": "img/cervezas/APA.png",
+              "abv": "5.2%",
+              "style": "Pale Ale",
+              "tags": [],
+              "name_en": "APA Born & Released",
+              "desc_en": "American Pale Ale with citrus hops, medium body, and a dry finish"
+            },
+            {
+              "name": "Irish Cream Ale",
+              "price": "$9.000",
+              "available": true,
+              "desc": "Cream Ale estilo irlandés, suave y cremosa con notas tostadas y dulces",
+              "beerCard": true,
+              "image": "img/cervezas/Irish-Cream-Ale.png",
+              "abv": "4.9%",
+              "style": "Cream Ale",
+              "tags": [],
+              "name_en": "Irish Cream Ale",
+              "desc_en": "Irish-style Cream Ale, smooth and creamy with sweet toasted notes"
+            },
+            {
+              "name": "Session IPA",
+              "price": "$9.000",
+              "available": true,
+              "desc": "IPA de baja graduación, muy lupulada con notas tropicales y cítricas",
+              "beerCard": true,
+              "image": "img/cervezas/Session-IPA.png",
+              "abv": "5%",
+              "style": "Session IPA",
+              "tags": [],
+              "name_en": "Session IPA",
+              "desc_en": "Low ABV IPA, highly hopped with tropical and citrus notes"
+            },
+            {
+              "name": "Old Garage IPA",
+              "price": "$9.000",
+              "available": true,
+              "desc": "IPA intensa con resina, pino y cítricos; amargor pronunciado y aroma potente",
+              "beerCard": true,
+              "image": "img/cervezas/Old-Garage-IPA.png",
+              "abv": "6.5%",
+              "style": "IPA",
+              "tags": [],
+              "name_en": "Old Garage IPA",
+              "desc_en": "Intense IPA with pine resin and citrus notes; bold bitterness and powerful aroma"
+            },
+            {
+              "name": "Milk / Extra Stout",
+              "price": "$9.000",
+              "available": false,
+              "desc": "Oscura y cremosa con notas de café, chocolate y caramelo. Cuerpo lleno",
+              "beerCard": true,
+              "image": "img/cervezas/Milk-Stout.png",
+              "abv": "4.2%",
+              "style": "Stout",
+              "tags": [],
+              "name_en": "Milk / Extra Stout",
+              "desc_en": "Dark and creamy stout with coffee, chocolate, and caramel notes. Full body"
+            }
+          ],
+          "title_en": "🍺 Draft Beer",
+          "desc_en": "Craft beers <span class=\"highlight\">Manush</span> · Pint 500ml"
+        },
+        {
           "title": "Postres",
           "gridClass": "grid-2col",
           "items": [
@@ -924,93 +1011,6 @@
             }
           ],
           "title_en": "Alcoholic Beverages"
-        },
-        {
-          "title": "🍺 Cervezas Tiradas",
-          "gridClass": "",
-          "desc": "Cervezas artesanales <span class=\"highlight\">Manush</span> · Pinta 500ml",
-          "items": [
-            {
-              "name": "Pilsen",
-              "price": "$9.000",
-              "available": true,
-              "desc": "Rubia liviana y refrescante, con amargor suave y aroma a lúpulo floral",
-              "beerCard": true,
-              "image": "img/cervezas/Easy-Pilsen.png",
-              "abv": "4.3%",
-              "style": "Lager",
-              "tags": [],
-              "name_en": "Pilsen",
-              "desc_en": "Light and refreshing blonde lager, with mild bitterness and floral hop aroma"
-            },
-            {
-              "name": "APA Born & Released",
-              "price": "$9.000",
-              "available": true,
-              "desc": "American Pale Ale con lúpulos cítricos, cuerpo medio y final seco",
-              "beerCard": true,
-              "image": "img/cervezas/APA.png",
-              "abv": "5.2%",
-              "style": "Pale Ale",
-              "tags": [],
-              "name_en": "APA Born & Released",
-              "desc_en": "American Pale Ale with citrus hops, medium body, and a dry finish"
-            },
-            {
-              "name": "Irish Cream Ale",
-              "price": "$9.000",
-              "available": true,
-              "desc": "Cream Ale estilo irlandés, suave y cremosa con notas tostadas y dulces",
-              "beerCard": true,
-              "image": "img/cervezas/Irish-Cream-Ale.png",
-              "abv": "4.9%",
-              "style": "Cream Ale",
-              "tags": [],
-              "name_en": "Irish Cream Ale",
-              "desc_en": "Irish-style Cream Ale, smooth and creamy with sweet toasted notes"
-            },
-            {
-              "name": "Session IPA",
-              "price": "$9.000",
-              "available": true,
-              "desc": "IPA de baja graduación, muy lupulada con notas tropicales y cítricas",
-              "beerCard": true,
-              "image": "img/cervezas/Session-IPA.png",
-              "abv": "5%",
-              "style": "Session IPA",
-              "tags": [],
-              "name_en": "Session IPA",
-              "desc_en": "Low ABV IPA, highly hopped with tropical and citrus notes"
-            },
-            {
-              "name": "Old Garage IPA",
-              "price": "$9.000",
-              "available": true,
-              "desc": "IPA intensa con resina, pino y cítricos; amargor pronunciado y aroma potente",
-              "beerCard": true,
-              "image": "img/cervezas/Old-Garage-IPA.png",
-              "abv": "6.5%",
-              "style": "IPA",
-              "tags": [],
-              "name_en": "Old Garage IPA",
-              "desc_en": "Intense IPA with pine resin and citrus notes; bold bitterness and powerful aroma"
-            },
-            {
-              "name": "Milk / Extra Stout",
-              "price": "$9.000",
-              "available": false,
-              "desc": "Oscura y cremosa con notas de café, chocolate y caramelo. Cuerpo lleno",
-              "beerCard": true,
-              "image": "img/cervezas/Milk-Stout.png",
-              "abv": "4.2%",
-              "style": "Stout",
-              "tags": [],
-              "name_en": "Milk / Extra Stout",
-              "desc_en": "Dark and creamy stout with coffee, chocolate, and caramel notes. Full body"
-            }
-          ],
-          "title_en": "🍺 Draft Beer",
-          "desc_en": "Craft beers <span class=\"highlight\">Manush</span> · Pint 500ml"
         }
       ]
     },

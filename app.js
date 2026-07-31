@@ -404,9 +404,11 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (tLower.includes('mocktail')) icon = '🍹 ';
             else if (tLower.includes('café')) icon = '☕ ';
 
+            const isBeerCat = tLower.includes('cerveza');
+            const extraClass = isBeerCat ? ' sub-pill-highlight' : '';
             const isFirst = idx === 0 ? ' active' : '';
 
-            return `<button class="sub-pill sub-pill-entry${isFirst}" data-cat-id="${catId}" style="animation-delay:${idx * 0.04}s">
+            return `<button class="sub-pill sub-pill-entry${isFirst}${extraClass}" data-cat-id="${catId}" style="animation-delay:${idx * 0.04}s">
                 <span class="pill-icon">${icon}</span><span class="pill-text">${cleanTitle}</span>
             </button>`;
         }).join('\n');
@@ -437,6 +439,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         enablePillsDragScroll();
+    }
+
+    // Happy Hour Banner Click Shortcut to Cervezas Tiradas / Fernet
+    const hhBannerContainer = document.getElementById('happyHourBanner');
+    if (hhBannerContainer) {
+        hhBannerContainer.addEventListener('click', () => {
+            const activeSecId = document.body.getAttribute('data-active-section');
+            if (activeSecId === 'tragos') {
+                const targetCat = document.getElementById('cat-tragos-tragos-directos');
+                if (targetCat) {
+                    targetCat.classList.remove('collapsed');
+                    const offsetPosition = targetCat.getBoundingClientRect().top + window.pageYOffset - 135;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                }
+            } else {
+                const beerCat = Array.from(document.querySelectorAll('.menu-category')).find(c => c.id.includes('cervezas-tiradas'));
+                if (beerCat) {
+                    beerCat.classList.remove('collapsed');
+                    const offsetPosition = beerCat.getBoundingClientRect().top + window.pageYOffset - 135;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                }
+            }
+        });
     }
 
     let scrollSpySetup = false;
@@ -669,6 +694,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!activeSection) return;
 
         activeSection.querySelectorAll('.menu-category').forEach(category => {
+            const catTitle = category.querySelector('.category-title')?.textContent.toLowerCase() || '';
+            const catDesc = category.querySelector('.category-desc')?.textContent.toLowerCase() || '';
+            const catMatchesSearch = searchTerm !== '' && (catTitle.includes(searchTerm) || catDesc.includes(searchTerm));
+
             const items = category.querySelectorAll('.menu-item');
             let visibleCount = 0;
 
@@ -677,7 +706,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const desc = item.querySelector('.item-desc')?.textContent.toLowerCase() || '';
                 const tags = item.dataset.tags || '';
 
-                const matchesSearch = searchTerm === '' || name.includes(searchTerm) || desc.includes(searchTerm);
+                const matchesSearch = searchTerm === '' || catMatchesSearch || name.includes(searchTerm) || desc.includes(searchTerm);
                 const matchesFilter = activeFilter === 'all' || tags.includes(activeFilter);
 
                 const visible = matchesSearch && matchesFilter;
