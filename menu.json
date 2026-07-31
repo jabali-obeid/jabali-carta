@@ -13,70 +13,90 @@
               "price": "$24.000",
               "available": true,
               "tags": [],
-              "name_en": "Mozzarella"
+              "name_en": "Mozzarella",
+              "desc": "Salsa de tomate y queso muzzarella",
+              "desc_en": "Tomato sauce and mozzarella cheese"
             },
             {
               "name": "Napolitana",
               "price": "$27.000",
               "available": true,
               "tags": [],
-              "name_en": "Neapolitan"
+              "name_en": "Neapolitan",
+              "desc": "Salsa de tomate, tomate y ajo",
+              "desc_en": "Tomato sauce, fresh tomatoes, and garlic"
             },
             {
               "name": "Fugazzetta Rellena",
               "price": "$43.000",
               "available": true,
               "tags": [],
-              "name_en": "Stuffed Fugazzetta"
+              "name_en": "Stuffed Fugazzetta",
+              "desc": "Muzzarella, cebolla y chimichurri pizzero",
+              "desc_en": "Mozzarella, onions, and pizza chimichurri"
             },
             {
               "name": "Jamón y Morrón",
               "price": "$29.000",
               "available": true,
               "tags": [],
-              "name_en": "Ham & Roasted Red Pepper"
+              "name_en": "Ham & Roasted Red Pepper",
+              "desc": "Salsa de tomate, muzzarella, jamón, morrón y chimichurri",
+              "desc_en": "Tomato sauce, mozzarella, ham, roasted red pepper, and chimichurri"
             },
             {
               "name": "Cuatro Quesos",
               "price": "$29.000",
               "available": true,
               "tags": [],
-              "name_en": "Four Cheese"
+              "name_en": "Four Cheese",
+              "desc": "Muzzarella, queso holanda, roquefort y parmesano",
+              "desc_en": "Mozzarella, Gouda cheese, Roquefort blue cheese, and Parmesan"
             },
             {
               "name": "Tomate y Huevo",
               "price": "$27.000",
               "available": true,
               "tags": [],
-              "name_en": "Tomato & Sliced Egg"
+              "name_en": "Tomato & Sliced Egg",
+              "desc": "Salsa de tomate, queso muzzarella, tomate y huevo duro rallado",
+              "desc_en": "Tomato sauce, mozzarella cheese, fresh tomatoes, and grated hard-boiled egg"
             },
             {
               "name": "Peperoni",
               "price": "$27.000",
               "available": true,
               "tags": [],
-              "name_en": "Pepperoni"
+              "name_en": "Pepperoni",
+              "desc": "Salsa de tomate, queso muzzarella y peperoni",
+              "desc_en": "Tomato sauce, mozzarella cheese, and pepperoni"
             },
             {
               "name": "Provolone",
               "price": "$29.000",
               "available": true,
               "tags": [],
-              "name_en": "Provolone"
+              "name_en": "Provolone",
+              "desc": "Salsa de tomate, queso muzzarella y queso provolone especiado",
+              "desc_en": "Tomato sauce, mozzarella cheese, and spiced provolone cheese"
             },
             {
               "name": "Rúcula y Crudo",
               "price": "$33.000",
               "available": true,
               "tags": [],
-              "name_en": "Arugula & Prosciutto"
+              "name_en": "Arugula & Prosciutto",
+              "desc": "Salsa de tomate, queso muzzarella, rúcula, jamón crudo y aceite de oliva",
+              "desc_en": "Tomato sauce, mozzarella cheese, fresh arugula, prosciutto, and olive oil"
             },
             {
               "name": "Champiñones y Panceta",
               "price": "$33.000",
               "available": true,
               "tags": [],
-              "name_en": "Mushroom & Bacon"
+              "name_en": "Mushroom & Bacon",
+              "desc": "Salsa de tomate, muzzarella, champiñones feteados, panceta en cubos salteados y chimichurri pizzero",
+              "desc_en": "Tomato sauce, mozzarella, sliced mushrooms, sautéed diced bacon, and pizza chimichurri"
             }
           ],
           "title_en": "Large Pizza"
@@ -90,56 +110,72 @@
               "price": "$4.800",
               "available": true,
               "tags": [],
-              "name_en": "Beef"
+              "name_en": "Beef",
+              "desc": "Carne cortada a cuchillo, cebolla de verdeo y huevo duro",
+              "desc_en": "Hand-cut beef, green onion, and hard-boiled egg"
             },
             {
               "name": "Bondiola con Barbacoa",
               "price": "$4.800",
               "available": true,
               "tags": [],
-              "name_en": "BBQ Pulled Pork"
+              "name_en": "BBQ Pulled Pork",
+              "desc": "Bondiola desmechada con cerveza negra y salsa barbacoa",
+              "desc_en": "Stout beer pulled pork with BBQ sauce"
             },
             {
               "name": "Jamón y Queso",
               "price": "$4.800",
               "available": true,
               "tags": [],
-              "name_en": "Ham & Cheese"
+              "name_en": "Ham & Cheese",
+              "desc": "Jamón cocido y queso muzzarella",
+              "desc_en": "Cooked ham and mozzarella cheese"
             },
             {
               "name": "Cuatro Quesos",
               "price": "$4.800",
               "available": true,
               "tags": [],
-              "name_en": "Four Cheese"
+              "name_en": "Four Cheese",
+              "desc": "Muzzarella, queso holanda, roquefort y parmesano",
+              "desc_en": "Mozzarella, Gouda cheese, Roquefort blue cheese, and Parmesan"
             },
             {
               "name": "Caprese",
               "price": "$4.800",
               "available": true,
               "tags": [],
-              "name_en": "Caprese"
+              "name_en": "Caprese",
+              "desc": "Muzzarella, tomate y albahaca",
+              "desc_en": "Mozzarella, fresh tomato, and basil"
             },
             {
               "name": "Humita",
               "price": "$4.800",
               "available": true,
               "tags": [],
-              "name_en": "Sweet Corn"
+              "name_en": "Sweet Corn",
+              "desc": "Choclo y salsa blanca",
+              "desc_en": "Sweet corn and Béchamel cream sauce"
             },
             {
               "name": "Verdura",
               "price": "$4.800",
               "available": true,
               "tags": [],
-              "name_en": "Spinach & Cheese"
+              "name_en": "Spinach & Cheese",
+              "desc": "Acelga, muzzarella y salsa blanca",
+              "desc_en": "Swiss chard, mozzarella, and Béchamel cream sauce"
             },
             {
               "name": "Pollo al verdeo",
               "available": true,
               "price": "$4.800",
               "tags": [],
-              "name_en": "Chicken & Green Onion"
+              "name_en": "Chicken & Green Onion",
+              "desc": "Pollo salteado, cebolla de verdeo, crema de leche y queso crema",
+              "desc_en": "Sautéed chicken, green onion, heavy cream, and cream cheese"
             }
           ],
           "title_en": "Empanadas"
