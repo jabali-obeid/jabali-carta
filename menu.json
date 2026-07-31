@@ -12,63 +12,74 @@
               "name": "Muzzarella",
               "price": "$24.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Mozzarella"
             },
             {
               "name": "Napolitana",
               "price": "$27.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Neapolitan"
             },
             {
               "name": "Fugazzetta Rellena",
               "price": "$43.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Stuffed Fugazzetta"
             },
             {
               "name": "Jamón y Morrón",
               "price": "$29.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Ham & Roasted Red Pepper"
             },
             {
               "name": "Cuatro Quesos",
               "price": "$29.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Four Cheese"
             },
             {
               "name": "Tomate y Huevo",
               "price": "$27.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Tomato & Sliced Egg"
             },
             {
               "name": "Peperoni",
               "price": "$27.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Pepperoni"
             },
             {
               "name": "Provolone",
               "price": "$29.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Provolone"
             },
             {
               "name": "Rúcula y Crudo",
               "price": "$33.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Arugula & Prosciutto"
             },
             {
               "name": "Champiñones y Panceta",
               "price": "$33.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Mushroom & Bacon"
             }
-          ]
+          ],
+          "title_en": "Large Pizza"
         },
         {
           "title": "Empanadas",
@@ -78,51 +89,60 @@
               "name": "Carne",
               "price": "$4.800",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Beef"
             },
             {
               "name": "Bondiola con Barbacoa",
               "price": "$4.800",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "BBQ Pulled Pork"
             },
             {
               "name": "Jamón y Queso",
               "price": "$4.800",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Ham & Cheese"
             },
             {
               "name": "Cuatro Quesos",
               "price": "$4.800",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Four Cheese"
             },
             {
               "name": "Caprese",
               "price": "$4.800",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Caprese"
             },
             {
               "name": "Humita",
               "price": "$4.800",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Sweet Corn"
             },
             {
               "name": "Verdura",
               "price": "$4.800",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Spinach & Cheese"
             },
             {
               "name": "Pollo al verdeo",
               "available": true,
               "price": "$4.800",
-              "tags": []
+              "tags": [],
+              "name_en": "Chicken & Green Onion"
             }
-          ]
+          ],
+          "title_en": "Empanadas"
         },
         {
           "title": "Pizza por Porción",
@@ -132,25 +152,29 @@
               "name": "Muzzarella",
               "price": "$5.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Mozzarella"
             },
             {
               "name": "Napolitana",
               "price": "$6.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Neapolitan"
             },
             {
               "name": "Fugazzetta Rellena",
               "price": "$10.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Stuffed Fugazzetta"
             },
             {
               "name": "Jamón y Morrón",
               "price": "$6.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Ham & Roasted Red Pepper"
             },
             {
               "name": "Fainá",
@@ -159,9 +183,11 @@
               "tags": [
                 "sin-tacc",
                 "vegano"
-              ]
+              ],
+              "name_en": "Chickpea Fainá"
             }
-          ]
+          ],
+          "title_en": "Pizza by the Slice"
         },
         {
           "title": "Postres",
@@ -171,21 +197,25 @@
               "name": "Panqueques con dulce de leche",
               "price": "$9000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Dulce de Leche Crêpes"
             },
             {
               "name": "Vigilante",
               "price": "$8.000",
               "available": false,
-              "tags": []
+              "tags": [],
+              "name_en": "Vigilante (Cheese & Quince Jam)"
             },
             {
               "name": "Flan casero con DDL",
               "price": "$9.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Homemade Flan with Dulce de Leche"
             }
-          ]
+          ],
+          "title_en": "Desserts"
         },
         {
           "title": "Bebidas sin Alcohol",
@@ -197,7 +227,8 @@
               "available": true,
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "Still Water"
             },
             {
               "name": "Agua c/gas",
@@ -205,7 +236,8 @@
               "available": true,
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "Sparkling Water"
             },
             {
               "name": "Pepsi 500ml",
@@ -213,7 +245,8 @@
               "available": true,
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "Pepsi 500ml"
             },
             {
               "name": "Pepsi Black 500ml",
@@ -221,7 +254,8 @@
               "available": true,
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "Pepsi Black 500ml"
             },
             {
               "name": "7up 500ml",
@@ -229,7 +263,8 @@
               "available": true,
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "7Up 500ml"
             },
             {
               "name": "Mirinda 500ml",
@@ -237,7 +272,8 @@
               "available": true,
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "Mirinda 500ml"
             },
             {
               "name": "Paso de los Toros 500ml",
@@ -245,7 +281,8 @@
               "available": true,
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "Paso de los Toros Grapefruit 500ml"
             },
             {
               "name": "H2o agua saborizada 500ml",
@@ -253,7 +290,8 @@
               "available": true,
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "H2O Flavored Water 500ml"
             },
             {
               "name": "Corona s/alcohol 330ml",
@@ -261,9 +299,11 @@
               "available": true,
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "Non-Alcoholic Corona 330ml"
             }
-          ]
+          ],
+          "title_en": "Soft Drinks & Non-Alcoholic"
         },
         {
           "title": "Bebidas con Alcohol",
@@ -273,27 +313,32 @@
               "name": "Andes 1L",
               "price": "$11.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Andes Beer 1L"
             },
             {
               "name": "Patagonia 730cm³",
               "price": "$13.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Patagonia Beer 730ml"
             },
             {
               "name": "Corona 330ml",
               "price": "$7.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Corona Beer 330ml"
             },
             {
               "name": "Michelob lata",
               "price": "$7.000",
-              "available": true,
-              "tags": []
+              "available": false,
+              "tags": [],
+              "name_en": "Michelob Can Beer"
             }
-          ]
+          ],
+          "title_en": "Alcoholic Beverages"
         },
         {
           "title": "🍺 Cervezas Tiradas",
@@ -309,7 +354,9 @@
               "image": "img/cervezas/Easy-Pilsen.png",
               "abv": "4.3%",
               "style": "Lager",
-              "tags": []
+              "tags": [],
+              "name_en": "Pilsen",
+              "desc_en": "Light and refreshing blonde lager, with mild bitterness and floral hop aroma"
             },
             {
               "name": "APA Born & Released",
@@ -320,7 +367,9 @@
               "image": "img/cervezas/APA.png",
               "abv": "5.2%",
               "style": "Pale Ale",
-              "tags": []
+              "tags": [],
+              "name_en": "APA Born & Released",
+              "desc_en": "American Pale Ale with citrus hops, medium body, and a dry finish"
             },
             {
               "name": "Irish Cream Ale",
@@ -331,7 +380,9 @@
               "image": "img/cervezas/Irish-Cream-Ale.png",
               "abv": "4.9%",
               "style": "Cream Ale",
-              "tags": []
+              "tags": [],
+              "name_en": "Irish Cream Ale",
+              "desc_en": "Irish-style Cream Ale, smooth and creamy with sweet toasted notes"
             },
             {
               "name": "Session IPA",
@@ -342,7 +393,9 @@
               "image": "img/cervezas/Session-IPA.png",
               "abv": "5%",
               "style": "Session IPA",
-              "tags": []
+              "tags": [],
+              "name_en": "Session IPA",
+              "desc_en": "Low ABV IPA, highly hopped with tropical and citrus notes"
             },
             {
               "name": "Old Garage IPA",
@@ -353,7 +406,9 @@
               "image": "img/cervezas/Old-Garage-IPA.png",
               "abv": "6.5%",
               "style": "IPA",
-              "tags": []
+              "tags": [],
+              "name_en": "Old Garage IPA",
+              "desc_en": "Intense IPA with pine resin and citrus notes; bold bitterness and powerful aroma"
             },
             {
               "name": "Milk / Extra Stout",
@@ -364,9 +419,13 @@
               "image": "img/cervezas/Milk-Stout.png",
               "abv": "4.2%",
               "style": "Stout",
-              "tags": []
+              "tags": [],
+              "name_en": "Milk / Extra Stout",
+              "desc_en": "Dark and creamy stout with coffee, chocolate, and caramel notes. Full body"
             }
-          ]
+          ],
+          "title_en": "🍺 Draft Beer",
+          "desc_en": "Craft beers <span class=\"highlight\">Manush</span> · Pint 500ml"
         }
       ]
     },
@@ -391,7 +450,9 @@
               "desc": "Medallón de carne vacuna y queso",
               "tags": [
                 "sin-tacc"
-              ]
+              ],
+              "name_en": "Malcriada Burger",
+              "desc_en": "Beef patty and cheese"
             },
             {
               "name": "Mac Grande",
@@ -400,7 +461,9 @@
               "desc": "Medallón de carne vacuna, queso cheddar, lechuga, pepino, salsa Utah (mayonesa, ketchup, ajo, aceite de oliva, ciboulette, reducción de pepino en almíbar)",
               "tags": [
                 "sin-tacc"
-              ]
+              ],
+              "name_en": "Mac Grande Burger",
+              "desc_en": "Beef patty, cheddar cheese, lettuce, pickles, Utah sauce (mayo, ketchup, garlic, olive oil, chives, candied pickle reduction)"
             },
             {
               "name": "Tercio de Libra",
@@ -409,7 +472,9 @@
               "desc": "Medallón de carne vacuna, queso cheddar, pepino, salsa españa (cebolla, ketchup, mostaza)",
               "tags": [
                 "sin-tacc"
-              ]
+              ],
+              "name_en": "Third Pounder Burger",
+              "desc_en": "Beef patty, cheddar cheese, pickles, Spanish sauce (onion, ketchup, mustard)"
             },
             {
               "name": "4-4-2",
@@ -418,7 +483,9 @@
               "desc": "Medallón de carne vacuna, queso dambo, jamón cocido, lechuga, tomate y huevo frito",
               "tags": [
                 "sin-tacc"
-              ]
+              ],
+              "name_en": "4-4-2 Burger",
+              "desc_en": "Beef patty, Dambo cheese, cooked ham, lettuce, tomato, and fried egg"
             },
             {
               "name": "Ricky Fort",
@@ -427,7 +494,9 @@
               "desc": "Medallón de carne vacuna, manteca de roquefort y cebolla caramelizada",
               "tags": [
                 "sin-tacc"
-              ]
+              ],
+              "name_en": "Ricky Fort Burger",
+              "desc_en": "Beef patty, Roquefort blue cheese butter, and caramelized onions"
             },
             {
               "name": "Crispy",
@@ -436,7 +505,9 @@
               "desc": "Medallón de carne vacuna, queso cheddar, panceta ahumada, cebolla crispy y salsa Utah",
               "tags": [
                 "sin-tacc"
-              ]
+              ],
+              "name_en": "Crispy Burger",
+              "desc_en": "Beef patty, cheddar cheese, smoked bacon, crispy onions, and Utah sauce"
             },
             {
               "name": "Maradona",
@@ -445,8 +516,17 @@
               "desc": "Medallón de carne vacuna, provoleta, salsa criolla, tomate y lechuga",
               "tags": [
                 "sin-tacc"
-              ]
+              ],
+              "name_en": "Maradona Burger",
+              "desc_en": "Beef patty, grilled provoleta cheese, criolla relish, tomato, and lettuce"
             }
+          ],
+          "title_en": "Burgers",
+          "desc_en": "Served with French fries or chips",
+          "extras_en": [
+            "Veggie patty and gluten-free bun available for all options",
+            "Gluten-free bun option: <strong>+$3,500</strong>",
+            "Double patty: <strong>+$5,000</strong>"
           ]
         },
         {
@@ -459,21 +539,27 @@
               "price": "$29.000",
               "available": true,
               "desc": "Trucha a la plancha, lechuga, cebolla morada y salsa de queso crema, ciboulette y limón",
-              "tags": []
+              "tags": [],
+              "name_en": "Lemon Trout Sandwich",
+              "desc_en": "Grilled trout, lettuce, red onion, and lemon-chive cream cheese sauce"
             },
             {
               "name": "Bondiola",
               "price": "$21.000",
               "available": true,
               "desc": "Pan ciabatta, bondiola de cerdo desmechada, salsa barbacoa, cebolla caramelizada y queso gratinado",
-              "tags": []
+              "tags": [],
+              "name_en": "Pulled Pork Sandwich",
+              "desc_en": "Ciabatta bread, pulled pork shoulder, BBQ sauce, caramelized onions, and melted cheese"
             },
             {
               "name": "Brie y Crudo",
               "price": "$21.000",
               "available": true,
               "desc": "Pan baguette, queso brie, jamón crudo, rúcula, aceite de oliva y pesto de tomates asados",
-              "tags": []
+              "tags": [],
+              "name_en": "Brie & Prosciutto Sandwich",
+              "desc_en": "Baguette, brie cheese, prosciutto, arugula, olive oil, and roasted tomato pesto"
             },
             {
               "name": "Vegano",
@@ -482,23 +568,31 @@
               "desc": "Pan ciabatta, tofu a la plancha, ensalada mixta, hummus de garbanzos y veganesa de chimichurri",
               "tags": [
                 "vegano"
-              ]
+              ],
+              "name_en": "Vegan Sandwich",
+              "desc_en": "Ciabatta bread, grilled tofu, mixed greens, chickpea hummus, and chimichurri vegan mayo"
             },
             {
               "name": "Tostado clásico",
               "price": "$13.000",
               "available": true,
               "desc": "Pan de molde, queso dambo y jamón cocido",
-              "tags": []
+              "tags": [],
+              "name_en": "Classic Ham & Cheese Toastie",
+              "desc_en": "Toast bread, Dambo cheese, and cooked ham"
             },
             {
               "name": "Vegetariano caliente o tostado",
               "price": "$15.000",
               "available": true,
               "desc": "Lechuga, tomate, zanahoria, palmitos, huevo duro y queso",
-              "tags": []
+              "tags": [],
+              "name_en": "Hot Veggie Sandwich",
+              "desc_en": "Lettuce, tomato, carrot, hearts of palm, hard-boiled egg, and cheese"
             }
-          ]
+          ],
+          "title_en": "Sandwiches",
+          "desc_en": "Served with French fries or chips"
         },
         {
           "title": "Panchos",
@@ -510,30 +604,40 @@
               "price": "$13.000",
               "available": true,
               "desc": "Con manteca de roquefort y cebolla caramelizada",
-              "tags": []
+              "tags": [],
+              "name_en": "Ricky Fort Hot Dog",
+              "desc_en": "With Roquefort blue cheese butter and caramelized onions"
             },
             {
               "name": "Criollo",
               "price": "$12.000",
               "available": true,
               "desc": "Con salsa criolla (cebolla, tomate, morrón, ajo, perejil y vinagre)",
-              "tags": []
+              "tags": [],
+              "name_en": "Criollo Hot Dog",
+              "desc_en": "With criolla relish (onion, tomato, bell pepper, garlic, parsley, and vinegar)"
             },
             {
               "name": "Cheddar",
               "price": "$12.000",
               "available": true,
               "desc": "Con queso cheddar cremoso",
-              "tags": []
+              "tags": [],
+              "name_en": "Cheddar Hot Dog",
+              "desc_en": "With creamy cheddar cheese"
             },
             {
               "name": "Pelado",
               "price": "$10.000",
               "available": true,
               "desc": "Sin nada",
-              "tags": []
+              "tags": [],
+              "name_en": "Plain Hot Dog",
+              "desc_en": "Plain with no toppings"
             }
-          ]
+          ],
+          "title_en": "Hot Dogs",
+          "desc_en": "Served with French fries or chips"
         },
         {
           "title": "Para Picar",
@@ -546,21 +650,26 @@
               "tags": [
                 "vegano",
                 "sin-tacc"
-              ]
+              ],
+              "name_en": "French Fries"
             },
             {
               "name": "Papas a caballo",
               "price": "$14.000",
               "available": true,
               "desc": "Papas fritas con huevo frito",
-              "tags": []
+              "tags": [],
+              "name_en": "Fries with Fried Eggs",
+              "desc_en": "French fries topped with fried eggs"
             },
             {
               "name": "Papas con cheddar",
               "price": "$16.000",
               "available": true,
               "desc": "Papas fritas con cheddar, panceta y cebolla de verdeo",
-              "tags": []
+              "tags": [],
+              "name_en": "Cheddar & Bacon Fries",
+              "desc_en": "French fries topped with cheddar cheese, bacon, and green onion"
             },
             {
               "name": "Chips de batata",
@@ -570,23 +679,30 @@
               "tags": [
                 "vegano",
                 "sin-tacc"
-              ]
+              ],
+              "name_en": "Sweet Potato Chips",
+              "desc_en": "Crispy thin-sliced fried sweet potatoes"
             },
             {
               "name": "Provoleta con vegetales asados",
               "price": "$17.000",
               "available": true,
               "desc": "A la plancha con puerro, tomates cherry y vinagreta de aceite de oliva, miel, vinagre, sal y pimienta",
-              "tags": []
+              "tags": [],
+              "name_en": "Provoleta with Grilled Vegetables",
+              "desc_en": "Grilled provoleta cheese with leeks, cherry tomatoes, and olive oil honey-vinegar vinaigrette"
             },
             {
               "name": "Provoleta con morcilla",
               "price": "$17.000",
               "available": true,
               "desc": "A la plancha con morcilla cortada en rodajas",
-              "tags": []
+              "tags": [],
+              "name_en": "Provoleta with Blood Sausage",
+              "desc_en": "Grilled provoleta cheese served with sliced blood sausage"
             }
-          ]
+          ],
+          "title_en": "Appetizers / Finger Food"
         },
         {
           "title": "Ensaladas",
@@ -597,23 +713,30 @@
               "price": "$18.000",
               "available": true,
               "desc": "Rúcula, queso brie, queso roquefort, tomates cherry, manzana verde, nueces y vinagreta de mostaza y miel",
-              "tags": []
+              "tags": [],
+              "name_en": "Tropitango Salad",
+              "desc_en": "Arugula, brie cheese, Roquefort cheese, cherry tomatoes, green apple, walnuts, and honey-mustard vinaigrette"
             },
             {
               "name": "Ensalada Cesar",
               "price": "$19.000",
               "available": true,
               "desc": "Lechuga, rúcula, pollo, parmesano, croutones y aderezo",
-              "tags": []
+              "tags": [],
+              "name_en": "Caesar Salad",
+              "desc_en": "Lettuce, arugula, chicken, parmesan cheese, croutons, and Caesar dressing"
             },
             {
               "name": "Ensalada Serrana",
               "price": "$19.000",
               "available": true,
               "desc": "Lechuga, rúcula, jamón crudo, croutones, parmesano, tomate y palta",
-              "tags": []
+              "tags": [],
+              "name_en": "Serrana Salad",
+              "desc_en": "Lettuce, arugula, prosciutto, croutons, parmesan cheese, tomato, and avocado"
             }
-          ]
+          ],
+          "title_en": "Salads"
         },
         {
           "title": "Postres",
@@ -623,21 +746,25 @@
               "name": "Panqueques con dulce de leche",
               "price": "$9.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Dulce de Leche Crêpes"
             },
             {
               "name": "Vigilante",
               "price": "$8.000",
               "available": false,
-              "tags": []
+              "tags": [],
+              "name_en": "Vigilante (Cheese & Quince Jam)"
             },
             {
               "name": "Flan casero con DDL",
               "price": "$9.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Homemade Flan with Dulce de Leche"
             }
-          ]
+          ],
+          "title_en": "Desserts"
         },
         {
           "title": "Bebidas sin Alcohol",
@@ -649,7 +776,8 @@
               "available": true,
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "Still Water"
             },
             {
               "name": "Agua c/gas",
@@ -657,7 +785,8 @@
               "available": true,
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "Sparkling Water"
             },
             {
               "name": "Pepsi 500ml",
@@ -665,7 +794,8 @@
               "available": true,
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "Pepsi 500ml"
             },
             {
               "name": "Pepsi Black 500ml",
@@ -673,7 +803,8 @@
               "available": true,
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "Pepsi Black 500ml"
             },
             {
               "name": "7up 500ml",
@@ -681,7 +812,8 @@
               "available": true,
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "7Up 500ml"
             },
             {
               "name": "Mirinda 500ml",
@@ -689,7 +821,8 @@
               "available": true,
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "Mirinda 500ml"
             },
             {
               "name": "Paso de los Toros 500ml",
@@ -697,7 +830,8 @@
               "available": true,
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "Paso de los Toros Grapefruit 500ml"
             },
             {
               "name": "H2o agua saborizada 500ml",
@@ -705,7 +839,8 @@
               "available": true,
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "H2O Flavored Water 500ml"
             },
             {
               "name": "Corona s/alcohol 330ml",
@@ -713,9 +848,11 @@
               "available": true,
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "Non-Alcoholic Corona 330ml"
             }
-          ]
+          ],
+          "title_en": "Soft Drinks & Non-Alcoholic"
         },
         {
           "title": "Bebidas con Alcohol",
@@ -725,27 +862,32 @@
               "name": "Andes 1L",
               "price": "$11.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Andes Beer 1L"
             },
             {
               "name": "Patagonia 730cm³",
               "price": "$13.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Patagonia Beer 730ml"
             },
             {
               "name": "Corona 330ml",
               "price": "$7.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Corona Beer 330ml"
             },
             {
               "name": "Michelob lata",
               "price": "$7.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Michelob Can Beer"
             }
-          ]
+          ],
+          "title_en": "Alcoholic Beverages"
         },
         {
           "title": "🍺 Cervezas Tiradas",
@@ -761,7 +903,9 @@
               "image": "img/cervezas/Easy-Pilsen.png",
               "abv": "4.3%",
               "style": "Lager",
-              "tags": []
+              "tags": [],
+              "name_en": "Pilsen",
+              "desc_en": "Light and refreshing blonde lager, with mild bitterness and floral hop aroma"
             },
             {
               "name": "APA Born & Released",
@@ -772,7 +916,9 @@
               "image": "img/cervezas/APA.png",
               "abv": "5.2%",
               "style": "Pale Ale",
-              "tags": []
+              "tags": [],
+              "name_en": "APA Born & Released",
+              "desc_en": "American Pale Ale with citrus hops, medium body, and a dry finish"
             },
             {
               "name": "Irish Cream Ale",
@@ -783,7 +929,9 @@
               "image": "img/cervezas/Irish-Cream-Ale.png",
               "abv": "4.9%",
               "style": "Cream Ale",
-              "tags": []
+              "tags": [],
+              "name_en": "Irish Cream Ale",
+              "desc_en": "Irish-style Cream Ale, smooth and creamy with sweet toasted notes"
             },
             {
               "name": "Session IPA",
@@ -794,7 +942,9 @@
               "image": "img/cervezas/Session-IPA.png",
               "abv": "5%",
               "style": "Session IPA",
-              "tags": []
+              "tags": [],
+              "name_en": "Session IPA",
+              "desc_en": "Low ABV IPA, highly hopped with tropical and citrus notes"
             },
             {
               "name": "Old Garage IPA",
@@ -805,7 +955,9 @@
               "image": "img/cervezas/Old-Garage-IPA.png",
               "abv": "6.5%",
               "style": "IPA",
-              "tags": []
+              "tags": [],
+              "name_en": "Old Garage IPA",
+              "desc_en": "Intense IPA with pine resin and citrus notes; bold bitterness and powerful aroma"
             },
             {
               "name": "Milk / Extra Stout",
@@ -816,9 +968,13 @@
               "image": "img/cervezas/Milk-Stout.png",
               "abv": "4.2%",
               "style": "Stout",
-              "tags": []
+              "tags": [],
+              "name_en": "Milk / Extra Stout",
+              "desc_en": "Dark and creamy stout with coffee, chocolate, and caramel notes. Full body"
             }
-          ]
+          ],
+          "title_en": "🍺 Draft Beer",
+          "desc_en": "Craft beers <span class=\"highlight\">Manush</span> · Pint 500ml"
         }
       ]
     },
@@ -839,7 +995,9 @@
               "image": "img/licores/Fernet.png",
               "style": "Amaro italiano",
               "tags": [],
-              "wednesdayPromo": true
+              "wednesdayPromo": true,
+              "name_en": "Fernet & Coke",
+              "desc_en": "Fernet Branca and Coca-Cola"
             },
             {
               "name": "Tintelo",
@@ -849,7 +1007,9 @@
               "beerCard": true,
               "image": "img/licores/Tintelo.png",
               "style": "Vino tinto",
-              "tags": []
+              "tags": [],
+              "name_en": "Tintelo",
+              "desc_en": "Red wine, grapefruit soda, and grapefruit slice"
             },
             {
               "name": "Cuba Libre",
@@ -859,7 +1019,9 @@
               "beerCard": true,
               "image": "img/licores/Cuba.png",
               "style": "Ron dorado",
-              "tags": []
+              "tags": [],
+              "name_en": "Cuba Libre",
+              "desc_en": "Gold rum, Coca-Cola, and lime slice"
             },
             {
               "name": "Garibaldi",
@@ -869,7 +1031,9 @@
               "beerCard": true,
               "image": "img/licores/Garibaldi.png",
               "style": "Campari",
-              "tags": []
+              "tags": [],
+              "name_en": "Garibaldi",
+              "desc_en": "Campari, orange juice, and orange slice (or tonic water)"
             },
             {
               "name": "Aperol Spritz",
@@ -879,7 +1043,9 @@
               "beerCard": true,
               "image": "img/licores/Aperol.png",
               "style": "Aperol",
-              "tags": []
+              "tags": [],
+              "name_en": "Aperol Spritz",
+              "desc_en": "Aperol, soda water, sparkling wine, and orange slice"
             },
             {
               "name": "Cynar Julep",
@@ -889,7 +1055,9 @@
               "beerCard": true,
               "image": "img/licores/Cynar.png",
               "style": "Cynar",
-              "tags": []
+              "tags": [],
+              "name_en": "Cynar Julep",
+              "desc_en": "Cynar, lemon juice, simple syrup, grapefruit juice, and fresh mint"
             },
             {
               "name": "Carpano Orange",
@@ -899,7 +1067,9 @@
               "beerCard": true,
               "image": "img/licores/Carpano.png",
               "style": "Carpano",
-              "tags": []
+              "tags": [],
+              "name_en": "Carpano Orange",
+              "desc_en": "Carpano Vermouth, choice of soda/tonic/grapefruit, and orange slice"
             },
             {
               "name": "Ferroviario",
@@ -909,7 +1079,9 @@
               "beerCard": true,
               "image": "img/licores/Ferroviario.png",
               "style": "Carpano",
-              "tags": []
+              "tags": [],
+              "name_en": "Ferroviario",
+              "desc_en": "Fernet Branca, Carpano Vermouth, and soda water"
             },
             {
               "name": "Cóctel Americano",
@@ -919,7 +1091,9 @@
               "beerCard": true,
               "image": "img/licores/Americano.png",
               "style": "Campari",
-              "tags": []
+              "tags": [],
+              "name_en": "Americano Cocktail",
+              "desc_en": "Campari, Carpano Rosso Vermouth, soda water, and orange twist"
             },
             {
               "name": "Mint Tonic",
@@ -929,7 +1103,9 @@
               "beerCard": true,
               "image": "img/licores/Mint-Tonic.png",
               "style": "Branca Menta",
-              "tags": []
+              "tags": [],
+              "name_en": "Mint Tonic",
+              "desc_en": "Branca Menta, tonic water, lemon, and fresh mint"
             },
             {
               "name": "Gin Tonic Blu",
@@ -939,7 +1115,9 @@
               "beerCard": true,
               "image": "img/licores/Gin-Tonic.png",
               "style": "Gin Tonic",
-              "tags": []
+              "tags": [],
+              "name_en": "Gin Tonic Blu",
+              "desc_en": "Blu Gin, tonic water, choice of lemon, cucumber, orange, or grapefruit"
             },
             {
               "name": "Sangría",
@@ -949,7 +1127,9 @@
               "beerCard": true,
               "image": "img/licores/Sangria.png",
               "style": "Sangría",
-              "tags": []
+              "tags": [],
+              "name_en": "Sangria",
+              "desc_en": "Malbec wine, orange juice, lemon juice, berry syrup, lemon, and fresh mint"
             },
             {
               "name": "Malibú",
@@ -959,7 +1139,9 @@
               "beerCard": true,
               "image": "img/licores/Malibu.png",
               "style": "Ron Malibú",
-              "tags": []
+              "tags": [],
+              "name_en": "Malibu Mixer",
+              "desc_en": "Malibu Rum with choice of orange juice, 7Up, or Coca-Cola"
             },
             {
               "name": "Vodka Veloz",
@@ -969,7 +1151,9 @@
               "beerCard": true,
               "image": "img/licores/Vodka-Veloz.png",
               "style": "Vodka Sernova",
-              "tags": []
+              "tags": [],
+              "name_en": "Vodka Veloz",
+              "desc_en": "Red Bull and Sernova Vodka"
             },
             {
               "name": "Jäger Power",
@@ -979,15 +1163,19 @@
               "beerCard": true,
               "image": "img/licores/Jager-Power.png",
               "style": "Jägermeister",
-              "tags": []
+              "tags": [],
+              "name_en": "Jäger Power",
+              "desc_en": "Red Bull and Jägermeister"
             },
             {
               "name": "Red Bull",
               "price": "$8.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Red Bull"
             }
-          ]
+          ],
+          "title_en": "Direct Drinks"
         },
         {
           "title": "Tragos Elaborados",
@@ -998,134 +1186,173 @@
               "price": "$13.000",
               "available": true,
               "desc": "Cachaça, lima, jugo de limón y almíbar simple",
-              "tags": []
+              "tags": [],
+              "name_en": "Caipirinha",
+              "desc_en": "Cachaça, fresh lime, lemon juice, and simple syrup"
             },
             {
               "name": "Caipijäger",
               "price": "$16.000",
               "desc": "Jägermeister, lima, jugo de limón y almíbar simple",
-              "tags": []
+              "tags": [],
+              "name_en": "Caipijäger",
+              "desc_en": "Jägermeister, fresh lime, lemon juice, and simple syrup"
             },
             {
               "name": "Caipiroska",
               "price": "$13.000",
               "available": true,
               "desc": "Vodka Sernova, lima, jugo de limón y almíbar simple",
-              "tags": []
+              "tags": [],
+              "name_en": "Caipiroska",
+              "desc_en": "Sernova Vodka, fresh lime, lemon juice, and simple syrup"
             },
             {
               "name": "Maycaipi",
               "price": "$15.000",
               "available": true,
               "desc": "Vodka Sernova/Cachaça, lima, maracuyá, jugo de limón y almíbar simple",
-              "tags": []
+              "tags": [],
+              "name_en": "Maycaipi",
+              "desc_en": "Sernova Vodka or Cachaça, lime, passion fruit, lemon juice, and simple syrup"
             },
             {
               "name": "Mojito",
               "price": "$14.000",
               "available": true,
               "desc": "Ron o Malibú, jugo de limón, menta, almíbar simple y soda",
-              "tags": []
+              "tags": [],
+              "name_en": "Mojito",
+              "desc_en": "Rum or Malibu, lemon juice, fresh mint, simple syrup, and soda water"
             },
             {
               "name": "Tom Collins",
               "price": "$12.000",
               "available": true,
               "desc": "Gin Blu, limón, soda y almíbar simple",
-              "tags": []
+              "tags": [],
+              "name_en": "Tom Collins",
+              "desc_en": "Blu Gin, lemon juice, soda water, and simple syrup"
             },
             {
               "name": "Old Fashioned",
               "price": "$16.000",
               "available": true,
               "desc": "Bourbon, dash de Bitter Angostura, azúcar y rodaja de naranja",
-              "tags": []
+              "tags": [],
+              "name_en": "Old Fashioned",
+              "desc_en": "Bourbon, dash of Angostura Bitters, sugar, and orange slice"
             },
             {
               "name": "Negroni",
               "price": "$16.000",
               "available": true,
               "desc": "Campari, gin, Carpano Rosso y rodaja de naranja",
-              "tags": []
+              "tags": [],
+              "name_en": "Negroni",
+              "desc_en": "Campari, gin, Carpano Rosso, and orange slice"
             },
             {
               "name": "Negrol",
               "price": "$16.000",
               "available": true,
               "desc": "Gin, Aperol y Carpano Rosso",
-              "tags": []
+              "tags": [],
+              "name_en": "Negrol",
+              "desc_en": "Gin, Aperol, and Carpano Rosso"
             },
             {
               "name": "Boulevardier",
               "price": "$16.000",
               "available": true,
               "desc": "Bourbon, Campari y Carpano Rosso",
-              "tags": []
+              "tags": [],
+              "name_en": "Boulevardier",
+              "desc_en": "Bourbon, Campari, and Carpano Rosso"
             },
             {
               "name": "Pisco Sour",
               "price": "$14.000",
               "available": true,
               "desc": "Pisco, almíbar, limón, clara de huevo y Bitter Angostura",
-              "tags": []
+              "tags": [],
+              "name_en": "Pisco Sour",
+              "desc_en": "Pisco, simple syrup, lemon juice, egg white, and Angostura Bitters"
             },
             {
               "name": "Pisco Maracuyá",
               "price": "$15.000",
               "available": true,
               "desc": "Pisco, almíbar, limón, clara de huevo, Bitter Angostura y maracuyá",
-              "tags": []
+              "tags": [],
+              "name_en": "Passion Fruit Pisco Sour",
+              "desc_en": "Pisco, simple syrup, lemon juice, egg white, Angostura Bitters, and passion fruit"
             },
             {
               "name": "Martini Dry",
               "price": "$16.000",
               "available": true,
               "desc": "Gin, Carpano Dry, limón y/o aceitunas",
-              "tags": []
+              "tags": [],
+              "name_en": "Dry Martini",
+              "desc_en": "Gin, Carpano Dry, lemon twist and/or olives"
             },
             {
               "name": "Manhattan",
               "price": "$16.000",
               "available": true,
               "desc": "Bourbon, Carpano Rosso y dash de Bitter Angostura",
-              "tags": []
+              "tags": [],
+              "name_en": "Manhattan",
+              "desc_en": "Bourbon, Carpano Rosso, and dash of Angostura Bitters"
             },
             {
               "name": "Espresso Martini",
               "price": "$16.000",
               "available": true,
               "desc": "Café espresso, licor de café, vodka Sernova y almíbar simple",
-              "tags": []
+              "tags": [],
+              "name_en": "Espresso Martini",
+              "desc_en": "Espresso coffee, coffee liqueur, Sernova Vodka, and simple syrup"
             },
             {
               "name": "Penicillin",
               "price": "$19.000",
               "available": true,
               "desc": "Whisky Scotch, almíbar de miel, almíbar de jengibre y jugo de limón",
-              "tags": []
+              "tags": [],
+              "name_en": "Penicillin",
+              "desc_en": "Scotch whisky, honey syrup, ginger syrup, and lemon juice"
             },
             {
               "name": "New York Sour",
               "price": "$19.000",
               "available": true,
               "desc": "Whisky Scotch, clara de huevo, almíbar simple, jugo de limón y vino Malbec",
-              "tags": []
+              "tags": [],
+              "name_en": "New York Sour",
+              "desc_en": "Scotch whisky, egg white, simple syrup, lemon juice, and Malbec float"
             },
             {
               "name": "Aperol Sour",
               "price": "$16.000",
               "available": true,
               "desc": "Aperol, clara de huevo, jugo de limón y almíbar simple",
-              "tags": []
+              "tags": [],
+              "name_en": "Aperol Sour",
+              "desc_en": "Aperol, egg white, lemon juice, and simple syrup"
             },
             {
               "name": "Margarita",
               "price": "$15.000",
               "available": true,
               "desc": "Tequila, triple sec, limón, almíbar y sal/azúcar",
-              "tags": []
+              "tags": [],
+              "name_en": "Margarita",
+              "desc_en": "Tequila, triple sec, lemon juice, simple syrup, and salt/sugar rim"
             }
-          ]
+          ],
+          "title_en": "Craft Cocktails"
         },
         {
           "title": "Whiskies",
@@ -1135,39 +1362,46 @@
               "name": "Jim Beam",
               "price": "$15.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Jim Beam"
             },
             {
               "name": "Jameson",
               "price": "$16.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Jameson"
             },
             {
               "name": "Jack Daniel's",
               "price": "$19.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Jack Daniel's"
             },
             {
               "name": "Johnnie Walker Red Label",
               "price": "$15.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Johnnie Walker Red Label"
             },
             {
               "name": "Johnnie Walker Black Label",
               "price": "$20.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Johnnie Walker Black Label"
             },
             {
               "name": "Baileys",
               "price": "$16.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Baileys"
             }
-          ]
+          ],
+          "title_en": "Whiskies"
         },
         {
           "title": "Shots",
@@ -1177,27 +1411,32 @@
               "name": "Tequila",
               "price": "$12.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Tequila"
             },
             {
               "name": "Jäger",
               "price": "$13.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Jäger"
             },
             {
               "name": "Esquí con 4 vasos de Tequila",
               "price": "$41.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Ski with 4 Tequila Shots"
             },
             {
               "name": "Esquí con 4 vasos de Jäger",
               "price": "$43.000",
               "available": true,
-              "tags": []
+              "tags": [],
+              "name_en": "Ski with 4 Jäger Shots"
             }
-          ]
+          ],
+          "title_en": "Shots"
         },
         {
           "title": "Mocktails (Sin Alcohol)",
@@ -1210,7 +1449,9 @@
               "desc": "Jugo de limón, almíbar, rodajas de limón y agua (opcionales: menta, jengibre o pepino)",
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "Lemonade",
+              "desc_en": "Lemon juice, simple syrup, lemon slices, and water (optional: mint, ginger, or cucumber)"
             },
             {
               "name": "Pomelada",
@@ -1219,7 +1460,9 @@
               "desc": "Jugo de pomelo, almíbar, rodajas de pomelo y agua",
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "Grapefruitade",
+              "desc_en": "Grapefruit juice, simple syrup, grapefruit slices, and water"
             },
             {
               "name": "Limonada Frutos Rojos",
@@ -1228,7 +1471,9 @@
               "desc": "Jugo de limón, frutos rojos, almíbar de frutos rojos y agua",
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "Berry Lemonade",
+              "desc_en": "Lemon juice, mixed berries, berry syrup, and water"
             },
             {
               "name": "Natural Mystic",
@@ -1237,7 +1482,9 @@
               "desc": "Frutilla, limón, jugo de naranja, almíbar y agua",
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "Natural Mystic",
+              "desc_en": "Strawberry, lemon, orange juice, simple syrup, and water"
             },
             {
               "name": "Aljaba",
@@ -1246,9 +1493,12 @@
               "desc": "Jarabe de saúco, limón, almíbar, agua tónica, menta y rodaja de limón",
               "tags": [
                 "sin-alcohol"
-              ]
+              ],
+              "name_en": "Aljaba",
+              "desc_en": "Elderflower syrup, lemon, simple syrup, tonic water, fresh mint, and lemon slice"
             }
-          ]
+          ],
+          "title_en": "Mocktails (Non-Alcoholic)"
         },
         {
           "title": "Vinos",
@@ -1258,9 +1508,11 @@
               "name": "Consultar en barra",
               "price": "",
               "tags": [],
-              "isPlaceholder": true
+              "isPlaceholder": true,
+              "name_en": "Ask at the bar"
             }
-          ]
+          ],
+          "title_en": "Wines"
         },
         {
           "title": "Cafetería Clásica",
@@ -1270,15 +1522,18 @@
               "name": "Café Chico",
               "price": "$4.000",
               "available": false,
-              "tags": []
+              "tags": [],
+              "name_en": "Small Coffee / Espresso"
             },
             {
               "name": "Café Doble",
               "price": "$5.000",
               "available": false,
-              "tags": []
+              "tags": [],
+              "name_en": "Double Espresso"
             }
-          ]
+          ],
+          "title_en": "Classic Coffee"
         }
       ]
     }

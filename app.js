@@ -105,13 +105,28 @@ document.addEventListener('DOMContentLoaded', () => {
         en: {
             "Pizza Grande": "Large Pizza",
             "Empanadas": "Empanadas",
+            "Pizza por Porción": "Pizza by the Slice",
+            "Postres": "Desserts",
+            "Bebidas sin Alcohol": "Soft Drinks & Non-Alcoholic",
+            "Bebidas con Alcohol": "Alcoholic Beverages",
+            "🍺 Cervezas Tiradas": "🍺 Draft Beer",
             "Hamburguesas": "Burgers",
+            "Sandwiches": "Sandwiches",
+            "Panchos": "Hot Dogs",
+            "Para Picar": "Appetizers / Finger Food",
+            "Ensaladas": "Salads",
+            "Tragos Directos": "Direct Drinks",
+            "Tragos Elaborados": "Craft Cocktails",
+            "Whiskies": "Whiskies",
+            "Shots": "Shots",
+            "Mocktails (Sin Alcohol)": "Mocktails (Non-Alcoholic)",
+            "Vinos": "Wines",
+            "Cafetería Clásica": "Classic Coffee",
             "Acompañamientos": "Sides",
             "Tragos de Autor": "Signature Cocktails",
             "Clásicos": "Classic Cocktails",
             "Cerveza Tirada": "Draft Beer",
             "Sin Alcohol / Mocktails": "Non-Alcoholic / Mocktails",
-            "Vinos": "Wines",
             "Sin Alcohol": "Soft Drinks"
         }
     };
@@ -121,7 +136,22 @@ document.addEventListener('DOMContentLoaded', () => {
     let searchTerm = '';
     let currentLang = localStorage.getItem('jabali_lang') || 'es';
     let menuData = null;
+    let menuItemMap = {};
     let splitPeopleCount = 1;
+
+    function buildMenuItemMap(data) {
+        menuItemMap = {};
+        if (!data || !data.sections) return;
+        data.sections.forEach(sec => {
+            sec.categories.forEach(cat => {
+                cat.items.forEach(item => {
+                    if (item.name) {
+                        menuItemMap[item.name] = item;
+                    }
+                });
+            });
+        });
+    }
 
     // Cart state: { [itemName]: { name, priceStr, priceNum, qty } }
     let cart = {};
@@ -300,11 +330,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        const displayName = (currentLang === 'en' && item.name_en) ? item.name_en : item.name;
+        const displayDesc = (currentLang === 'en' && item.desc_en) ? item.desc_en : item.desc;
+        const soldOutBadge = currentLang === 'en' ? 'Sold Out' : 'Agotado';
+        const consultText = currentLang === 'en' ? 'Ask at the bar' : 'Consultar en barra';
+
         let inner = `
             <div class="item-header">
                 <h3 class="item-name">
-                    ${item.name}
-                    ${item.available === false ? '<span class="agotado-badge">Agotado</span>' : ''}
+                    ${displayName}
+                    ${item.available === false ? `<span class="agotado-badge">${soldOutBadge}</span>` : ''}
                     ${hhBadgeHtml}
                     ${fernetBadgeHtml}
                 </h3>
@@ -313,20 +348,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (item.isPlaceholder) {
             return `<div class="menu-item vinos-placeholder" data-tags="">
-                        <p class="item-desc">Consultar en barra</p>
+                        <p class="item-desc">${consultText}</p>
                     </div>`;
         }
 
-        if (item.desc) {
-            inner += `<p class="item-desc">${item.desc}</p>`;
+        if (displayDesc) {
+            inner += `<p class="item-desc">${displayDesc}</p>`;
         }
 
         // Diet badges
         const dietBadges = [];
         if (item.tags) {
-            if (item.tags.includes('vegano') && !isTragos) dietBadges.push('<span class="diet-tag tag-vegano">🌱 Vegano</span>');
-            if (item.tags.includes('sin-tacc') && !isBeer) dietBadges.push('<span class="diet-tag tag-sin-tacc">🌾 Sin TACC</span>');
-            if (item.tags.includes('sin-alcohol')) dietBadges.push('<span class="diet-tag tag-sin-alcohol">🚫 Sin Alcohol</span>');
+            if (item.tags.includes('vegano') && !isTragos) dietBadges.push(`<span class="diet-tag tag-vegano">${currentLang === 'en' ? '🌱 Vegan' : '🌱 Vegano'}</span>`);
+            if (item.tags.includes('sin-tacc') && !isBeer) dietBadges.push(`<span class="diet-tag tag-sin-tacc">${currentLang === 'en' ? '🌾 Gluten Free' : '🌾 Sin TACC'}</span>`);
+            if (item.tags.includes('sin-alcohol')) dietBadges.push(`<span class="diet-tag tag-sin-alcohol">${currentLang === 'en' ? '🚫 Non-Alcoholic' : '🚫 Sin Alcohol'}</span>`);
         }
 
         if (isBeer) {
@@ -366,15 +401,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderCategory(cat, index, sectionId) {
         const gridClass = cat.gridClass ? ` ${cat.gridClass}` : '';
-        const descHtml = cat.desc ? `<p class="category-desc">${cat.desc}</p>` : '';
+        const rawDesc = (currentLang === 'en' && cat.desc_en) ? cat.desc_en : cat.desc;
+        const descHtml = rawDesc ? `<p class="category-desc">${rawDesc}</p>` : '';
 
+        const rawExtras = (currentLang === 'en' && cat.extras_en) ? cat.extras_en : cat.extras;
         let extrasHtml = '';
-        if (cat.extras && cat.extras.length > 0) {
-            extrasHtml = `<div class="item-extras">${cat.extras.map(e => `<p>${e}</p>`).join('')}</div>`;
+        if (rawExtras && rawExtras.length > 0) {
+            extrasHtml = `<div class="item-extras">${rawExtras.map(e => `<p>${e}</p>`).join('')}</div>`;
         }
 
-        const catTitle = (currentLang === 'en' && categoryTranslations.en[cat.title])
-            ? categoryTranslations.en[cat.title]
+        const catTitle = (currentLang === 'en' && (cat.title_en || categoryTranslations.en[cat.title]))
+            ? (cat.title_en || categoryTranslations.en[cat.title])
             : cat.title;
 
         const itemsHtml = cat.items.map(item => renderItem(item, sectionId)).join('\n');
@@ -530,13 +567,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 itemsList.innerHTML = cartKeys.map(key => {
                     const item = cart[key];
                     const itemSubtotal = item.priceNum * item.qty;
+                    const itemData = menuItemMap[key];
+                    const displayName = (currentLang === 'en' && itemData && itemData.name_en) ? itemData.name_en : key;
                     return `
                     <div class="cart-item-row">
-                        <span class="cart-item-name">${item.name}</span>
+                        <span class="cart-item-name">${displayName}</span>
                         <div class="qty-control-inline">
-                            <button class="qty-btn modal-minus-btn" data-item-name="${item.name}">-</button>
+                            <button class="qty-btn modal-minus-btn" data-item-name="${key}">-</button>
                             <span class="qty-val">${item.qty}</span>
-                            <button class="qty-btn modal-plus-btn" data-item-name="${item.name}">+</button>
+                            <button class="qty-btn modal-plus-btn" data-item-name="${key}">+</button>
                         </div>
                         <span class="cart-item-subtotal">${formatPrice(itemSubtotal)}</span>
                     </div>`;
@@ -559,6 +598,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(r => r.json())
         .then(data => {
             menuData = data;
+            buildMenuItemMap(data);
             renderAllSections();
             applyLanguage(currentLang);
 
