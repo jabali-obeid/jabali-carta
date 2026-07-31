@@ -290,7 +290,7 @@
             {
               "name": "Michelob lata",
               "price": "$7.000",
-              "available": false,
+              "available": true,
               "tags": []
             }
           ]
