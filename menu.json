@@ -456,7 +456,7 @@
             {
               "name": "Michelob lata",
               "price": "$7.000",
-              "available": false,
+              "available": true,
               "tags": [],
               "name_en": "Michelob Can Beer"
             }
@@ -847,7 +847,7 @@
             {
               "name": "Milk / Extra Stout",
               "price": "$9.000",
-              "available": false,
+              "available": true,
               "desc": "Oscura y cremosa con notas de café, chocolate y caramelo. Cuerpo lleno",
               "beerCard": true,
               "image": "img/cervezas/Milk-Stout.png",
