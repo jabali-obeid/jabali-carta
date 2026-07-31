@@ -142,22 +142,42 @@ document.addEventListener('DOMContentLoaded', () => {
     function buildMenuItemMap(data) {
         menuItemMap = {};
         if (!data || !data.sections) return;
+        let itemCounter = 0;
         data.sections.forEach(sec => {
             sec.categories.forEach(cat => {
                 cat.items.forEach(item => {
                     if (item.name) {
-                        menuItemMap[item.name] = item;
+                        itemCounter++;
+                        if (!item.id) {
+                            const slugName = item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                            item.id = `${sec.id}_${slugName}_${itemCounter}`;
+                        }
+                        menuItemMap[item.id] = item;
                     }
                 });
             });
         });
     }
 
-    // Cart state: { [itemName]: { name, priceStr, priceNum, qty } }
+    // Cart state: { [itemId]: { id, name, name_en, priceStr, priceNum, qty } }
     let cart = {};
     try {
         const savedCart = localStorage.getItem('jabali_cart');
-        if (savedCart) cart = JSON.parse(savedCart);
+        if (savedCart) {
+            const parsed = JSON.parse(savedCart);
+            if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+                Object.keys(parsed).forEach(k => {
+                    const it = parsed[k];
+                    if (it && typeof it === 'object') {
+                        if (typeof it.qty !== 'number' || it.qty <= 0) return;
+                        if (typeof it.priceNum !== 'number' || isNaN(it.priceNum)) {
+                            it.priceNum = parsePriceNum(it.priceStr || '');
+                        }
+                        cart[k] = it;
+                    }
+                });
+            }
+        }
     } catch (e) {
         cart = {};
     }
@@ -374,26 +394,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Cart Actions per item
         if (item.price && item.available !== false) {
-            const currentQty = cart[item.name] ? cart[item.name].qty : 0;
+            const currentQty = (cart[item.id] && cart[item.id].qty) ? cart[item.id].qty : 0;
             const btnLabel = translations[currentLang].cart_add;
 
+            let actionsHtml = '';
             if (currentQty === 0) {
-                inner += `
-                <div class="item-cart-actions">
-                    <button class="add-item-btn" data-item-name="${item.name}" data-item-price="${item.price}">
+                actionsHtml = `
+                    <button class="add-item-btn" data-item-id="${item.id}">
                         ${btnLabel}
-                    </button>
-                </div>`;
+                    </button>`;
             } else {
-                inner += `
-                <div class="item-cart-actions">
+                actionsHtml = `
                     <div class="qty-control-inline">
-                        <button class="qty-btn cart-minus-btn" data-item-name="${item.name}">-</button>
+                        <button class="qty-btn cart-minus-btn" data-item-id="${item.id}">-</button>
                         <span class="qty-val">${currentQty}</span>
-                        <button class="qty-btn cart-plus-btn" data-item-name="${item.name}">+</button>
-                    </div>
-                </div>`;
+                        <button class="qty-btn cart-plus-btn" data-item-id="${item.id}">+</button>
+                    </div>`;
             }
+
+            inner += `
+                <div class="item-cart-actions" data-item-id="${item.id}">
+                    ${actionsHtml}
+                </div>`;
         }
 
         return `<div class="${classes}"${styleAttr} data-tags="${tags}">${inner}</div>`;
@@ -487,48 +509,85 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('jabali_cart', JSON.stringify(cart));
     }
 
-    function addToCart(name, priceStr) {
-        if (!cart[name]) {
-            cart[name] = {
-                name: name,
-                priceStr: priceStr,
-                priceNum: parsePriceNum(priceStr),
+    function updateItemCardUI(itemId) {
+        const containers = document.querySelectorAll(`.item-cart-actions[data-item-id="${itemId}"]`);
+        containers.forEach(container => {
+            const currentQty = (cart[itemId] && cart[itemId].qty) ? cart[itemId].qty : 0;
+            const btnLabel = translations[currentLang].cart_add;
+
+            if (currentQty === 0) {
+                container.innerHTML = `
+                    <button class="add-item-btn" data-item-id="${itemId}">
+                        ${btnLabel}
+                    </button>`;
+            } else {
+                container.innerHTML = `
+                    <div class="qty-control-inline">
+                        <button class="qty-btn cart-minus-btn" data-item-id="${itemId}">-</button>
+                        <span class="qty-val">${currentQty}</span>
+                        <button class="qty-btn cart-plus-btn" data-item-id="${itemId}">+</button>
+                    </div>`;
+            }
+        });
+    }
+
+    function updateAllItemCardsUI() {
+        document.querySelectorAll('.item-cart-actions[data-item-id]').forEach(container => {
+            const itemId = container.dataset.itemId;
+            updateItemCardUI(itemId);
+        });
+    }
+
+    function addToCart(itemId) {
+        const itemData = menuItemMap[itemId];
+        if (!itemData) return;
+
+        if (!cart[itemId]) {
+            cart[itemId] = {
+                id: itemId,
+                name: itemData.name,
+                name_en: itemData.name_en || itemData.name,
+                priceStr: itemData.price,
+                priceNum: parsePriceNum(itemData.price),
                 qty: 1
             };
         } else {
-            cart[name].qty += 1;
+            cart[itemId].qty += 1;
         }
         saveCart();
         updateCartUI();
-        renderAllSections();
-        applyFilters();
+        updateItemCardUI(itemId);
     }
 
-    function updateQty(name, delta) {
-        if (cart[name]) {
-            cart[name].qty += delta;
-            if (cart[name].qty <= 0) {
-                delete cart[name];
+    function updateQty(itemId, delta) {
+        if (cart[itemId]) {
+            cart[itemId].qty += delta;
+            if (cart[itemId].qty <= 0) {
+                delete cart[itemId];
             }
         }
         saveCart();
         updateCartUI();
-        renderAllSections();
-        applyFilters();
+        updateItemCardUI(itemId);
     }
 
     function clearCart() {
         cart = {};
         saveCart();
         updateCartUI();
-        renderAllSections();
-        applyFilters();
+        updateAllItemCardsUI();
     }
 
     function getCartTotal() {
         let total = 0;
         Object.values(cart).forEach(item => {
-            total += item.priceNum * item.qty;
+            if (item && typeof item === 'object') {
+                const qty = parseInt(item.qty, 10) || 0;
+                const priceNum = (typeof item.priceNum === 'number' && !isNaN(item.priceNum))
+                    ? item.priceNum
+                    : parsePriceNum(item.priceStr || '');
+                total += priceNum * qty;
+            }
         });
         return total;
     }
@@ -536,7 +595,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function getCartItemCount() {
         let count = 0;
         Object.values(cart).forEach(item => {
-            count += item.qty;
+            if (item && typeof item === 'object') {
+                count += parseInt(item.qty, 10) || 0;
+            }
         });
         return count;
     }
@@ -566,20 +627,28 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 itemsList.innerHTML = cartKeys.map(key => {
                     const item = cart[key];
-                    const itemSubtotal = item.priceNum * item.qty;
+                    if (!item || typeof item !== 'object') return '';
+                    const qty = parseInt(item.qty, 10) || 0;
+                    if (qty <= 0) return '';
+                    const priceNum = (typeof item.priceNum === 'number' && !isNaN(item.priceNum))
+                        ? item.priceNum
+                        : parsePriceNum(item.priceStr || '');
+                    const itemSubtotal = priceNum * qty;
                     const itemData = menuItemMap[key];
-                    const displayName = (currentLang === 'en' && itemData && itemData.name_en) ? itemData.name_en : key;
+                    const displayName = (currentLang === 'en' && itemData && itemData.name_en)
+                        ? itemData.name_en
+                        : (itemData ? itemData.name : (item.name || key));
                     return `
                     <div class="cart-item-row">
                         <span class="cart-item-name">${displayName}</span>
                         <div class="qty-control-inline">
-                            <button class="qty-btn modal-minus-btn" data-item-name="${key}">-</button>
-                            <span class="qty-val">${item.qty}</span>
-                            <button class="qty-btn modal-plus-btn" data-item-name="${key}">+</button>
+                            <button class="qty-btn modal-minus-btn" data-item-id="${key}">-</button>
+                            <span class="qty-val">${qty}</span>
+                            <button class="qty-btn modal-plus-btn" data-item-id="${key}">+</button>
                         </div>
                         <span class="cart-item-subtotal">${formatPrice(itemSubtotal)}</span>
                     </div>`;
-                }).join('\n');
+                }).filter(Boolean).join('\n');
             }
         }
 
@@ -658,29 +727,28 @@ document.addEventListener('DOMContentLoaded', () => {
             // Collapsible categories & cart item click Delegation
             const menuRoot = document.getElementById('menu-root');
             menuRoot.addEventListener('click', e => {
-                const header = e.target.closest('.category-header');
-                if (header && !e.target.closest('.add-item-btn') && !e.target.closest('.qty-btn')) {
-                    header.closest('.menu-category').classList.toggle('collapsed');
-                    return;
-                }
-
                 const addBtn = e.target.closest('.add-item-btn');
                 if (addBtn) {
-                    const name = addBtn.dataset.itemName;
-                    const price = addBtn.dataset.itemPrice;
-                    addToCart(name, price);
+                    const id = addBtn.dataset.itemId;
+                    addToCart(id);
                     return;
                 }
 
                 const minusBtn = e.target.closest('.cart-minus-btn');
                 if (minusBtn) {
-                    updateQty(minusBtn.dataset.itemName, -1);
+                    updateQty(minusBtn.dataset.itemId, -1);
                     return;
                 }
 
                 const plusBtn = e.target.closest('.cart-plus-btn');
                 if (plusBtn) {
-                    updateQty(plusBtn.dataset.itemName, 1);
+                    updateQty(plusBtn.dataset.itemId, 1);
+                    return;
+                }
+
+                const header = e.target.closest('.category-header');
+                if (header) {
+                    header.closest('.menu-category').classList.toggle('collapsed');
                     return;
                 }
             });
@@ -836,12 +904,12 @@ document.addEventListener('DOMContentLoaded', () => {
         cartItemsList.addEventListener('click', e => {
             const minusBtn = e.target.closest('.modal-minus-btn');
             if (minusBtn) {
-                updateQty(minusBtn.dataset.itemName, -1);
+                updateQty(minusBtn.dataset.itemId, -1);
                 return;
             }
             const plusBtn = e.target.closest('.modal-plus-btn');
             if (plusBtn) {
-                updateQty(plusBtn.dataset.itemName, 1);
+                updateQty(plusBtn.dataset.itemId, 1);
                 return;
             }
         });
