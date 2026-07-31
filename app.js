@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cart_people_text: "pers.",
             cart_total: "Total estimado:",
             cart_per_person: "Por persona:",
-            cart_note: "💡 Este simulador te ayuda a calcular tu cuenta. Hacé tu pedido al mozo.",
+            cart_note: "💡 Este simulador te ayuda a calcular tu cuenta.",
             cart_clear: "Vaciar borrador",
             cart_close: "Entendido",
             cart_empty: "No agregaste ningún producto a tu cuenta aún.",
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cart_people_text: "ppl.",
             cart_total: "Estimated total:",
             cart_per_person: "Per person:",
-            cart_note: "💡 This simulator helps calculate your bill. Order directly from your server.",
+            cart_note: "💡 This simulator helps calculate your bill.",
             cart_clear: "Clear bill",
             cart_close: "Got it",
             cart_empty: "You haven't added any items to your bill yet.",
@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let styleAttr = isBeer ? ` style="background-image:url('${item.image}')"` : '';
 
         const hhBadgeHtml = hhActive ? `<span class="hh-badge">🔥 HH 2x$14k</span>` : '';
-        
+
         let fernetBadgeHtml = '';
         if (isFernet) {
             const t = translations[currentLang];
