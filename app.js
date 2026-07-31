@@ -511,11 +511,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateItemCardUI(itemId) {
         const containers = document.querySelectorAll(`.item-cart-actions[data-item-id="${itemId}"]`);
-        if (!containers || containers.length === 0) {
-            renderAllSections();
-            applyFilters();
-            return;
-        }
         containers.forEach(container => {
             const currentQty = (cart[itemId] && cart[itemId].qty) ? cart[itemId].qty : 0;
             const btnLabel = translations[currentLang].cart_add;
@@ -568,6 +563,8 @@ document.addEventListener('DOMContentLoaded', () => {
         saveCart();
         updateCartUI();
         updateItemCardUI(itemId);
+        renderAllSections();
+        applyFilters();
     }
 
     function updateQty(itemIdOrName, delta) {
@@ -587,13 +584,16 @@ document.addEventListener('DOMContentLoaded', () => {
         saveCart();
         updateCartUI();
         updateItemCardUI(itemId);
+        renderAllSections();
+        applyFilters();
     }
 
     function clearCart() {
         cart = {};
         saveCart();
         updateCartUI();
-        updateAllItemCardsUI();
+        renderAllSections();
+        applyFilters();
     }
 
     function getCartTotal() {
@@ -742,9 +742,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
 
-            // Collapsible categories & cart item click Delegation
-            const menuRoot = document.getElementById('menu-root');
-            menuRoot.addEventListener('click', e => {
+            // Global Cart item & Collapsible categories click Delegation
+            document.addEventListener('click', e => {
                 const addBtn = e.target.closest('.add-item-btn');
                 if (addBtn) {
                     const id = addBtn.dataset.itemId || addBtn.dataset.itemName;
