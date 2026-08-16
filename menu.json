@@ -170,7 +170,7 @@
             },
             {
               "name": "Pollo al verdeo",
-              "available": true,
+              "available": false,
               "price": "$4.800",
               "tags": [],
               "name_en": "Chicken & Green Onion",
