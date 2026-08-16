@@ -481,7 +481,7 @@
           "items": [
             {
               "name": "Malcriada",
-              "price": "$15.000",
+              "price": "$16.000",
               "available": true,
               "desc": "Medallón de carne vacuna y queso",
               "tags": [
@@ -492,7 +492,7 @@
             },
             {
               "name": "Mac Grande",
-              "price": "$18.000",
+              "price": "$19.000",
               "available": true,
               "desc": "Medallón de carne vacuna, queso cheddar, lechuga, pepino, salsa Utah (mayonesa, ketchup, ajo, aceite de oliva, ciboulette, reducción de pepino en almíbar)",
               "tags": [
@@ -503,7 +503,7 @@
             },
             {
               "name": "Tercio de Libra",
-              "price": "$18.000",
+              "price": "$19.000",
               "available": true,
               "desc": "Medallón de carne vacuna, queso cheddar, pepino, salsa españa (cebolla, ketchup, mostaza)",
               "tags": [
@@ -514,7 +514,7 @@
             },
             {
               "name": "4-4-2",
-              "price": "$18.000",
+              "price": "$19.000",
               "available": true,
               "desc": "Medallón de carne vacuna, queso dambo, jamón cocido, lechuga, tomate y huevo frito",
               "tags": [
@@ -525,7 +525,7 @@
             },
             {
               "name": "Ricky Fort",
-              "price": "$18.000",
+              "price": "$19.000",
               "available": true,
               "desc": "Medallón de carne vacuna, manteca de roquefort y cebolla caramelizada",
               "tags": [
@@ -536,7 +536,7 @@
             },
             {
               "name": "Crispy",
-              "price": "$19.000",
+              "price": "$20.000",
               "available": true,
               "desc": "Medallón de carne vacuna, queso cheddar, panceta ahumada, cebolla crispy y salsa Utah",
               "tags": [
@@ -547,7 +547,7 @@
             },
             {
               "name": "Maradona",
-              "price": "$18.000",
+              "price": "$19.000",
               "available": true,
               "desc": "Medallón de carne vacuna, provoleta, salsa criolla, tomate y lechuga",
               "tags": [
@@ -581,7 +581,7 @@
             },
             {
               "name": "Bondiola",
-              "price": "$21.000",
+              "price": "$22.000",
               "available": true,
               "desc": "Pan ciabatta, bondiola de cerdo desmechada, salsa barbacoa, cebolla caramelizada y queso gratinado",
               "tags": [],
@@ -590,7 +590,7 @@
             },
             {
               "name": "Brie y Crudo",
-              "price": "$21.000",
+              "price": "$22.000",
               "available": true,
               "desc": "Pan baguette, queso brie, jamón crudo, rúcula, aceite de oliva y pesto de tomates asados",
               "tags": [],
@@ -599,7 +599,7 @@
             },
             {
               "name": "Vegano",
-              "price": "$19.000",
+              "price": "$20.000",
               "available": true,
               "desc": "Pan ciabatta, tofu a la plancha, ensalada mixta, hummus de garbanzos y veganesa de chimichurri",
               "tags": [
@@ -610,7 +610,7 @@
             },
             {
               "name": "Tostado clásico",
-              "price": "$13.000",
+              "price": "$14.000",
               "available": true,
               "desc": "Pan de molde, queso dambo y jamón cocido",
               "tags": [],
@@ -619,7 +619,7 @@
             },
             {
               "name": "Vegetariano caliente o tostado",
-              "price": "$15.000",
+              "price": "$16.000",
               "available": true,
               "desc": "Lechuga, tomate, zanahoria, palmitos, huevo duro y queso",
               "tags": [],
@@ -637,7 +637,7 @@
           "items": [
             {
               "name": "Ricky fort",
-              "price": "$13.000",
+              "price": "$14.000",
               "available": true,
               "desc": "Con manteca de roquefort y cebolla caramelizada",
               "tags": [],
@@ -646,7 +646,7 @@
             },
             {
               "name": "Criollo",
-              "price": "$12.000",
+              "price": "$13.000",
               "available": true,
               "desc": "Con salsa criolla (cebolla, tomate, morrón, ajo, perejil y vinagre)",
               "tags": [],
@@ -655,7 +655,7 @@
             },
             {
               "name": "Cheddar",
-              "price": "$12.000",
+              "price": "$13.000",
               "available": true,
               "desc": "Con queso cheddar cremoso",
               "tags": [],
@@ -664,7 +664,7 @@
             },
             {
               "name": "Pelado",
-              "price": "$10.000",
+              "price": "$11.000",
               "available": true,
               "desc": "Sin nada",
               "tags": [],
@@ -681,7 +681,7 @@
           "items": [
             {
               "name": "Papas fritas",
-              "price": "$12.000",
+              "price": "$13.000",
               "available": true,
               "tags": [
                 "vegano",
@@ -691,7 +691,7 @@
             },
             {
               "name": "Papas a caballo",
-              "price": "$14.000",
+              "price": "$15.000",
               "available": true,
               "desc": "Papas fritas con huevo frito",
               "tags": [],
@@ -700,7 +700,7 @@
             },
             {
               "name": "Papas con cheddar",
-              "price": "$16.000",
+              "price": "$17.000",
               "available": true,
               "desc": "Papas fritas con cheddar, panceta y cebolla de verdeo",
               "tags": [],
