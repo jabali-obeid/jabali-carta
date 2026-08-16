@@ -233,7 +233,7 @@
             {
               "name": "Pilsen",
               "price": "$9.000",
-              "available": true,
+              "available": false,
               "desc": "Rubia liviana y refrescante, con amargor suave y aroma a lúpulo floral",
               "beerCard": true,
               "image": "img/cervezas/Easy-Pilsen.png",
@@ -246,7 +246,7 @@
             {
               "name": "APA Born & Released",
               "price": "$9.000",
-              "available": true,
+              "available": false,
               "desc": "American Pale Ale con lúpulos cítricos, cuerpo medio y final seco",
               "beerCard": true,
               "image": "img/cervezas/APA.png",
@@ -259,7 +259,7 @@
             {
               "name": "Irish Cream Ale",
               "price": "$9.000",
-              "available": true,
+              "available": false,
               "desc": "Cream Ale estilo irlandés, suave y cremosa con notas tostadas y dulces",
               "beerCard": true,
               "image": "img/cervezas/Irish-Cream-Ale.png",
@@ -272,7 +272,7 @@
             {
               "name": "Session IPA",
               "price": "$9.000",
-              "available": true,
+              "available": false,
               "desc": "IPA de baja graduación, muy lupulada con notas tropicales y cítricas",
               "beerCard": true,
               "image": "img/cervezas/Session-IPA.png",
@@ -285,7 +285,7 @@
             {
               "name": "Old Garage IPA",
               "price": "$9.000",
-              "available": true,
+              "available": false,
               "desc": "IPA intensa con resina, pino y cítricos; amargor pronunciado y aroma potente",
               "beerCard": true,
               "image": "img/cervezas/Old-Garage-IPA.png",
@@ -782,7 +782,7 @@
             {
               "name": "Pilsen",
               "price": "$9.000",
-              "available": true,
+              "available": false,
               "desc": "Rubia liviana y refrescante, con amargor suave y aroma a lúpulo floral",
               "beerCard": true,
               "image": "img/cervezas/Easy-Pilsen.png",
@@ -795,7 +795,7 @@
             {
               "name": "APA Born & Released",
               "price": "$9.000",
-              "available": true,
+              "available": false,
               "desc": "American Pale Ale con lúpulos cítricos, cuerpo medio y final seco",
               "beerCard": true,
               "image": "img/cervezas/APA.png",
@@ -808,7 +808,7 @@
             {
               "name": "Irish Cream Ale",
               "price": "$9.000",
-              "available": true,
+              "available": false,
               "desc": "Cream Ale estilo irlandés, suave y cremosa con notas tostadas y dulces",
               "beerCard": true,
               "image": "img/cervezas/Irish-Cream-Ale.png",
@@ -821,7 +821,7 @@
             {
               "name": "Session IPA",
               "price": "$9.000",
-              "available": true,
+              "available": false,
               "desc": "IPA de baja graduación, muy lupulada con notas tropicales y cítricas",
               "beerCard": true,
               "image": "img/cervezas/Session-IPA.png",
@@ -834,7 +834,7 @@
             {
               "name": "Old Garage IPA",
               "price": "$9.000",
-              "available": true,
+              "available": false,
               "desc": "IPA intensa con resina, pino y cítricos; amargor pronunciado y aroma potente",
               "beerCard": true,
               "image": "img/cervezas/Old-Garage-IPA.png",
@@ -847,7 +847,7 @@
             {
               "name": "Milk / Extra Stout",
               "price": "$9.000",
-              "available": false,
+              "available": true,
               "desc": "Oscura y cremosa con notas de café, chocolate y caramelo. Cuerpo lleno",
               "beerCard": true,
               "image": "img/cervezas/Milk-Stout.png",
