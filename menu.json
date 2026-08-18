@@ -83,7 +83,7 @@
             {
               "name": "Rúcula y Crudo",
               "price": "$33.000",
-              "available": true,
+              "available": false,
               "tags": [],
               "name_en": "Arugula & Prosciutto",
               "desc": "Salsa de tomate, queso muzzarella, rúcula, jamón crudo y aceite de oliva",
@@ -215,7 +215,7 @@
             {
               "name": "Fainá",
               "price": "$4.000",
-              "available": true,
+              "available": false,
               "tags": [
                 "sin-tacc",
                 "vegano"
@@ -456,7 +456,7 @@
             {
               "name": "Michelob lata",
               "price": "$7.000",
-              "available": false,
+              "available": true,
               "tags": [],
               "name_en": "Michelob Can Beer"
             }
