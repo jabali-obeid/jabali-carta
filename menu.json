@@ -83,7 +83,7 @@
             {
               "name": "Rúcula y Crudo",
               "price": "$33.000",
-              "available": false,
+              "available": true,
               "tags": [],
               "name_en": "Arugula & Prosciutto",
               "desc": "Salsa de tomate, queso muzzarella, rúcula, jamón crudo y aceite de oliva",
@@ -92,7 +92,7 @@
             {
               "name": "Champiñones y Panceta",
               "price": "$33.000",
-              "available": false,
+              "available": true,
               "tags": [],
               "name_en": "Mushroom & Bacon",
               "desc": "Salsa de tomate, muzzarella, champiñones feteados, panceta en cubos salteados y chimichurri pizzero",
@@ -170,7 +170,7 @@
             },
             {
               "name": "Pollo al verdeo",
-              "available": false,
+              "available": true,
               "price": "$4.800",
               "tags": [],
               "name_en": "Chicken & Green Onion",
