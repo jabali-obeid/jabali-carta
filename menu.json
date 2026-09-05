@@ -10,7 +10,7 @@
           "items": [
             {
               "name": "Muzzarella",
-              "price": "$24.000",
+              "price": "$26.000",
               "available": true,
               "tags": [],
               "name_en": "Mozzarella",
@@ -19,7 +19,7 @@
             },
             {
               "name": "Napolitana",
-              "price": "$27.000",
+              "price": "$29.000",
               "available": true,
               "tags": [],
               "name_en": "Neapolitan",
@@ -28,7 +28,7 @@
             },
             {
               "name": "Fugazzetta Rellena",
-              "price": "$43.000",
+              "price": "$45.000",
               "available": true,
               "tags": [],
               "name_en": "Stuffed Fugazzetta",
@@ -37,7 +37,7 @@
             },
             {
               "name": "Jamón y Morrón",
-              "price": "$29.000",
+              "price": "$31000",
               "available": true,
               "tags": [],
               "name_en": "Ham & Roasted Red Pepper",
@@ -55,7 +55,7 @@
             },
             {
               "name": "Tomate y Huevo",
-              "price": "$27.000",
+              "price": "$29000",
               "available": true,
               "tags": [],
               "name_en": "Tomato & Sliced Egg",
@@ -64,7 +64,7 @@
             },
             {
               "name": "Peperoni",
-              "price": "$27.000",
+              "price": "$29000",
               "available": true,
               "tags": [],
               "name_en": "Pepperoni",
@@ -73,7 +73,7 @@
             },
             {
               "name": "Provolone",
-              "price": "$29.000",
+              "price": "$31.000",
               "available": true,
               "tags": [],
               "name_en": "Provolone",
@@ -82,7 +82,7 @@
             },
             {
               "name": "Rúcula y Crudo",
-              "price": "$33.000",
+              "price": "$35.000",
               "available": true,
               "tags": [],
               "name_en": "Arugula & Prosciutto",
@@ -91,7 +91,7 @@
             },
             {
               "name": "Champiñones y Panceta",
-              "price": "$33.000",
+              "price": "$35.000",
               "available": true,
               "tags": [],
               "name_en": "Mushroom & Bacon",
