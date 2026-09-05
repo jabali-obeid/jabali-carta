@@ -55,7 +55,7 @@
             },
             {
               "name": "Tomate y Huevo",
-              "price": "$29000",
+              "price": "$29.000",
               "available": true,
               "tags": [],
               "name_en": "Tomato & Sliced Egg",
@@ -64,7 +64,7 @@
             },
             {
               "name": "Peperoni",
-              "price": "$29000",
+              "price": "$29.000",
               "available": true,
               "tags": [],
               "name_en": "Pepperoni",
