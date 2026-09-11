@@ -47,7 +47,7 @@
             {
               "name": "Cuatro Quesos",
               "price": "$29.000",
-              "available": false,
+              "available": true,
               "tags": [],
               "name_en": "Four Cheese",
               "desc": "Muzzarella, queso holanda, roquefort y parmesano",
