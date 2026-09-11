@@ -92,7 +92,7 @@
             {
               "name": "Champiñones y Panceta",
               "price": "$35.000",
-              "available": false,
+              "available": true,
               "tags": [],
               "name_en": "Mushroom & Bacon",
               "desc": "Salsa de tomate, muzzarella, champiñones feteados, panceta en cubos salteados y chimichurri pizzero",
