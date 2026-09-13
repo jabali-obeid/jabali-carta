@@ -29,7 +29,7 @@
             {
               "name": "Fugazzetta Rellena",
               "price": "$45.000",
-              "available": true,
+              "available": false,
               "tags": [],
               "name_en": "Stuffed Fugazzetta",
               "desc": "Muzzarella, cebolla y chimichurri pizzero",
