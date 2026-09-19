@@ -29,7 +29,7 @@
             {
               "name": "Fugazzetta Rellena",
               "price": "$45.000",
-              "available": false,
+              "available": true,
               "tags": [],
               "name_en": "Stuffed Fugazzetta",
               "desc": "Muzzarella, cebolla y chimichurri pizzero",
@@ -92,7 +92,7 @@
             {
               "name": "Champiñones y Panceta",
               "price": "$35.000",
-              "available": false,
+              "available": true,
               "tags": [],
               "name_en": "Mushroom & Bacon",
               "desc": "Salsa de tomate, muzzarella, champiñones feteados, panceta en cubos salteados y chimichurri pizzero",
