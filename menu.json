@@ -272,7 +272,7 @@
             {
               "name": "Session IPA",
               "price": "$9.000",
-              "available": false,
+              "available": true,
               "desc": "IPA de baja graduación, muy lupulada con notas tropicales y cítricas",
               "beerCard": true,
               "image": "img/cervezas/Session-IPA.png",
@@ -285,7 +285,7 @@
             {
               "name": "Old Garage IPA",
               "price": "$9.000",
-              "available": true,
+              "available": false,
               "desc": "IPA intensa con resina, pino y cítricos; amargor pronunciado y aroma potente",
               "beerCard": true,
               "image": "img/cervezas/Old-Garage-IPA.png",
