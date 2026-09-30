@@ -456,7 +456,7 @@
             {
               "name": "Michelob lata",
               "price": "$7.000",
-              "available": true,
+              "available": false,
               "tags": [],
               "name_en": "Michelob Can Beer"
             }
