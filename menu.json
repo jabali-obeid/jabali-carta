@@ -233,7 +233,7 @@
             {
               "name": "Pilsen",
               "price": "$9.000",
-              "available": true,
+              "available": false,
               "desc": "Rubia liviana y refrescante, con amargor suave y aroma a lúpulo floral",
               "beerCard": true,
               "image": "img/cervezas/Easy-Pilsen.png",
@@ -272,7 +272,7 @@
             {
               "name": "Session IPA",
               "price": "$9.000",
-              "available": true,
+              "available": false,
               "desc": "IPA de baja graduación, muy lupulada con notas tropicales y cítricas",
               "beerCard": true,
               "image": "img/cervezas/Session-IPA.png",
