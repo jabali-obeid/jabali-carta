@@ -215,7 +215,7 @@
             {
               "name": "Fainá",
               "price": "$4.000",
-              "available": true,
+              "available": false,
               "tags": [
                 "sin-tacc",
                 "vegano"
