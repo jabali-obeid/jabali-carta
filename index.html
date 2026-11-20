@@ -5,158 +5,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carta QR - Jabalí</title>
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=1.1">
+    <link rel="stylesheet" href="style.css?v=1.9">
 </head>
 
 <body>
     <div class="app-container">
-        <!-- Top Utility Bar: WiFi & Language -->
-        <div class="top-utility-bar">
-            <button id="wifiBtn" class="utility-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
-                    <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
-                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-                    <line x1="12" y1="20" x2="12.01" y2="20"></line>
-                </svg>
-                <span>Wi-Fi</span>
-            </button>
-            <button id="langBtn" class="utility-btn lang-btn" data-lang="es">
-                <span class="lang-flag">🇦🇷</span>
-                <span class="lang-text">ES / EN</span>
-            </button>
-        </div>
-
-        <!-- Banner Reseña -->
-        <a href="https://maps.app.goo.gl/3cimkMsdgdtfZPni6" target="_blank" rel="noopener noreferrer"
-            class="review-banner">
-            <div class="review-banner-left">
-                <div class="review-header-row">
-                    <svg class="google-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                        viewBox="0 0 24 24">
-                        <path fill="#4285F4"
-                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-                        <path fill="#34A853"
-                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-                        <path fill="#FBBC05"
-                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
-                        <path fill="#EA4335"
-                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
-                    </svg>
-                    <span class="review-stars">⭐⭐⭐⭐⭐</span>
+        <div id="srAnnouncer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+        <!-- Compact Single-Row Brand & Utility Header (~56px) -->
+        <header class="site-header">
+            <div class="header-brand">
+                <img src="logo.png" alt="Jabalí" class="brand-logo" width="44" height="44">
+                <div class="brand-text">
+                    <h1 class="logo">JABALÍ</h1>
+                    <p class="subtitle" data-i18n="subtitle">Elegí una de las tres barras</p>
                 </div>
-                <span class="review-text" data-i18n="review_text">¡No olvides dejar tu reseña! 💕✨</span>
             </div>
-            <div class="review-banner-btn">
-                <span data-i18n="review_btn">Dejar reseña</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
+            <div class="header-utilities">
+                <button id="wifiBtn" class="utility-btn" aria-label="Ver Wi-Fi del local" data-i18n-aria="aria_wifi">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                        <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                        <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                        <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                    </svg>
+                    <span>Wi-Fi</span>
+                </button>
+                <button id="langBtn" class="utility-btn lang-btn" data-lang="es" aria-label="Cambiar idioma (Español / English)" data-i18n-aria="aria_lang">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                        </path>
+                    </svg>
+                    <span class="lang-text"><span class="lang-opt active" data-code="es">ES</span><span class="lang-sep">/</span><span class="lang-opt" data-code="en">EN</span></span>
+                </button>
             </div>
-        </a>
+        </header>
 
-        <!-- Dynamic Happy Hour Banner -->
+        <!-- Dynamic Happy Hour Compact Strip -->
         <div id="happyHourBanner" class="happy-hour-banner">
             <!-- Rendered by JS -->
         </div>
 
-        <header>
-            <div class="header-brand">
-                <div class="logo-container">
-                    <img src="logo.png" alt="Jabalí Logo" class="brand-logo">
+        <!-- Sticky Navigation Shell (flush top: 0, no bleed above) -->
+        <div class="sticky-nav-shell">
+            <nav class="category-nav" aria-label="Barras de Jabalí" data-i18n-aria="aria_nav_bars">
+                <button class="nav-btn active" type="button" aria-pressed="true" data-target="pizzeria" data-i18n="nav_pizzeria">Pizzería</button>
+                <button class="nav-btn" type="button" aria-pressed="false" data-target="hamburgueseria"
+                    data-i18n="nav_hamburgueseria">Hamburguesería</button>
+                <button class="nav-btn" type="button" aria-pressed="false" data-target="tragos" data-i18n="nav_tragos">Tragos</button>
+            </nav>
+
+            <!-- Subcategory Horizontal Index with Edge Fade -->
+            <nav id="subcategoryNav" class="subcategory-nav" aria-label="Navegación por subcategorías" data-i18n-aria="aria_nav_subcats">
+                <div id="subcategoryPills" class="subcategory-pills">
+                    <!-- Rendered by JS -->
                 </div>
-                <h1 class="logo">JABALÍ</h1>
-            </div>
-            <p class="subtitle" data-i18n="subtitle">Elegí una de las tres barras</p>
-        </header>
-
-        <nav class="category-nav">
-            <button class="nav-btn active" data-target="pizzeria" data-i18n="nav_pizzeria">Pizzería</button>
-            <button class="nav-btn" data-target="hamburgueseria" data-i18n="nav_hamburgueseria">Hamburguesería</button>
-            <button class="nav-btn" data-target="tragos" data-i18n="nav_tragos">Tragos</button>
-        </nav>
-
-        <!-- Subcategory Floating / Sticky Index Bar -->
-        <nav id="subcategoryNav" class="subcategory-nav" aria-label="Navegación por subcategorías">
-            <button id="subNavPrev" class="sub-nav-arrow prev" aria-label="Anterior">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-            </button>
-            <div id="subcategoryPills" class="subcategory-pills">
-                <!-- Rendered by JS -->
-            </div>
-            <button id="subNavNext" class="sub-nav-arrow next" aria-label="Siguiente">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </button>
-        </nav>
-
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="🔍 Buscar plato, trago o bebida..." autocomplete="off">
-            <button id="clearSearchBtn" class="clear-search-btn hidden" aria-label="Limpiar búsqueda">&times;</button>
+            </nav>
         </div>
 
-        <div class="diet-filters">
-            <button class="diet-btn active" data-filter="all" data-i18n="filter_all">Todos</button>
-            <button class="diet-btn" data-filter="vegano" data-i18n="filter_vegan">🌱 Vegano</button>
-            <button class="diet-btn" data-filter="sin-tacc" data-i18n="filter_sintacc">🌾 Sin TACC (No apto
-                celíaco)</button>
-            <button class="diet-btn" data-filter="sin-alcohol" data-i18n="filter_noalcohol">🚫 Sin Alcohol</button>
+        <div class="controls-toolbar">
+            <div class="search-container">
+                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="searchInput" placeholder="Buscar en las 3 barras..." autocomplete="off"
+                    aria-label="Buscar en las 3 barras" data-i18n-aria="aria_search">
+                <button id="clearSearchBtn" class="clear-search-btn hidden" type="button"
+                    aria-label="Limpiar búsqueda" data-i18n-aria="aria_clear_search">&times;</button>
+            </div>
+
+            <div class="diet-filters">
+                <button class="diet-btn active" type="button" aria-pressed="true" data-filter="all" data-i18n="filter_all">Todos</button>
+                <button class="diet-btn" type="button" aria-pressed="false" data-filter="vegano" data-i18n="filter_vegan">Vegano</button>
+                <button class="diet-btn" type="button" aria-pressed="false" data-filter="sin-tacc" data-i18n="filter_sintacc">Sin TACC (No
+                    celíacos)</button>
+                <button class="diet-btn" type="button" aria-pressed="false" data-filter="sin-alcohol" data-i18n="filter_noalcohol">Sin Alcohol</button>
+            </div>
         </div>
 
         <main class="menu-content">
             <div id="menu-root"></div>
         </main>
 
-        <!-- Floating Actions Bar (Cart + Back to Top side-by-side) -->
-        <div class="floating-actions-bar">
-            <button id="floatingCartBtn" class="floating-cart-btn" title="Ver mi cuenta">
-                <div class="cart-icon-wrapper">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="9" cy="21" r="1"></circle>
-                        <circle cx="20" cy="21" r="1"></circle>
-                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        <!-- Back to top button -->
+        <button id="backToTopBtn" type="button" title="Volver arriba" aria-label="Volver arriba" data-i18n-aria="aria_back_to_top">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+        </button>
+
+        <!-- Full-Width Bottom List / Calculator Bar (shown only when items > 0) -->
+        <div id="listSummaryBar" class="list-summary-bar hidden">
+            <button id="floatingCartBtn" class="list-summary-btn" type="button">
+                <div class="list-summary-left">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"></path>
+                        <path d="M8 7h8"></path>
+                        <path d="M8 11h8"></path>
+                        <path d="M8 15h5"></path>
                     </svg>
+                    <span class="list-summary-title" data-i18n="cart_button">Tu lista</span>
                     <span id="cartBadge" class="cart-badge">0</span>
                 </div>
-                <div class="cart-btn-info">
+                <div class="list-summary-right">
                     <strong id="cartTotalHeader">$0</strong>
+                    <span class="list-summary-cta" data-i18n="cart_bar_cta">Ver cálculo</span>
                 </div>
             </button>
-
-            <!-- Back to top button -->
-            <button id="backToTopBtn" title="Volver arriba">↑</button>
         </div>
 
         <!-- Wi-Fi Modal -->
         <div id="wifiModal" class="modal-overlay hidden">
-            <div class="modal-card">
-                <button class="modal-close-btn" id="closeWifiModal">&times;</button>
+            <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="wifiModalTitle">
+                <button class="modal-close-btn" id="closeWifiModal" type="button" aria-label="Cerrar" data-i18n-aria="aria_close">&times;</button>
                 <div class="wifi-header">
                     <div class="wifi-icon-circle">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
+                            stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
                             <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
                             <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
                             <line x1="12" y1="20" x2="12.01" y2="20"></line>
                         </svg>
                     </div>
-                    <h3 data-i18n="wifi_title">Wi-Fi del Local</h3>
+                    <h2 id="wifiModalTitle" data-i18n="wifi_title">Wi-Fi del Local</h2>
                     <p data-i18n="wifi_subtitle">Conectate gratis en Jabalí</p>
                 </div>
                 <div class="wifi-details">
@@ -169,9 +160,9 @@
                         <strong class="wifi-value" id="wifiPassText">barandino</strong>
                     </div>
                 </div>
-                <button id="copyWifiBtn" class="copy-wifi-btn">
+                <button id="copyWifiBtn" class="copy-wifi-btn" type="button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2">
+                        stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                     </svg>
@@ -182,18 +173,20 @@
 
         <!-- Cart Drawer / Modal -->
         <div id="cartModal" class="modal-overlay hidden">
-            <div class="modal-card cart-drawer-card">
+            <div class="modal-card cart-drawer-card" role="dialog" aria-modal="true" aria-labelledby="cartModalTitle">
                 <div class="cart-header">
-                    <h3>
+                    <h2 id="cartModalTitle">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <circle cx="9" cy="21" r="1"></circle>
-                            <circle cx="20" cy="21" r="1"></circle>
-                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true">
+                            <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"></path>
+                            <path d="M8 7h8"></path>
+                            <path d="M8 11h8"></path>
+                            <path d="M8 15h5"></path>
                         </svg>
-                        <span data-i18n="cart_modal_title">Simulador de Cuenta</span>
-                    </h3>
-                    <button class="modal-close-btn" id="closeCartModal">&times;</button>
+                        <span data-i18n="cart_modal_title">Tu lista · Calculadora</span>
+                    </h2>
+                    <button class="modal-close-btn" id="closeCartModal" type="button" aria-label="Cerrar" data-i18n-aria="aria_close">&times;</button>
                 </div>
 
                 <div id="cartItemsList" class="cart-items-list">
@@ -204,14 +197,18 @@
                     <div class="cart-split-calculator">
                         <label for="splitPeopleInput" data-i18n="cart_split_label">Dividir cuenta entre:</label>
                         <div class="split-controls">
-                            <button id="splitMinusBtn" class="split-qty-btn">-</button>
+                            <button id="splitMinusBtn" class="split-qty-btn" type="button" aria-label="Restar una persona" data-i18n-aria="aria_split_minus">-</button>
                             <input type="number" id="splitPeopleInput" value="1" min="1" max="20" readonly>
-                            <button id="splitPlusBtn" class="split-qty-btn">+</button>
+                            <button id="splitPlusBtn" class="split-qty-btn" type="button" aria-label="Sumar una persona" data-i18n-aria="aria_split_plus">+</button>
                             <span data-i18n="cart_people_text">pers.</span>
                         </div>
                     </div>
 
                     <div class="cart-totals">
+                        <div id="promoDiscountRow" class="promo-discount-row hidden">
+                            <span id="promoDiscountLabel">Promo aplicada:</span>
+                            <strong id="promoDiscountAmount">-$0</strong>
+                        </div>
                         <div class="total-row">
                             <span data-i18n="cart_total">Total estimado:</span>
                             <strong id="cartTotalPrice">$0</strong>
@@ -222,34 +219,98 @@
                         </div>
                     </div>
 
-                    <p class="cart-note" data-i18n="cart_note">💡 Este simulador te ayuda a calcular tu cuenta. Hacé tu
-                        pedido en caja</p>
+                    <p class="cart-note" data-i18n="cart_note">Esta calculadora es orientativa. Hacé tu pedido en caja.
+                    </p>
 
                     <div class="cart-actions">
-                        <button id="clearCartBtn" class="clear-cart-btn" data-i18n="cart_clear">Vaciar borrador</button>
-                        <button id="closeCartActionBtn" class="primary-cart-btn"
-                            data-i18n="cart_close">Entendido</button>
+                        <button id="clearCartBtn" class="clear-cart-btn" type="button" data-i18n="cart_clear">Vaciar lista</button>
+                        <button id="copyListBtn" class="copy-list-btn" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                            <span id="copyListLabel" data-i18n="cart_copy">Copiar lista</span>
+                        </button>
+                        <button id="closeCartActionBtn" class="primary-cart-btn" type="button" data-i18n="cart_close">Cerrar</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Developer footer -->
+        <!-- Footer: Google Review + Developer credit -->
         <footer class="dev-footer">
-            <p class="dev-credit">⚡ Carta digital desarrollada por <strong>Nicolás Gómez</strong></p>
-            <a href="https://instagram.com/nicogomezp10" target="_blank" rel="noopener noreferrer"
-                class="dev-instagram">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
-                @nicogomezp10
+            <a href="https://maps.app.goo.gl/3cimkMsdgdtfZPni6" target="_blank" rel="noopener noreferrer"
+                class="review-banner">
+                <div class="review-banner-left">
+                    <div class="review-header-row">
+                        <svg class="google-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="#4285F4"
+                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                            <path fill="#34A853"
+                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                            <path fill="#FBBC05"
+                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+                            <path fill="#EA4335"
+                                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+                        </svg>
+                        <span class="review-stars" aria-label="5 estrellas">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                        </span>
+                    </div>
+                    <span class="review-text" data-i18n="review_text">¿La pasaste bien en Jabalí? Dejanos tu
+                        reseña</span>
+                </div>
+                <div class="review-banner-btn">
+                    <span data-i18n="review_btn">Dejar reseña</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                </div>
             </a>
-            <span class="dev-tagline" data-i18n="dev_tagline">¿Querés una carta QR para tu negocio? ¡Escribime!</span>
+
+            <div class="dev-credit-row">
+                <p class="dev-credit">Carta digital desarrollada por <strong>Nicolás Gómez</strong></p>
+                <a href="https://instagram.com/nicogomezp10" target="_blank" rel="noopener noreferrer"
+                    class="dev-instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                        fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                    @nicogomezp10
+                </a>
+                <span class="dev-tagline" data-i18n="dev_tagline">¿Querés una carta QR para tu negocio?
+                    ¡Escribime!</span>
+            </div>
         </footer>
 
     </div>
-    <script src="app.js?v=1.3"></script>
+    <script src="app.js?v=2.0"></script>
 
 </body>
 

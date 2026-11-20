@@ -1,109 +1,162 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ── Fullscreen on first tap (non-intrusive) ────────────────────────────────
-    const enterFullscreen = () => {
-        const elem = document.documentElement;
-        if (!document.fullscreenElement) {
-            const request = elem.requestFullscreen || elem.webkitRequestFullscreen || elem.msRequestFullscreen;
-            if (request) request.call(elem).catch(() => { });
-        }
-        document.removeEventListener('click', enterFullscreen);
-        document.removeEventListener('touchstart', enterFullscreen);
-    };
-    document.addEventListener('click', enterFullscreen);
-    document.addEventListener('touchstart', enterFullscreen, { passive: true });
-
     // ── Translations Dictionary ───────────────────────────────────────────────
     const translations = {
         es: {
-            review_text: "¡No olvides dejar tu reseña! 💕✨",
+            review_text: "¿La pasaste bien en Jabalí? Dejanos tu reseña",
             review_btn: "Dejar reseña",
             subtitle: "Elegí una de las tres barras",
             nav_pizzeria: "Pizzería",
             nav_hamburgueseria: "Hamburguesería",
             nav_tragos: "Tragos",
-            search_placeholder: "🔍 Buscar plato, trago o bebida...",
+            search_placeholder: "Buscar en las 3 barras...",
             filter_all: "Todos",
-            filter_vegan: "🌱 Vegano",
-            filter_sintacc: "🌾 Sin TACC (No apto celíaco)",
-            filter_noalcohol: "🚫 Sin Alcohol",
-            cart_button: "Mi Cuenta",
-            cart_modal_title: "Simulador de Cuenta",
+            filter_vegan: "Vegano",
+            filter_sintacc: "Sin TACC (No celíacos)",
+            filter_noalcohol: "Sin Alcohol",
+            cart_button: "Tu lista",
+            cart_bar_cta: "Ver cálculo",
+            cart_modal_title: "Tu lista · Calculadora",
             cart_split_label: "Dividir cuenta entre:",
             cart_people_text: "pers.",
             cart_total: "Total estimado:",
             cart_per_person: "Por persona:",
-            cart_note: "💡 Este simulador te ayuda a calcular tu cuenta.",
-            cart_clear: "Vaciar borrador",
-            cart_close: "Entendido",
-            cart_empty: "No agregaste ningún producto a tu cuenta aún.",
-            cart_add: "+ Agregar",
+            cart_note: "Esta calculadora es orientativa. Hacé tu pedido en caja.",
+            cart_clear: "Vaciar lista",
+            cart_clear_confirm: "¿Confirmar vaciado?",
+            cart_copy: "Copiar lista",
+            cart_copied: "Lista copiada",
+            cart_close: "Cerrar",
+            cart_empty: "Todavía no sumaste productos a tu lista.",
+            cart_add: "+ Sumar",
+            extra_double: "Doble medallón (+$4.000)",
+            extra_sintacc: "Pan sin TACC (+$4.000)",
+            promo_hh_label: "Happy Hour 2×$14.000:",
+            promo_fernet_label: "Miércoles 2×1 Fernet:",
+            promo_combined_label: "Promos aplicadas:",
             wifi_title: "Wi-Fi del Local",
             wifi_subtitle: "Conectate gratis en Jabalí",
             wifi_network: "Red (SSID):",
             wifi_password: "Contraseña:",
             wifi_copy: "Copiar contraseña",
-            wifi_copied: "¡Copiada con éxito! 🎉",
-            dev_tagline: "¿Querés una carta QR para tu negocio? ¡Escribime!",
+            wifi_copied: "Contraseña copiada",
+            dev_tagline: "¿Querés una carta QR para tu negocio? Escribime.",
             hh_title_active: "Happy Hour Cerveza Tirada",
             hh_deal_active: "2 Pintas 500ml x $14.000 (18:00 a 21:00 hs)",
             hh_tag_active: "ACTIVO HASTA 21:00 HS",
             hh_title_expired: "Happy Hour Cerveza Tirada",
-            hh_deal_expired: "Todos los días HH 18:00 a 21:00 hs | 2 Pintas x $14.000",
+            hh_deal_expired: "Todos los días 18:00 a 21:00 hs · 2 Pintas x $14.000",
             hh_tag_expired: "DE 18:00 A 21:00 HS",
-            fernet_promo_badge_active: "🔥 2X1 (Miércoles hasta 22:00 hs)",
-            fernet_promo_badge_info: "🍹 2X1 sólo Miércoles hasta 22:00 hs",
-            fernet_banner_active_title: "2X1 en Fernet con Coca",
-            fernet_banner_active_deal: "¡Promo de Miércoles activa hasta las 22:00 hs!",
+            fernet_promo_badge_active: "2x1 Miércoles hasta 22:00 hs",
+            fernet_promo_badge_info: "2x1 sólo Miércoles (18 a 22 hs)",
+            fernet_banner_active_title: "2x1 en Fernet con Coca",
+            fernet_banner_active_deal: "Promo de Miércoles activa hasta las 22:00 hs",
             fernet_banner_active_tag: "ACTIVO HASTA 22:00 HS",
-            fernet_banner_expired_title: "2X1 en Fernet con Coca",
-            fernet_banner_expired_deal: "Promo especial todos los Miércoles de 18:00 a 22:00 hs",
+            fernet_banner_expired_title: "2x1 en Fernet con Coca",
+            fernet_banner_expired_deal: "Todos los Miércoles de 18:00 a 22:00 hs",
             fernet_banner_expired_tag: "SÓLO MIÉRCOLES",
+            empty_search_title: "No encontramos resultados",
+            empty_search_desc: "Probá con otro nombre o limpiá la búsqueda para volver a la carta.",
+            empty_filter_desc: "No hay productos con ese filtro en esta barra.",
+            empty_reset_btn: "Limpiar filtros",
+            search_bar_prefix: "Barra",
+            error_load_title: "No pudimos cargar la carta",
+            error_load_desc: "Revisá tu conexión e intentá nuevamente.",
+            error_retry_btn: "Reintentar",
+            aria_wifi: "Ver Wi-Fi del local",
+            aria_lang: "Cambiar idioma (Español / English)",
+            aria_nav_bars: "Barras de Jabalí",
+            aria_nav_subcats: "Navegación por subcategorías",
+            aria_search: "Buscar en las 3 barras",
+            aria_clear_search: "Limpiar búsqueda",
+            aria_back_to_top: "Volver arriba",
+            aria_close: "Cerrar",
+            aria_split_minus: "Restar una persona",
+            aria_split_plus: "Sumar una persona",
+            aria_add_item: "Sumar",
+            aria_minus_item: "Quitar uno de",
+            aria_plus_item: "Sumar uno más de",
+            sr_added: "sumado a tu lista",
+            sr_removed: "quitado de tu lista",
+            sr_list_cleared: "Lista vaciada",
         },
         en: {
-            review_text: "Don't forget to leave us a review! 💕✨",
+            review_text: "Enjoyed Jabalí? Leave us a review",
             review_btn: "Leave review",
             subtitle: "Choose one of our three bars",
             nav_pizzeria: "Pizzeria",
             nav_hamburgueseria: "Burger Bar",
             nav_tragos: "Cocktails & Drinks",
-            search_placeholder: "🔍 Search dish, drink or beverage...",
+            search_placeholder: "Search across all 3 bars...",
             filter_all: "All",
-            filter_vegan: "🌱 Vegan",
-            filter_sintacc: "🌾 Gluten Free (Not for celiacs)",
-            filter_noalcohol: "🚫 Non-Alcoholic",
-            cart_button: "My Bill",
-            cart_modal_title: "Bill Simulator",
+            filter_vegan: "Vegan",
+            filter_sintacc: "Gluten-Free (Not celiac-safe)",
+            filter_noalcohol: "Non-Alcoholic",
+            cart_button: "Your list",
+            cart_bar_cta: "View bill",
+            cart_modal_title: "Your List · Bill Calculator",
             cart_split_label: "Split bill between:",
             cart_people_text: "ppl.",
             cart_total: "Estimated total:",
             cart_per_person: "Per person:",
-            cart_note: "💡 This simulator helps calculate your bill.",
-            cart_clear: "Clear bill",
-            cart_close: "Got it",
-            cart_empty: "You haven't added any items to your bill yet.",
+            cart_note: "This calculator is an estimate. Place your order at the counter.",
+            cart_clear: "Clear list",
+            cart_clear_confirm: "Confirm clear?",
+            cart_copy: "Copy list",
+            cart_copied: "List copied",
+            cart_close: "Close",
+            cart_empty: "You haven't added any items to your list yet.",
             cart_add: "+ Add",
+            extra_double: "Double patty (+$4,000)",
+            extra_sintacc: "GF bun (+$4,000)",
+            promo_hh_label: "Happy Hour 2×$14,000:",
+            promo_fernet_label: "Wednesday 2-for-1 Fernet:",
+            promo_combined_label: "Promos applied:",
             wifi_title: "Venue Wi-Fi",
             wifi_subtitle: "Connect for free at Jabalí",
             wifi_network: "Network (SSID):",
             wifi_password: "Password:",
             wifi_copy: "Copy password",
-            wifi_copied: "Copied successfully! 🎉",
-            dev_tagline: "Want a QR menu for your business? Contact me!",
+            wifi_copied: "Password copied",
+            dev_tagline: "Want a QR menu for your business? Get in touch.",
             hh_title_active: "Draft Beer Happy Hour",
             hh_deal_active: "2 Pints 500ml for $14,000 (6:00 to 9:00 PM)",
             hh_tag_active: "ACTIVE UNTIL 9:00 PM",
             hh_title_expired: "Draft Beer Happy Hour",
-            hh_deal_expired: "Every day HH 6:00 to 9:00 PM | 2 Pints x $14,000",
+            hh_deal_expired: "Every day 6:00 to 9:00 PM · 2 Pints x $14,000",
             hh_tag_expired: "6:00 TO 9:00 PM",
-            fernet_promo_badge_active: "🔥 2X1 (Wednesdays until 10:00 PM)",
-            fernet_promo_badge_info: "🍹 2X1 Wednesdays only (until 10:00 PM)",
-            fernet_banner_active_title: "2X1 on Fernet con Coca",
-            fernet_banner_active_deal: "Wednesday promo active until 10:00 PM!",
+            fernet_promo_badge_active: "2-for-1 Wed until 10:00 PM",
+            fernet_promo_badge_info: "2-for-1 Wednesdays (6 to 10 PM)",
+            fernet_banner_active_title: "2-for-1 Fernet & Coke",
+            fernet_banner_active_deal: "Wednesday promo active until 10:00 PM",
             fernet_banner_active_tag: "ACTIVE UNTIL 10:00 PM",
-            fernet_banner_expired_title: "2X1 on Fernet con Coca",
-            fernet_banner_expired_deal: "Special promo every Wednesday 6:00 to 10:00 PM",
+            fernet_banner_expired_title: "2-for-1 Fernet & Coke",
+            fernet_banner_expired_deal: "Every Wednesday from 6:00 to 10:00 PM",
             fernet_banner_expired_tag: "WEDNESDAYS ONLY",
+            empty_search_title: "No results found",
+            empty_search_desc: "Try another term or clear your search to see the full menu.",
+            empty_filter_desc: "No items match this filter in this bar.",
+            empty_reset_btn: "Clear filters",
+            search_bar_prefix: "Bar",
+            error_load_title: "Couldn't load the menu",
+            error_load_desc: "Check your connection and try again.",
+            error_retry_btn: "Try again",
+            aria_wifi: "View venue Wi-Fi",
+            aria_lang: "Switch language (Spanish / English)",
+            aria_nav_bars: "Jabalí bars",
+            aria_nav_subcats: "Subcategory navigation",
+            aria_search: "Search across all 3 bars",
+            aria_clear_search: "Clear search",
+            aria_back_to_top: "Back to top",
+            aria_close: "Close",
+            aria_split_minus: "Decrease people count",
+            aria_split_plus: "Increase people count",
+            aria_add_item: "Add",
+            aria_minus_item: "Remove one",
+            aria_plus_item: "Add one more",
+            sr_added: "added to your list",
+            sr_removed: "removed from your list",
+            sr_list_cleared: "List cleared",
         }
     };
 
@@ -158,6 +211,11 @@ document.addEventListener('DOMContentLoaded', () => {
                             const slugName = item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
                             item.id = `${sec.id}_${slugName}_${itemCounter}`;
                         }
+                        item._sectionId = sec.id;
+                        item._categoryTitle = cat.title;
+                        item._isDraftBeer = (sec.id === 'pizzeria' || sec.id === 'hamburgueseria') && !!item.beerCard;
+                        item._isFernetPromo = sec.id === 'tragos' && (!!item.wednesdayPromo || item.name.toLowerCase().includes('fernet'));
+                        item._isBurger = sec.id === 'hamburgueseria' && cat.title === 'Hamburguesas';
                         menuItemMap[item.id] = item;
                     }
                 });
@@ -195,6 +253,19 @@ document.addEventListener('DOMContentLoaded', () => {
         return parseInt(cleaned, 10) || 0;
     }
 
+    function escapeAttr(str) {
+        return String(str || '').replace(/"/g, '&quot;');
+    }
+
+    function announce(message) {
+        const el = document.getElementById('srAnnouncer');
+        if (!el || !message) return;
+        el.textContent = '';
+        requestAnimationFrame(() => {
+            el.textContent = message;
+        });
+    }
+
     function formatPrice(num) {
         return '$' + num.toLocaleString('es-AR');
     }
@@ -207,14 +278,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const parts = new Intl.DateTimeFormat('en-US', options).formatToParts(now);
             let hour = 0, minute = 0;
             parts.forEach(p => {
-                if (p.type === 'hour') hour = parseInt(p.value, 10);
+                if (p.type === 'hour') hour = parseInt(p.value, 10) % 24;
                 if (p.type === 'minute') minute = parseInt(p.value, 10);
             });
-            // Happy hour active until 21:00 hs (GMT-3)
-            return hour < 21 || (hour === 21 && minute === 0);
+            // Happy hour active from 18:00 to 21:00 hs (GMT-3)
+            return (hour >= 18 && hour < 21) || (hour === 21 && minute === 0);
         } catch (e) {
-            const h = new Date().getHours();
-            return h < 21;
+            const d = new Date();
+            const h = d.getHours();
+            const m = d.getMinutes();
+            return (h >= 18 && h < 21) || (h === 21 && m === 0);
         }
     }
 
@@ -226,16 +299,18 @@ document.addEventListener('DOMContentLoaded', () => {
             let weekday = '', hour = 0, minute = 0;
             parts.forEach(p => {
                 if (p.type === 'weekday') weekday = p.value;
-                if (p.type === 'hour') hour = parseInt(p.value, 10);
+                if (p.type === 'hour') hour = parseInt(p.value, 10) % 24;
                 if (p.type === 'minute') minute = parseInt(p.value, 10);
             });
-            // Wednesday is 'Wed' in en-US
+            // Wednesday is 'Wed' in en-US; active from 18:00 to 22:00 hs (GMT-3)
             const isWednesday = weekday === 'Wed';
-            const isBefore22 = hour < 22 || (hour === 22 && minute === 0);
-            return isWednesday && isBefore22;
+            const isPromoHours = (hour >= 18 && hour < 22) || (hour === 22 && minute === 0);
+            return isWednesday && isPromoHours;
         } catch (e) {
             const d = new Date();
-            return d.getDay() === 3 && (d.getHours() < 22 || (d.getHours() === 22 && d.getMinutes() === 0));
+            const h = d.getHours();
+            const m = d.getMinutes();
+            return d.getDay() === 3 && ((h >= 18 && h < 22) || (h === 22 && m === 0));
         }
     }
 
@@ -243,6 +318,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const slug = catTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
         return `cat-${sectionId}-${slug}`;
     }
+
+    const ICON_CLOCK = `<svg class="hh-svg-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`;
+    const ICON_PROMO = `<svg class="hh-svg-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>`;
+    const ICON_CHEVRON_RIGHT = `<svg class="hh-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>`;
 
     function renderHappyHourBanner() {
         const bannerContainer = document.getElementById('happyHourBanner');
@@ -254,58 +333,46 @@ document.addEventListener('DOMContentLoaded', () => {
         const t = translations[currentLang];
 
         if (activeSecId === 'tragos') {
-            // Exclusive 2x1 Fernet promo banner in Tragos section
             if (isFernetActive) {
+                bannerContainer.classList.remove('hidden');
                 bannerContainer.innerHTML = `
-                    <div class="hh-card active-hh fernet-banner">
+                    <button type="button" class="hh-card active-hh fernet-banner">
                         <div class="hh-left">
-                            <span class="hh-fire-icon">🍹</span>
+                            <span class="hh-fire-icon">${ICON_PROMO}</span>
                             <div class="hh-info">
                                 <span class="hh-title">${t.fernet_banner_active_title}</span>
                                 <span class="hh-deal">${t.fernet_banner_active_deal}</span>
                             </div>
                         </div>
-                        <span class="hh-time-tag">${t.fernet_banner_active_tag}</span>
-                    </div>`;
+                        <span class="hh-right">
+                            <span class="hh-time-tag">${t.fernet_banner_active_tag}</span>
+                            ${ICON_CHEVRON_RIGHT}
+                        </span>
+                    </button>`;
             } else {
-                bannerContainer.innerHTML = `
-                    <div class="hh-card expired-hh fernet-banner">
-                        <div class="hh-left">
-                            <span class="hh-fire-icon">🍹</span>
-                            <div class="hh-info">
-                                <span class="hh-title">${t.fernet_banner_expired_title}</span>
-                                <span class="hh-deal">${t.fernet_banner_expired_deal}</span>
-                            </div>
-                        </div>
-                        <span class="hh-time-tag">${t.fernet_banner_expired_tag}</span>
-                    </div>`;
+                bannerContainer.innerHTML = '';
+                bannerContainer.classList.add('hidden');
             }
         } else {
-            // Pizzería & Hamburguesería: Exclusive Cerveza Tirada Happy Hour
             if (isHappyHour) {
+                bannerContainer.classList.remove('hidden');
                 bannerContainer.innerHTML = `
-                    <div class="hh-card active-hh">
+                    <button type="button" class="hh-card active-hh">
                         <div class="hh-left">
-                            <span class="hh-fire-icon">🍺</span>
+                            <span class="hh-fire-icon">${ICON_PROMO}</span>
                             <div class="hh-info">
                                 <span class="hh-title">${t.hh_title_active}</span>
                                 <span class="hh-deal">${t.hh_deal_active}</span>
                             </div>
                         </div>
-                        <span class="hh-time-tag">${t.hh_tag_active}</span>
-                    </div>`;
+                        <span class="hh-right">
+                            <span class="hh-time-tag">${t.hh_tag_active}</span>
+                            ${ICON_CHEVRON_RIGHT}
+                        </span>
+                    </button>`;
             } else {
-                bannerContainer.innerHTML = `
-                    <div class="hh-card expired-hh">
-                        <div class="hh-left">
-                            <span class="hh-fire-icon">⏳</span>
-                            <div class="hh-info">
-                                <span class="hh-title">${t.hh_title_expired}</span>
-                                <span class="hh-deal">${t.hh_deal_expired}</span>
-                            </div>
-                        </div>
-                        <span class="hh-time-tag">${t.hh_tag_expired}</span>
-                    </div>`;
+                bannerContainer.innerHTML = '';
+                bannerContainer.classList.add('hidden');
             }
         }
     }
@@ -318,14 +385,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const langBtn = document.getElementById('langBtn');
         if (langBtn) {
-            langBtn.querySelector('.lang-flag').textContent = lang === 'es' ? '🇦🇷' : '🇬🇧';
-            langBtn.querySelector('.lang-text').textContent = lang === 'es' ? 'ES' : 'EN';
+            langBtn.querySelectorAll('.lang-opt').forEach(opt => {
+                opt.classList.toggle('active', opt.dataset.code === lang);
+            });
+            langBtn.dataset.lang = lang;
         }
 
         const t = translations[lang];
         document.querySelectorAll('[data-i18n]').forEach(elem => {
             const key = elem.dataset.i18n;
             if (t[key]) elem.textContent = t[key];
+        });
+        document.querySelectorAll('[data-i18n-aria]').forEach(elem => {
+            const key = elem.dataset.i18nAria;
+            if (t[key]) {
+                elem.setAttribute('aria-label', t[key]);
+                if (elem.hasAttribute('title')) elem.setAttribute('title', t[key]);
+            }
         });
 
         const searchInput = document.getElementById('searchInput');
@@ -366,43 +442,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function setupSubcategoryNavArrows() {
-        const subNavPrev = document.getElementById('subNavPrev');
-        const subNavNext = document.getElementById('subNavNext');
-        const pillsContainer = document.getElementById('subcategoryPills');
-
-        if (!pillsContainer) return;
-
-        const updateArrowVisibility = () => {
-            if (!subNavPrev || !subNavNext) return;
-            const scrollLeft = pillsContainer.scrollLeft;
-            const maxScrollLeft = pillsContainer.scrollWidth - pillsContainer.clientWidth;
-
-            subNavPrev.classList.toggle('disabled', scrollLeft <= 5);
-            subNavNext.classList.toggle('disabled', scrollLeft >= maxScrollLeft - 5);
-        };
-
-        if (subNavPrev && !subNavPrev.dataset.bound) {
-            subNavPrev.dataset.bound = 'true';
-            subNavPrev.addEventListener('click', (e) => {
-                e.stopPropagation();
-                pillsContainer.scrollBy({ left: -160, behavior: 'smooth' });
-            });
-        }
-
-        if (subNavNext && !subNavNext.dataset.bound) {
-            subNavNext.dataset.bound = 'true';
-            subNavNext.addEventListener('click', (e) => {
-                e.stopPropagation();
-                pillsContainer.scrollBy({ left: 160, behavior: 'smooth' });
-            });
-        }
-
-        pillsContainer.removeEventListener('scroll', updateArrowVisibility);
-        pillsContainer.addEventListener('scroll', updateArrowVisibility, { passive: true });
-        setTimeout(updateArrowVisibility, 80);
-    }
-
     function renderSubcategoryNav(sectionId) {
         const pillsContainer = document.getElementById('subcategoryPills');
         if (!pillsContainer || !menuData) return;
@@ -420,33 +459,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 ? (cat.title_en || categoryTranslations.en[cat.title])
                 : cat.title;
 
-            // Clean leading emojis from rawTitle if present to avoid duplicates
+            // Clean leading emojis from rawTitle
             const cleanTitle = rawTitle.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}\s]+/gu, '').trim();
+            const tLower = cleanTitle.toLowerCase();
 
-            let icon = '';
-            const tLower = rawTitle.toLowerCase();
-            if (tLower.includes('pizza')) icon = '🍕 ';
-            else if (tLower.includes('empanada')) icon = '🥟 ';
-            else if (tLower.includes('hamburguesa')) icon = '🍔 ';
-            else if (tLower.includes('sandwich')) icon = '🥪 ';
-            else if (tLower.includes('pancho')) icon = '🌭 ';
-            else if (tLower.includes('picar')) icon = '🍟 ';
-            else if (tLower.includes('ensalada')) icon = '🥗 ';
-            else if (tLower.includes('postre')) icon = '🍰 ';
-            else if (tLower.includes('trago') || tLower.includes('clásico')) icon = '🍹 ';
-            else if (tLower.includes('cerveza')) icon = '🍺 ';
-            else if (tLower.includes('vino')) icon = '🍷 ';
-            else if (tLower.includes('whisky')) icon = '🥃 ';
-            else if (tLower.includes('shot')) icon = '🥂 ';
-            else if (tLower.includes('mocktail')) icon = '🍹 ';
-            else if (tLower.includes('café')) icon = '☕ ';
-
-            const isBeerCat = tLower.includes('cerveza');
+            const isBeerCat = tLower.includes('cerveza') || tLower.includes('draft beer');
             const extraClass = isBeerCat ? ' sub-pill-highlight' : '';
             const isFirst = idx === 0 ? ' active' : '';
 
-            return `<button class="sub-pill sub-pill-entry${isFirst}${extraClass}" data-cat-id="${catId}" style="animation-delay:${idx * 0.04}s">
-                <span class="pill-icon">${icon}</span><span class="pill-text">${cleanTitle}</span>
+            return `<button class="sub-pill${isFirst}${extraClass}" data-cat-id="${catId}">
+                <span class="pill-text">${cleanTitle}</span>
             </button>`;
         }).join('\n');
 
@@ -459,8 +481,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!targetElem) return;
 
                 targetElem.classList.remove('collapsed');
+                const hdrBtn = targetElem.querySelector('.category-header');
+                if (hdrBtn) hdrBtn.setAttribute('aria-expanded', 'true');
 
-                const headerOffset = 135;
+                const headerOffset = 118;
                 const elementPosition = targetElem.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -476,28 +500,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         enablePillsDragScroll();
-        setupSubcategoryNavArrows();
     }
 
-    // Happy Hour Banner Click Shortcut to Cervezas Tiradas / Fernet
+    // Happy Hour Banner Click Shortcut to Cervezas Tiradas / Fernet (scoped to active section)
     const hhBannerContainer = document.getElementById('happyHourBanner');
     if (hhBannerContainer) {
         hhBannerContainer.addEventListener('click', () => {
-            const activeSecId = document.body.getAttribute('data-active-section');
-            if (activeSecId === 'tragos') {
-                const targetCat = document.getElementById('cat-tragos-tragos-directos');
-                if (targetCat) {
-                    targetCat.classList.remove('collapsed');
-                    const offsetPosition = targetCat.getBoundingClientRect().top + window.pageYOffset - 135;
-                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                }
-            } else {
-                const beerCat = Array.from(document.querySelectorAll('.menu-category')).find(c => c.id.includes('cervezas-tiradas'));
-                if (beerCat) {
-                    beerCat.classList.remove('collapsed');
-                    const offsetPosition = beerCat.getBoundingClientRect().top + window.pageYOffset - 135;
-                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-                }
+            const activeSecId = document.body.getAttribute('data-active-section') || 'pizzeria';
+            const targetCat = activeSecId === 'tragos'
+                ? document.getElementById('cat-tragos-tragos-directos')
+                : document.querySelector(`#${activeSecId} .menu-category[id*="cervezas-tiradas"]`);
+
+            if (targetCat) {
+                targetCat.classList.remove('collapsed');
+                const hdrBtn = targetCat.querySelector('.category-header');
+                if (hdrBtn) hdrBtn.setAttribute('aria-expanded', 'true');
+                const offsetPosition = targetCat.getBoundingClientRect().top + window.pageYOffset - 118;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
             }
         });
     }
@@ -575,20 +594,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isBeer) classes += ' beer-card';
         if (item.available === false) classes += ' agotado';
 
-        const mocktailGradients = {
-            'Limonada': 'mocktail-limonada',
-            'Pomelada': 'mocktail-pomelada',
-            'Limonada Frutos Rojos': 'mocktail-limonada-roja',
-            'Natural Mystic': 'mocktail-natural-mystic',
-            'Aljaba': 'mocktail-aljaba'
-        };
-        if (mocktailGradients[item.name]) {
-            classes += ' ' + mocktailGradients[item.name];
-        }
-
         let styleAttr = isBeer ? ` style="background-image:url('${item.image}')"` : '';
 
-        const hhBadgeHtml = hhActive ? `<span class="hh-badge">🔥 HH 2x$14k</span>` : '';
+        const hhBadgeHtml = hhActive ? `<span class="hh-badge">HH 2x$14k</span>` : '';
 
         let fernetBadgeHtml = '';
         if (isFernet) {
@@ -624,13 +632,27 @@ document.addEventListener('DOMContentLoaded', () => {
             inner += `<p class="item-desc">${displayDesc}</p>`;
         }
 
-        // Diet & Promo badges (placed below description/style tag like Amaro italiano & Pilsen)
+        // Diet & Promo badges (omit redundant "Sin Alcohol" tag inside "Bebidas sin Alcohol" / "Mocktails (Sin Alcohol)")
         const dietBadges = [];
+        const isNonAlcCategory = (item._categoryTitle || '').toLowerCase().includes('sin alcohol');
         if (item.tags) {
-            if (item.tags.includes('vegano') && !isTragos) dietBadges.push(`<span class="diet-tag tag-vegano">${currentLang === 'en' ? '🌱 Vegan' : '🌱 Vegano'}</span>`);
-            if (item.tags.includes('sin-tacc') && !isBeer) dietBadges.push(`<span class="diet-tag tag-sin-tacc">${currentLang === 'en' ? '🌾 Gluten Free' : '🌾 Sin TACC'}</span>`);
-            if (item.tags.includes('sin-alcohol')) dietBadges.push(`<span class="diet-tag tag-sin-alcohol">${currentLang === 'en' ? '🚫 Non-Alcoholic' : '🚫 Sin Alcohol'}</span>`);
+            if (item.tags.includes('vegano') && !isTragos) {
+                dietBadges.push(`<span class="diet-tag tag-vegano">${currentLang === 'en' ? 'Vegan' : 'Vegano'}</span>`);
+            }
+            if (item.tags.includes('sin-tacc') && !isBeer) {
+                const isBurger = !!item._isBurger;
+                const sinTaccLabel = isBurger
+                    ? (currentLang === 'en' ? 'GF Option (+$4,000 · Not celiac-safe)' : 'Opción Sin TACC (+$4.000 · No celíacos)')
+                    : (currentLang === 'en' ? 'Gluten-Free (Not celiac-safe)' : 'Sin TACC (No celíacos)');
+                dietBadges.push(`<span class="diet-tag tag-sin-tacc">${sinTaccLabel}</span>`);
+            }
+            if (item.tags.includes('sin-alcohol') && !isNonAlcCategory) {
+                dietBadges.push(`<span class="diet-tag tag-sin-alcohol">${currentLang === 'en' ? 'Non-Alcoholic' : 'Sin Alcohol'}</span>`);
+            }
         }
+
+        const isCompact = !displayDesc && !isBeer && dietBadges.length === 0 && !hhBadgeHtml && !fernetBadgeHtml;
+        if (isCompact) classes += ' menu-item-compact';
 
         if (isBeer) {
             const abvBadge = item.abv ? `<span class="beer-badge">${item.abv} ABV</span>` : '';
@@ -643,20 +665,22 @@ document.addEventListener('DOMContentLoaded', () => {
         // Cart Actions per item
         if (item.price && item.available !== false) {
             const currentQty = (cart[item.id] && cart[item.id].qty) ? cart[item.id].qty : 0;
-            const btnLabel = translations[currentLang].cart_add;
+            const t = translations[currentLang];
+            const btnLabel = t.cart_add;
+            const safeName = escapeAttr(displayName);
 
             let actionsHtml = '';
             if (currentQty === 0) {
                 actionsHtml = `
-                    <button class="add-item-btn" data-item-id="${item.id}">
+                    <button type="button" class="add-item-btn" data-item-id="${item.id}" aria-label="${escapeAttr(t.aria_add_item + ' ' + displayName)}">
                         ${btnLabel}
                     </button>`;
             } else {
                 actionsHtml = `
                     <div class="qty-control-inline">
-                        <button class="qty-btn cart-minus-btn" data-item-id="${item.id}">-</button>
+                        <button type="button" class="qty-btn cart-minus-btn" data-item-id="${item.id}" aria-label="${escapeAttr(t.aria_minus_item + ' ' + displayName)}">-</button>
                         <span class="qty-val">${currentQty}</span>
-                        <button class="qty-btn cart-plus-btn" data-item-id="${item.id}">+</button>
+                        <button type="button" class="qty-btn cart-plus-btn" data-item-id="${item.id}" aria-label="${escapeAttr(t.aria_plus_item + ' ' + displayName)}">+</button>
                     </div>`;
             }
 
@@ -680,21 +704,31 @@ document.addEventListener('DOMContentLoaded', () => {
             extrasHtml = `<div class="item-extras">${rawExtras.map(e => `<p>${e}</p>`).join('')}</div>`;
         }
 
-        const catTitle = (currentLang === 'en' && (cat.title_en || categoryTranslations.en[cat.title]))
+        const rawCatTitle = (currentLang === 'en' && (cat.title_en || categoryTranslations.en[cat.title]))
             ? (cat.title_en || categoryTranslations.en[cat.title])
             : cat.title;
+        const catTitle = rawCatTitle.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}\s]+/gu, '').trim();
 
         const itemsHtml = cat.items.map(item => renderItem(item, sectionId)).join('\n');
         const catId = getCatId(sectionId, cat.title);
+        const allSoldOut = cat.items.length > 0 && cat.items.every(item => item.available === false);
+        const soldOutLabel = currentLang === 'en' ? 'Sold Out' : 'Agotado';
+        const collapsedClass = allSoldOut ? ' collapsed' : '';
 
         return `
-        <div id="${catId}" class="menu-category" style="animation-delay:${(index + 1) * 0.1}s">
-            <div class="category-header">
-                <h2 class="category-title">${catTitle}</h2><span class="toggle-icon"></span>
-            </div>
+        <div id="${catId}" class="menu-category${collapsedClass}">
+            <h2 class="category-heading">
+                <button type="button" class="category-header" aria-expanded="${!allSoldOut}" aria-controls="${catId}-grid">
+                    <span class="category-title-wrap">
+                        <span class="category-title">${catTitle}</span>
+                        ${allSoldOut ? `<span class="agotado-badge">${soldOutLabel}</span>` : ''}
+                    </span>
+                    <span class="toggle-icon" aria-hidden="true"></span>
+                </button>
+            </h2>
             ${descHtml}
             ${extrasHtml}
-            <div class="items-grid${gridClass}">
+            <div id="${catId}-grid" class="items-grid${gridClass}">
                 ${itemsHtml}
             </div>
         </div>`;
@@ -702,8 +736,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderSection(section) {
         const categoriesHtml = section.categories.map((cat, i) => renderCategory(cat, i, section.id)).join('\n');
+        const t = translations[currentLang];
+        const navKey = `nav_${section.id}`;
+        const sectionLabel = t[navKey] || section.label || section.id;
         return `
         <section id="${section.id}" class="menu-section">
+            <div class="search-section-label">${t.search_bar_prefix} · ${sectionLabel}</div>
             ${categoriesHtml}
         </section>`;
     }
@@ -726,39 +764,119 @@ document.addEventListener('DOMContentLoaded', () => {
         setupSubcategoryScrollSpy();
     }
 
-    // ── Filter logic ─────────────────────────────────────────────────────────
+    // ── Filter & Global Search Logic ─────────────────────────────────────────
+    function normalizeText(str) {
+        return (str || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function removeEmptyState() {
+        const existing = document.getElementById('menuEmptyState');
+        if (existing) existing.remove();
+    }
+
+    function renderEmptyState(isSearch) {
+        removeEmptyState();
+        const menuRoot = document.getElementById('menu-root');
+        if (!menuRoot) return;
+        const t = translations[currentLang];
+        const desc = isSearch ? t.empty_search_desc : t.empty_filter_desc;
+
+        const box = document.createElement('div');
+        box.id = 'menuEmptyState';
+        box.className = 'empty-state-box';
+        box.setAttribute('role', 'status');
+        box.innerHTML = `
+            <p class="empty-state-title">${t.empty_search_title}</p>
+            <p class="empty-state-desc">${desc}</p>
+            <button type="button" class="empty-state-reset-btn" id="emptyStateResetBtn">${t.empty_reset_btn}</button>
+        `;
+        menuRoot.appendChild(box);
+
+        const resetBtn = document.getElementById('emptyStateResetBtn');
+        if (resetBtn) {
+            resetBtn.addEventListener('click', () => {
+                const searchInput = document.getElementById('searchInput');
+                if (searchInput) searchInput.value = '';
+                searchTerm = '';
+                activeFilter = 'all';
+                document.querySelectorAll('.diet-btn').forEach(b => b.classList.remove('active'));
+                const allBtn = document.querySelector('.diet-btn[data-filter="all"]');
+                if (allBtn) allBtn.classList.add('active');
+                const clearBtn = document.getElementById('clearSearchBtn');
+                if (clearBtn) clearBtn.classList.add('hidden');
+                applyFilters();
+                if (searchInput && isSearch) searchInput.focus();
+            });
+        }
+    }
+
     function applyFilters() {
-        const activeSection = document.querySelector('.menu-section.active');
-        if (!activeSection) return;
+        const allSections = Array.from(document.querySelectorAll('.menu-section'));
+        if (allSections.length === 0) return;
 
-        activeSection.querySelectorAll('.menu-category').forEach(category => {
-            const catTitle = category.querySelector('.category-title')?.textContent.toLowerCase() || '';
-            const catDesc = category.querySelector('.category-desc')?.textContent.toLowerCase() || '';
-            const catMatchesSearch = searchTerm !== '' && (catTitle.includes(searchTerm) || catDesc.includes(searchTerm));
+        const normalizedQuery = normalizeText(searchTerm);
+        const isGlobalSearch = normalizedQuery !== '';
+        const subNav = document.getElementById('subcategoryNav');
+        if (subNav) subNav.classList.toggle('hidden', isGlobalSearch);
 
-            const items = category.querySelectorAll('.menu-item');
-            let visibleCount = 0;
+        let totalVisibleItems = 0;
 
-            items.forEach(item => {
-                const name = item.querySelector('.item-name')?.textContent.toLowerCase() || '';
-                const desc = item.querySelector('.item-desc')?.textContent.toLowerCase() || '';
-                const tags = item.dataset.tags || '';
+        allSections.forEach(section => {
+            const isActiveSection = section.classList.contains('active');
+            const shouldEvaluate = isGlobalSearch || isActiveSection;
 
-                const matchesSearch = searchTerm === '' || catMatchesSearch || name.includes(searchTerm) || desc.includes(searchTerm);
-                const matchesFilter = activeFilter === 'all' || tags.includes(activeFilter);
+            if (!shouldEvaluate) {
+                section.classList.remove('search-visible');
+                return;
+            }
 
-                const visible = matchesSearch && matchesFilter;
-                item.classList.toggle('hidden', !visible);
-                if (visible) visibleCount++;
+            let sectionVisibleItems = 0;
+
+            section.querySelectorAll('.menu-category').forEach(category => {
+                const catTitle = normalizeText(category.querySelector('.category-title')?.textContent);
+                const catDesc = normalizeText(category.querySelector('.category-desc')?.textContent);
+                const catMatchesSearch = isGlobalSearch && (catTitle.includes(normalizedQuery) || catDesc.includes(normalizedQuery));
+
+                const items = category.querySelectorAll('.menu-item');
+                let visibleCount = 0;
+
+                items.forEach(item => {
+                    const name = normalizeText(item.querySelector('.item-name')?.textContent);
+                    const desc = normalizeText(item.querySelector('.item-desc')?.textContent);
+                    const tags = item.dataset.tags || '';
+
+                    const matchesSearch = !isGlobalSearch || catMatchesSearch || name.includes(normalizedQuery) || desc.includes(normalizedQuery);
+                    const matchesFilter = activeFilter === 'all' || tags.includes(activeFilter);
+
+                    const visible = matchesSearch && matchesFilter;
+                    item.classList.toggle('hidden', !visible);
+                    if (visible) visibleCount++;
+                });
+
+                if (visibleCount > 0 || (activeFilter === 'all' && !isGlobalSearch)) {
+                    category.style.display = '';
+                    if (isGlobalSearch) category.classList.remove('collapsed');
+                } else {
+                    category.style.display = 'none';
+                }
+
+                sectionVisibleItems += visibleCount;
             });
 
-            if (visibleCount > 0 || (activeFilter === 'all' && searchTerm === '')) {
-                category.style.display = '';
-                if (searchTerm !== '') category.classList.remove('collapsed');
+            if (isGlobalSearch) {
+                section.classList.toggle('search-visible', sectionVisibleItems > 0);
             } else {
-                category.style.display = 'none';
+                section.classList.remove('search-visible');
             }
+
+            totalVisibleItems += sectionVisibleItems;
         });
+
+        if (totalVisibleItems === 0 && (isGlobalSearch || activeFilter !== 'all')) {
+            renderEmptyState(isGlobalSearch);
+        } else {
+            removeEmptyState();
+        }
     }
 
     // ── Cart & Bill Simulator Logic ──────────────────────────────────────────
@@ -768,21 +886,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateItemCardUI(itemId) {
         const containers = document.querySelectorAll(`.item-cart-actions[data-item-id="${itemId}"]`);
+        const t = translations[currentLang];
+        const meta = menuItemMap[itemId];
+        const displayName = meta ? ((currentLang === 'en' && meta.name_en) ? meta.name_en : meta.name) : '';
+
         containers.forEach(container => {
             const currentQty = (cart[itemId] && cart[itemId].qty) ? cart[itemId].qty : 0;
-            const btnLabel = translations[currentLang].cart_add;
+            const btnLabel = t.cart_add;
 
             if (currentQty === 0) {
                 container.innerHTML = `
-                    <button class="add-item-btn" data-item-id="${itemId}">
+                    <button type="button" class="add-item-btn" data-item-id="${itemId}" aria-label="${escapeAttr(t.aria_add_item + ' ' + displayName)}">
                         ${btnLabel}
                     </button>`;
             } else {
                 container.innerHTML = `
                     <div class="qty-control-inline">
-                        <button class="qty-btn cart-minus-btn" data-item-id="${itemId}">-</button>
+                        <button type="button" class="qty-btn cart-minus-btn" data-item-id="${itemId}" aria-label="${escapeAttr(t.aria_minus_item + ' ' + displayName)}">-</button>
                         <span class="qty-val">${currentQty}</span>
-                        <button class="qty-btn cart-plus-btn" data-item-id="${itemId}">+</button>
+                        <button type="button" class="qty-btn cart-plus-btn" data-item-id="${itemId}" aria-label="${escapeAttr(t.aria_plus_item + ' ' + displayName)}">+</button>
                     </div>`;
             }
         });
@@ -812,6 +934,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 name_en: itemData.name_en || itemData.name,
                 priceStr: itemData.price,
                 priceNum: parsePriceNum(itemData.price),
+                sectionId: itemData._sectionId,
                 qty: 1
             };
         } else {
@@ -820,8 +943,9 @@ document.addEventListener('DOMContentLoaded', () => {
         saveCart();
         updateCartUI();
         updateItemCardUI(itemId);
-        renderAllSections();
-        applyFilters();
+        const t = translations[currentLang];
+        const labelName = (currentLang === 'en' && itemData.name_en) ? itemData.name_en : itemData.name;
+        announce(`${labelName} ${t.sr_added}. ${t.cart_total} ${formatPrice(getCartSummary().total)}`);
     }
 
     function updateQty(itemIdOrName, delta) {
@@ -832,39 +956,88 @@ document.addEventListener('DOMContentLoaded', () => {
             if (foundKey) itemId = foundKey;
         }
 
-        if (cart[itemId]) {
-            cart[itemId].qty += delta;
-            if (cart[itemId].qty <= 0) {
+        const itemBefore = cart[itemId];
+        if (itemBefore) {
+            itemBefore.qty += delta;
+            if (itemBefore.qty <= 0) {
                 delete cart[itemId];
             }
         }
         saveCart();
         updateCartUI();
         updateItemCardUI(itemId);
-        renderAllSections();
-        applyFilters();
+        if (itemBefore) {
+            const t = translations[currentLang];
+            const labelName = (currentLang === 'en' && itemBefore.name_en) ? itemBefore.name_en : itemBefore.name;
+            announce(`${labelName} ${delta > 0 ? t.sr_added : t.sr_removed}. ${t.cart_total} ${formatPrice(getCartSummary().total)}`);
+        }
     }
 
     function clearCart() {
         cart = {};
         saveCart();
         updateCartUI();
-        renderAllSections();
-        applyFilters();
+        updateAllItemCardsUI();
+        announce(translations[currentLang].sr_list_cleared);
     }
 
-    function getCartTotal() {
-        let total = 0;
-        Object.values(cart).forEach(item => {
-            if (item && typeof item === 'object') {
-                const qty = parseInt(item.qty, 10) || 0;
-                const priceNum = (typeof item.priceNum === 'number' && !isNaN(item.priceNum))
-                    ? item.priceNum
-                    : parsePriceNum(item.priceStr || '');
-                total += priceNum * qty;
+    const EXTRA_DOUBLE_PRICE = 4000;
+    const EXTRA_SINTACC_PRICE = 4000;
+
+    function toggleBurgerExtra(itemId, extraKey) {
+        if (!cart[itemId]) return;
+        if (!cart[itemId].extras) cart[itemId].extras = {};
+        cart[itemId].extras[extraKey] = !cart[itemId].extras[extraKey];
+        saveCart();
+        updateCartUI();
+    }
+
+    function getCartSummary() {
+        let subtotal = 0;
+        let draftBeerQty = 0;
+        let fernetQty = 0;
+        let fernetUnitPrice = 0;
+
+        Object.keys(cart).forEach(key => {
+            const item = cart[key];
+            if (!item || typeof item !== 'object') return;
+            const qty = parseInt(item.qty, 10) || 0;
+            if (qty <= 0) return;
+
+            const priceNum = (typeof item.priceNum === 'number' && !isNaN(item.priceNum))
+                ? item.priceNum
+                : parsePriceNum(item.priceStr || '');
+            let unitExtras = 0;
+            if (item.extras) {
+                if (item.extras.doublePatty) unitExtras += EXTRA_DOUBLE_PRICE;
+                if (item.extras.sinTaccBun) unitExtras += EXTRA_SINTACC_PRICE;
+            }
+            subtotal += (priceNum + unitExtras) * qty;
+
+            const meta = menuItemMap[key];
+            if (meta && meta._isDraftBeer) {
+                draftBeerQty += qty;
+            }
+            if (meta && meta._isFernetPromo) {
+                fernetQty += qty;
+                fernetUnitPrice = priceNum;
             }
         });
-        return total;
+
+        let hhDiscount = 0;
+        if (isHappyHourActive() && draftBeerQty >= 2) {
+            // 2 pints ($18.000) -> $14.000 => $4.000 off per pair
+            hhDiscount = Math.floor(draftBeerQty / 2) * 4000;
+        }
+
+        let fernetDiscount = 0;
+        if (isFernetPromoActive() && fernetQty >= 2 && fernetUnitPrice > 0) {
+            fernetDiscount = Math.floor(fernetQty / 2) * fernetUnitPrice;
+        }
+
+        const promoDiscount = hhDiscount + fernetDiscount;
+        const total = Math.max(0, subtotal - promoDiscount);
+        return { subtotal, hhDiscount, fernetDiscount, promoDiscount, total };
     }
 
     function getCartItemCount() {
@@ -878,10 +1051,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateCartUI() {
-        const total = getCartTotal();
+        const summary = getCartSummary();
+        const total = summary.total;
         const count = getCartItemCount();
+        const t = translations[currentLang];
 
-        // Update floating cart button
+        // Show full-width bottom list bar ONLY when count > 0
+        const listBar = document.getElementById('listSummaryBar');
+        if (listBar) {
+            listBar.classList.toggle('hidden', count === 0);
+        }
+        document.body.classList.toggle('has-list-bar', count > 0);
+
         const cartBadge = document.getElementById('cartBadge');
         const cartTotalHeader = document.getElementById('cartTotalHeader');
         if (cartBadge) cartBadge.textContent = count;
@@ -892,38 +1073,90 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalPriceEl = document.getElementById('cartTotalPrice');
         const splitRow = document.getElementById('splitTotalRow');
         const perPersonPriceEl = document.getElementById('cartPerPersonPrice');
+        const promoRow = document.getElementById('promoDiscountRow');
+        const promoLabel = document.getElementById('promoDiscountLabel');
+        const promoAmount = document.getElementById('promoDiscountAmount');
 
         if (totalPriceEl) totalPriceEl.textContent = formatPrice(total);
 
-        if (itemsList) {
-            const cartKeys = Object.keys(cart);
-            if (cartKeys.length === 0) {
-                itemsList.innerHTML = `<p class="cart-empty-msg">${translations[currentLang].cart_empty}</p>`;
+        if (promoRow && promoLabel && promoAmount) {
+            if (summary.promoDiscount > 0) {
+                promoRow.classList.remove('hidden');
+                if (summary.hhDiscount > 0 && summary.fernetDiscount > 0) {
+                    promoLabel.textContent = t.promo_combined_label;
+                } else if (summary.hhDiscount > 0) {
+                    promoLabel.textContent = t.promo_hh_label;
+                } else {
+                    promoLabel.textContent = t.promo_fernet_label;
+                }
+                promoAmount.textContent = '-' + formatPrice(summary.promoDiscount);
             } else {
-                itemsList.innerHTML = cartKeys.map(key => {
-                    const item = cart[key];
-                    if (!item || typeof item !== 'object') return '';
-                    const qty = parseInt(item.qty, 10) || 0;
-                    if (qty <= 0) return '';
-                    const priceNum = (typeof item.priceNum === 'number' && !isNaN(item.priceNum))
-                        ? item.priceNum
-                        : parsePriceNum(item.priceStr || '');
-                    const itemSubtotal = priceNum * qty;
-                    const itemData = menuItemMap[key];
-                    const displayName = (currentLang === 'en' && itemData && itemData.name_en)
-                        ? itemData.name_en
-                        : (itemData ? itemData.name : (item.name || key));
-                    return `
-                    <div class="cart-item-row">
-                        <span class="cart-item-name">${displayName}</span>
-                        <div class="qty-control-inline">
-                            <button class="qty-btn modal-minus-btn" data-item-id="${key}">-</button>
-                            <span class="qty-val">${qty}</span>
-                            <button class="qty-btn modal-plus-btn" data-item-id="${key}">+</button>
-                        </div>
-                        <span class="cart-item-subtotal">${formatPrice(itemSubtotal)}</span>
-                    </div>`;
-                }).filter(Boolean).join('\n');
+                promoRow.classList.add('hidden');
+            }
+        }
+
+        if (itemsList) {
+            const cartKeys = Object.keys(cart).filter(k => cart[k] && typeof cart[k] === 'object' && (parseInt(cart[k].qty, 10) || 0) > 0);
+            if (cartKeys.length === 0) {
+                itemsList.innerHTML = `<p class="cart-empty-msg">${t.cart_empty}</p>`;
+            } else {
+                const barOrder = ['pizzeria', 'hamburgueseria', 'tragos', 'other'];
+                const grouped = { pizzeria: [], hamburgueseria: [], tragos: [], other: [] };
+                cartKeys.forEach(key => {
+                    const meta = menuItemMap[key];
+                    const secId = (meta && meta._sectionId) || (cart[key] && cart[key].sectionId) || 'other';
+                    (grouped[secId] || grouped.other).push(key);
+                });
+
+                itemsList.innerHTML = barOrder
+                    .filter(secId => grouped[secId].length > 0)
+                    .map(secId => {
+                        const barLabel = secId === 'other' ? '' : (t[`nav_${secId}`] || secId);
+                        const rowsHtml = grouped[secId].map(key => {
+                            const item = cart[key];
+                            const qty = parseInt(item.qty, 10) || 0;
+                            const priceNum = (typeof item.priceNum === 'number' && !isNaN(item.priceNum))
+                                ? item.priceNum
+                                : parsePriceNum(item.priceStr || '');
+                            const extras = item.extras || {};
+                            const unitExtras = (extras.doublePatty ? EXTRA_DOUBLE_PRICE : 0) + (extras.sinTaccBun ? EXTRA_SINTACC_PRICE : 0);
+                            const itemSubtotal = (priceNum + unitExtras) * qty;
+                            const itemData = menuItemMap[key];
+                            const displayName = (currentLang === 'en' && itemData && itemData.name_en)
+                                ? itemData.name_en
+                                : (itemData ? itemData.name : (item.name || key));
+
+                            const burgerExtrasHtml = (itemData && itemData._isBurger) ? `
+                                <div class="cart-extras-row">
+                                    <button type="button" class="cart-extra-chip${extras.doublePatty ? ' active' : ''}" data-item-id="${key}" data-extra="doublePatty" aria-pressed="${!!extras.doublePatty}">
+                                        ${extras.doublePatty ? '✓ ' : '+ '}${t.extra_double}
+                                    </button>
+                                    <button type="button" class="cart-extra-chip${extras.sinTaccBun ? ' active' : ''}" data-item-id="${key}" data-extra="sinTaccBun" aria-pressed="${!!extras.sinTaccBun}">
+                                        ${extras.sinTaccBun ? '✓ ' : '+ '}${t.extra_sintacc}
+                                    </button>
+                                </div>` : '';
+
+                            return `
+                            <div class="cart-item-block">
+                                <div class="cart-item-row">
+                                    <span class="cart-item-name">${displayName}</span>
+                                <div class="qty-control-inline">
+                                    <button type="button" class="qty-btn modal-minus-btn" data-item-id="${key}" aria-label="${escapeAttr(t.aria_minus_item + ' ' + displayName)}">-</button>
+                                    <span class="qty-val">${qty}</span>
+                                    <button type="button" class="qty-btn modal-plus-btn" data-item-id="${key}" aria-label="${escapeAttr(t.aria_plus_item + ' ' + displayName)}">+</button>
+                                </div>
+                                    <span class="cart-item-subtotal">${formatPrice(itemSubtotal)}</span>
+                                </div>
+                                ${burgerExtrasHtml}
+                            </div>`;
+                        }).join('\n');
+
+                        return `
+                        <div class="cart-bar-group">
+                            ${barLabel ? `<div class="cart-bar-group-header">${barLabel}</div>` : ''}
+                            ${rowsHtml}
+                        </div>`;
+                    }).join('\n');
             }
         }
 
@@ -938,146 +1171,212 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ── Load JSON and initialize ─────────────────────────────────────────────
-    fetch('menu.json')
-        .then(r => r.json())
-        .then(data => {
-            menuData = data;
-            buildMenuItemMap(data);
-            renderAllSections();
-            applyLanguage(currentLang);
+    let coreListenersBound = false;
 
-            // Active section setup
-            const navBtns = document.querySelectorAll('.nav-btn');
-            const firstNav = document.querySelector('.nav-btn.active') || navBtns[0];
-            if (firstNav) {
-                const targetId = firstNav.dataset.target;
-                document.querySelectorAll('.menu-section').forEach(s => s.classList.remove('active'));
-                const sec = document.getElementById(targetId);
-                if (sec) sec.classList.add('active');
+    function bindCoreMenuListeners() {
+        if (coreListenersBound) return;
+        coreListenersBound = true;
+
+        const navBtns = document.querySelectorAll('.nav-btn');
+        const searchInput = document.getElementById('searchInput');
+        const clearSearchBtn = document.getElementById('clearSearchBtn');
+
+        function toggleClearSearchBtn() {
+            if (clearSearchBtn && searchInput) {
+                clearSearchBtn.classList.toggle('hidden', searchInput.value.trim().length === 0);
+            }
+        }
+
+        // Navigation handler
+        navBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                navBtns.forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-pressed', 'false');
+                });
+                document.querySelectorAll('.menu-section').forEach(s => {
+                    s.classList.remove('active');
+                    s.classList.remove('search-visible');
+                });
+
+                btn.classList.add('active');
+                btn.setAttribute('aria-pressed', 'true');
+                const targetId = btn.dataset.target;
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) targetSection.classList.add('active');
+
                 document.body.setAttribute('data-active-section', targetId);
-            }
+                renderHappyHourBanner();
+                renderSubcategoryNav(targetId);
 
-            // Navigation handler
-            navBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    navBtns.forEach(b => b.classList.remove('active'));
-                    document.querySelectorAll('.menu-section').forEach(s => s.classList.remove('active'));
+                const pillsContainer = document.getElementById('subcategoryPills');
+                if (pillsContainer) pillsContainer.scrollLeft = 0;
 
-                    btn.classList.add('active');
-                    const targetId = btn.dataset.target;
-                    const targetSection = document.getElementById(targetId);
-                    if (targetSection) targetSection.classList.add('active');
-
-                    document.body.setAttribute('data-active-section', targetId);
-                    renderHappyHourBanner();
-                    renderSubcategoryNav(targetId);
-
-                    // Reset filter if switching section to where active filter is not visible
-                    if (targetId === 'tragos' && activeFilter === 'vegano') {
-                        activeFilter = 'all';
-                        document.querySelectorAll('.diet-btn').forEach(b => b.classList.remove('active'));
-                        document.querySelector('.diet-btn[data-filter="all"]').classList.add('active');
+                // Reset filter if switching section to where active filter is not visible
+                if (targetId === 'tragos' && (activeFilter === 'vegano' || activeFilter === 'sin-tacc')) {
+                    activeFilter = 'all';
+                    document.querySelectorAll('.diet-btn').forEach(b => {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-pressed', 'false');
+                    });
+                    const allBtn = document.querySelector('.diet-btn[data-filter="all"]');
+                    if (allBtn) {
+                        allBtn.classList.add('active');
+                        allBtn.setAttribute('aria-pressed', 'true');
                     }
-                    if (targetId !== 'hamburgueseria' && activeFilter === 'sin-tacc') {
-                        activeFilter = 'all';
-                        document.querySelectorAll('.diet-btn').forEach(b => b.classList.remove('active'));
-                        document.querySelector('.diet-btn[data-filter="all"]').classList.add('active');
-                    }
-
-                    if (targetSection) {
-                        targetSection.querySelectorAll('.menu-category').forEach((cat, i) => {
-                            cat.style.animationDelay = `${(i + 1) * 0.1}s`;
-                            cat.style.animation = 'none';
-                            void cat.offsetHeight;
-                            cat.style.animation = null;
-                        });
-                    }
-
-                    const searchInput = document.getElementById('searchInput');
-                    if (searchInput) searchInput.value = '';
-                    searchTerm = '';
-                    toggleClearSearchBtn();
-                    applyFilters();
-                });
-            });
-
-            // Global Cart item & Collapsible categories click Delegation
-            document.addEventListener('click', e => {
-                const addBtn = e.target.closest('.add-item-btn');
-                if (addBtn) {
-                    const id = addBtn.dataset.itemId || addBtn.dataset.itemName;
-                    addToCart(id);
-                    return;
                 }
 
-                const minusBtn = e.target.closest('.cart-minus-btn');
-                if (minusBtn) {
-                    const id = minusBtn.dataset.itemId || minusBtn.dataset.itemName;
-                    updateQty(id, -1);
-                    return;
-                }
+                if (searchInput) searchInput.value = '';
+                searchTerm = '';
+                toggleClearSearchBtn();
+                applyFilters();
 
-                const plusBtn = e.target.closest('.cart-plus-btn');
-                if (plusBtn) {
-                    const id = plusBtn.dataset.itemId || plusBtn.dataset.itemName;
-                    updateQty(id, 1);
-                    return;
-                }
-
-                const header = e.target.closest('.category-header');
-                if (header) {
-                    header.closest('.menu-category').classList.toggle('collapsed');
-                    return;
+                // Reset scroll so user lands at the top of the newly selected bar
+                const navEl = document.querySelector('.sticky-nav-shell');
+                if (navEl && window.scrollY > navEl.offsetTop) {
+                    window.scrollTo({ top: Math.max(0, navEl.offsetTop), behavior: 'smooth' });
                 }
             });
-
-            // Search Input logic
-            const searchInput = document.getElementById('searchInput');
-            const clearSearchBtn = document.getElementById('clearSearchBtn');
-
-            function toggleClearSearchBtn() {
-                if (clearSearchBtn) {
-                    if (searchInput.value.trim().length > 0) {
-                        clearSearchBtn.classList.remove('hidden');
-                    } else {
-                        clearSearchBtn.classList.add('hidden');
-                    }
-                }
-            }
-
-            if (searchInput) {
-                searchInput.addEventListener('input', e => {
-                    searchTerm = e.target.value.toLowerCase().trim();
-                    toggleClearSearchBtn();
-                    applyFilters();
-                });
-            }
-
-            if (clearSearchBtn) {
-                clearSearchBtn.addEventListener('click', () => {
-                    searchInput.value = '';
-                    searchTerm = '';
-                    toggleClearSearchBtn();
-                    applyFilters();
-                    searchInput.focus();
-                });
-            }
-
-            // Diet filters
-            document.querySelectorAll('.diet-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    document.querySelectorAll('.diet-btn').forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    activeFilter = btn.dataset.filter;
-                    applyFilters();
-                });
-            });
-        })
-        .catch(err => {
-            document.getElementById('menu-root').innerHTML =
-                `<p style="color:#a1a1aa;text-align:center;padding:3rem">Error cargando el menú. Intentá recargar la página.</p>`;
-            console.error('Error loading menu.json:', err);
         });
+
+        // Global Cart item & Collapsible categories click Delegation
+        document.addEventListener('click', e => {
+            const addBtn = e.target.closest('.add-item-btn');
+            if (addBtn) {
+                const id = addBtn.dataset.itemId || addBtn.dataset.itemName;
+                addToCart(id);
+                return;
+            }
+
+            const minusBtn = e.target.closest('.cart-minus-btn');
+            if (minusBtn) {
+                const id = minusBtn.dataset.itemId || minusBtn.dataset.itemName;
+                updateQty(id, -1);
+                return;
+            }
+
+            const plusBtn = e.target.closest('.cart-plus-btn');
+            if (plusBtn) {
+                const id = plusBtn.dataset.itemId || plusBtn.dataset.itemName;
+                updateQty(id, 1);
+                return;
+            }
+
+            const header = e.target.closest('.category-header');
+            if (header) {
+                const catEl = header.closest('.menu-category');
+                const isCollapsed = catEl.classList.toggle('collapsed');
+                header.setAttribute('aria-expanded', String(!isCollapsed));
+                return;
+            }
+        });
+
+        if (searchInput) {
+            searchInput.addEventListener('input', e => {
+                searchTerm = e.target.value.toLowerCase().trim();
+                toggleClearSearchBtn();
+                applyFilters();
+            });
+        }
+
+        if (clearSearchBtn) {
+            clearSearchBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                searchTerm = '';
+                toggleClearSearchBtn();
+                applyFilters();
+                searchInput.focus();
+            });
+        }
+
+        // Diet filters
+        document.querySelectorAll('.diet-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.diet-btn').forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-pressed', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-pressed', 'true');
+                activeFilter = btn.dataset.filter;
+                applyFilters();
+            });
+        });
+    }
+
+    function reconcileCartWithMenu() {
+        let changed = false;
+        Object.keys(cart).forEach(key => {
+            const entry = cart[key];
+            const liveItem = menuItemMap[key];
+            if (!entry || !liveItem || liveItem.available === false || !liveItem.price) {
+                delete cart[key];
+                changed = true;
+                return;
+            }
+            const livePriceNum = parsePriceNum(liveItem.price);
+            if (
+                entry.priceNum !== livePriceNum ||
+                entry.priceStr !== liveItem.price ||
+                entry.name !== liveItem.name ||
+                entry.name_en !== (liveItem.name_en || liveItem.name) ||
+                entry.sectionId !== liveItem._sectionId
+            ) {
+                entry.priceNum = livePriceNum;
+                entry.priceStr = liveItem.price;
+                entry.name = liveItem.name;
+                entry.name_en = liveItem.name_en || liveItem.name;
+                entry.sectionId = liveItem._sectionId;
+                changed = true;
+            }
+        });
+        if (changed) saveCart();
+    }
+
+    function loadMenu() {
+        fetch('menu.json')
+            .then(r => {
+                if (!r.ok) throw new Error(`HTTP ${r.status}`);
+                return r.json();
+            })
+            .then(data => {
+                menuData = data;
+                buildMenuItemMap(data);
+                reconcileCartWithMenu();
+                renderAllSections();
+                applyLanguage(currentLang);
+
+                // Active section setup
+                const navBtns = document.querySelectorAll('.nav-btn');
+                const firstNav = document.querySelector('.nav-btn.active') || navBtns[0];
+                if (firstNav) {
+                    const targetId = firstNav.dataset.target;
+                    document.querySelectorAll('.menu-section').forEach(s => s.classList.remove('active'));
+                    const sec = document.getElementById(targetId);
+                    if (sec) sec.classList.add('active');
+                    document.body.setAttribute('data-active-section', targetId);
+                }
+
+                bindCoreMenuListeners();
+            })
+            .catch(err => {
+                const t = translations[currentLang];
+                const menuRoot = document.getElementById('menu-root');
+                if (menuRoot) {
+                    menuRoot.innerHTML = `
+                        <div class="empty-state-box" role="alert">
+                            <p class="empty-state-title">${t.error_load_title}</p>
+                            <p class="empty-state-desc">${t.error_load_desc}</p>
+                            <button type="button" class="empty-state-reset-btn" id="retryMenuLoadBtn">${t.error_retry_btn}</button>
+                        </div>`;
+                    const retryBtn = document.getElementById('retryMenuLoadBtn');
+                    if (retryBtn) retryBtn.addEventListener('click', loadMenu);
+                }
+                console.error('Error loading menu.json:', err);
+            });
+    }
+
+    loadMenu();
 
     // ── Language Toggle Button Handler ──────────────────────────────────────
     const langBtn = document.getElementById('langBtn');
@@ -1088,6 +1387,67 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ── Accessible Modal Manager (Focus Trap, Escape, Focus Restore) ─────────
+    let activeModal = null;
+    let lastModalTrigger = null;
+
+    function getFocusableElements(container) {
+        return Array.from(container.querySelectorAll(
+            'button:not([disabled]):not(.hidden), [href], input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )).filter(el => el.offsetParent !== null);
+    }
+
+    function openModal(modalEl, triggerEl) {
+        if (!modalEl) return;
+        lastModalTrigger = triggerEl || document.activeElement;
+        activeModal = modalEl;
+        modalEl.classList.remove('hidden');
+        const focusables = getFocusableElements(modalEl);
+        if (focusables.length > 0) {
+            focusables[0].focus();
+        }
+    }
+
+    function closeModal(modalEl) {
+        if (!modalEl) return;
+        modalEl.classList.add('hidden');
+        if (activeModal === modalEl) {
+            activeModal = null;
+        }
+        if (lastModalTrigger && typeof lastModalTrigger.focus === 'function') {
+            lastModalTrigger.focus();
+            lastModalTrigger = null;
+        }
+    }
+
+    document.addEventListener('keydown', e => {
+        if (!activeModal) return;
+
+        if (e.key === 'Escape') {
+            e.preventDefault();
+            if (activeModal.id === 'cartModal') {
+                closeCart();
+            } else {
+                closeModal(activeModal);
+            }
+            return;
+        }
+
+        if (e.key === 'Tab') {
+            const focusables = getFocusableElements(activeModal);
+            if (focusables.length === 0) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        }
+    });
+
     // ── Wi-Fi Modal & Clipboard Handler ──────────────────────────────────────
     const wifiBtn = document.getElementById('wifiBtn');
     const wifiModal = document.getElementById('wifiModal');
@@ -1097,19 +1457,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (wifiBtn && wifiModal) {
         wifiBtn.addEventListener('click', () => {
-            wifiModal.classList.remove('hidden');
+            openModal(wifiModal, wifiBtn);
         });
     }
 
     if (closeWifiModal && wifiModal) {
         closeWifiModal.addEventListener('click', () => {
-            wifiModal.classList.add('hidden');
+            closeModal(wifiModal);
         });
     }
 
     if (wifiModal) {
         wifiModal.addEventListener('click', e => {
-            if (e.target === wifiModal) wifiModal.classList.add('hidden');
+            if (e.target === wifiModal) closeModal(wifiModal);
         });
     }
 
@@ -1158,11 +1518,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (floatingCartBtn && cartModal) {
         floatingCartBtn.addEventListener('click', () => {
             updateCartUI();
-            cartModal.classList.remove('hidden');
+            openModal(cartModal, floatingCartBtn);
         });
     }
 
-    const closeCart = () => cartModal && cartModal.classList.add('hidden');
+    const closeCart = () => {
+        closeModal(cartModal);
+        resetClearCartConfirm();
+    };
     if (closeCartModal) closeCartModal.addEventListener('click', closeCart);
     if (closeCartActionBtn) closeCartActionBtn.addEventListener('click', closeCart);
     if (cartModal) {
@@ -1171,15 +1534,116 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    let clearConfirmTimer = null;
+    function resetClearCartConfirm() {
+        if (!clearCartBtn) return;
+        clearCartBtn.dataset.confirming = 'false';
+        clearCartBtn.classList.remove('confirming');
+        clearCartBtn.textContent = translations[currentLang].cart_clear;
+        if (clearConfirmTimer) {
+            clearTimeout(clearConfirmTimer);
+            clearConfirmTimer = null;
+        }
+    }
+
     if (clearCartBtn) {
         clearCartBtn.addEventListener('click', () => {
-            clearCart();
+            if (Object.keys(cart).length === 0) return;
+            if (clearCartBtn.dataset.confirming === 'true') {
+                clearCart();
+                resetClearCartConfirm();
+            } else {
+                clearCartBtn.dataset.confirming = 'true';
+                clearCartBtn.classList.add('confirming');
+                clearCartBtn.textContent = translations[currentLang].cart_clear_confirm;
+                clearConfirmTimer = setTimeout(resetClearCartConfirm, 3000);
+            }
         });
     }
 
-    // Cart Modal quantity controls delegation
+    // Copy grouped list to clipboard
+    const copyListBtn = document.getElementById('copyListBtn');
+    const copyListLabel = document.getElementById('copyListLabel');
+
+    function formatCartForClipboard() {
+        const t = translations[currentLang];
+        const summary = getCartSummary();
+        const barOrder = ['pizzeria', 'hamburgueseria', 'tragos', 'other'];
+        const grouped = { pizzeria: [], hamburgueseria: [], tragos: [], other: [] };
+
+        Object.keys(cart).forEach(key => {
+            const item = cart[key];
+            if (!item || (parseInt(item.qty, 10) || 0) <= 0) return;
+            const meta = menuItemMap[key];
+            const secId = (meta && meta._sectionId) || item.sectionId || 'other';
+            (grouped[secId] || grouped.other).push(key);
+        });
+
+        const lines = [currentLang === 'en' ? 'Jabalí · Our order list' : 'Jabalí · Nuestra lista'];
+        barOrder.forEach(secId => {
+            if (grouped[secId].length === 0) return;
+            const barLabel = secId === 'other' ? '' : (t[`nav_${secId}`] || secId);
+            if (barLabel) lines.push(`\n— ${barLabel} —`);
+            grouped[secId].forEach(key => {
+                const item = cart[key];
+                const meta = menuItemMap[key];
+                const name = (currentLang === 'en' && meta && meta.name_en) ? meta.name_en : (meta ? meta.name : item.name);
+                const extras = item.extras || {};
+                const extraParts = [];
+                if (extras.doublePatty) extraParts.push(currentLang === 'en' ? 'double patty' : 'doble medallón');
+                if (extras.sinTaccBun) extraParts.push(currentLang === 'en' ? 'GF bun' : 'pan sin TACC');
+                const extraSuffix = extraParts.length ? ` (${extraParts.join(', ')})` : '';
+                const unitExtras = (extras.doublePatty ? EXTRA_DOUBLE_PRICE : 0) + (extras.sinTaccBun ? EXTRA_SINTACC_PRICE : 0);
+                const subtotal = (item.priceNum + unitExtras) * item.qty;
+                lines.push(`• ${item.qty}x ${name}${extraSuffix} — ${formatPrice(subtotal)}`);
+            });
+        });
+
+        if (summary.promoDiscount > 0) {
+            lines.push(`\n${t.promo_combined_label} -${formatPrice(summary.promoDiscount)}`);
+        }
+        lines.push(`${t.cart_total} ${formatPrice(summary.total)}`);
+        if (splitPeopleCount > 1 && summary.total > 0) {
+            lines.push(`${t.cart_per_person} ${formatPrice(Math.ceil(summary.total / splitPeopleCount))} (${splitPeopleCount} ${t.cart_people_text})`);
+        }
+        return lines.join('\n');
+    }
+
+    if (copyListBtn) {
+        copyListBtn.addEventListener('click', () => {
+            if (getCartItemCount() === 0) return;
+            const text = formatCartForClipboard();
+            const showCopied = () => {
+                copyListBtn.classList.add('copied');
+                if (copyListLabel) copyListLabel.textContent = translations[currentLang].cart_copied;
+                setTimeout(() => {
+                    copyListBtn.classList.remove('copied');
+                    if (copyListLabel) copyListLabel.textContent = translations[currentLang].cart_copy;
+                }, 2500);
+            };
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(showCopied).catch(() => {
+                    const ta = document.createElement('textarea');
+                    ta.value = text;
+                    document.body.appendChild(ta);
+                    ta.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(ta);
+                    showCopied();
+                });
+            }
+        });
+    }
+
+    // Cart Modal quantity & burger extras controls delegation
     if (cartItemsList) {
         cartItemsList.addEventListener('click', e => {
+            const extraChip = e.target.closest('.cart-extra-chip');
+            if (extraChip) {
+                toggleBurgerExtra(extraChip.dataset.itemId, extraChip.dataset.extra);
+                return;
+            }
             const minusBtn = e.target.closest('.modal-minus-btn');
             if (minusBtn) {
                 updateQty(minusBtn.dataset.itemId, -1);
