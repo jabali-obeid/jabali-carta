@@ -363,6 +363,15 @@
               "name_en": "Sparkling Water"
             },
             {
+              "name": "Agua tónica",
+              "price": "$4.500",
+              "available": true,
+              "tags": [
+                "sin-alcohol"
+              ],
+              "name_en": "Tonic Water"
+            },
+            {
               "name": "Pepsi 500ml",
               "price": "$4.500",
               "available": true,
@@ -910,6 +919,15 @@
                 "sin-alcohol"
               ],
               "name_en": "Sparkling Water"
+            },
+            {
+              "name": "Agua tónica",
+              "price": "$4.500",
+              "available": true,
+              "tags": [
+                "sin-alcohol"
+              ],
+              "name_en": "Tonic Water"
             },
             {
               "name": "Pepsi 500ml",
