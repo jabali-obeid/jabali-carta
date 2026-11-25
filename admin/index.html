@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - Jabalí</title>
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-circle" id="brandLetter">J</div>
+                <div class="logo-text">
+                    <h2 id="brandNameDisplay">JABALÍ</h2>
+                    <span>Admin Panel</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">PRINCIPAL</div>
+                <a href="#" class="nav-item active" id="navMenuBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    Menú
+                </a>
+                <a href="#" class="nav-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    Estadísticas
+                </a>
+                
+                <div class="nav-section" style="margin-top: 2rem;">HERRAMIENTAS</div>
+                <a href="#" class="nav-item" id="navConfigBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    Ajustes de Interfaz
+                </a>
+
+                <!-- User profile snippet at bottom -->
+                <div class="sidebar-footer">
+                    <div class="avatar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Administrador</span>
+                        <span class="user-role">Dueño de Local</span>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <header class="topbar">
+                <div class="topbar-left">
+                    <h1 class="page-title">Gestión de Carta</h1>
+                </div>
+                <div class="topbar-right">
+                    <div class="stats-badge">
+                        <span class="pulse-dot"></span>
+                        <span id="statsLabel">Sistema Listo</span>
+                    </div>
+                    <div class="topbar-actions" style="display: flex; gap: 0.5rem;">
+                        <button id="ghDisconnectBtn" class="btn btn-icon" style="display: none;" title="Cerrar Sesión (GitHub)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                        </button>
+                        <button id="exportBtn" class="btn btn-outline" title="Descargar como archivo JSON (Copia de Seguridad)">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Exportar
+                        </button>
+                        <button id="syncBtn" class="btn btn-primary" style="display: none;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            <span>Guardar en GitHub</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-scroll">
+                
+                <!-- Configure GitHub Connection Card -->
+                <div id="upload-section" class="panel-section active">
+                    
+                    <div class="dashboard-grid">
+                        <div class="card card-wide">
+                            <div class="card-header">
+                                <h3 class="card-title">Conexión Global a GitHub</h3>
+                                <p class="card-subtitle">Enlaza tu repositorio para autorizar la sincronización de precios.</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="github-config-form">
+                                    <div class="form-row">
+                                        <div class="form-group flex-1">
+                                            <label>Usuario de GitHub</label>
+                                            <input type="text" id="ghOwner" class="form-control" placeholder="Ej: jabali-obeid">
+                                        </div>
+                                        <div class="form-group flex-1">
+                                            <label>Nombre del Repositorio</label>
+                                            <input type="text" id="ghRepo" class="form-control" placeholder="Ej: jabali-carta">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Token de Acceso (Personal Access Token)</label>
+                                        <input type="password" id="ghToken" class="form-control" placeholder="ghp_*******************">
+                                    </div>
+                                    
+                                    <button id="ghConnectBtn" class="btn btn-primary w-full" style="margin-top: 1rem;">
+                                        Conectar e Importar Precios
+                                    </button>
+                                    <p id="ghErrorMsg" class="error-msg"></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Edición Local (Offline)</h3>
+                                <p class="card-subtitle">O bien, selecciona tu archivo `menu.json` de tu computadora.</p>
+                            </div>
+                            <div class="card-body" style="display: flex; align-items: center; justify-content: center; min-height: 150px;">
+                                <div class="file-upload-wrapper w-full">
+                                    <label for="menuFileInput" class="btn btn-outline w-full" style="justify-content: center;">Seleccionar Archivo JSON</label>
+                                    <input type="file" id="menuFileInput" accept=".json">
+                                </div>
+                                <button id="devLoadBtn" class="btn btn-secondary" style="display: none;">Dev Load</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Main Editor State -->
+                <div id="editor-section" class="panel-section">
+                    <!-- Categories and items will be rendered here -->
+                    <div id="menu-editor-root"></div>
+                </div>
+
+                <!-- Configuration State -->
+                <div id="config-section" class="panel-section">
+                    <div class="dashboard-grid">
+                        <div class="card card-wide">
+                            <div class="card-header">
+                                <h3 class="card-title">Ajustes de Interfaz</h3>
+                                <p class="card-subtitle">Personaliza tu espacio de trabajo en el panel.</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group" style="max-width: 400px; margin-bottom: 2rem;">
+                                    <label>Nombre del Local (Tu Marca)</label>
+                                    <input type="text" id="prefBrandName" class="form-control" placeholder="Ej: Café Martínez" value="JABALÍ">
+                                </div>
+                                
+                                <div class="form-row" style="gap: 2rem;">
+                                    <!-- Primary Theme Color picker -->
+                                    <div class="form-group" style="flex: 1;">
+                                        <label>Color Decorativo (Acentos)</label>
+                                        <p style="font-size: 0.75rem; color: var(--text-sec); margin-bottom: 0.8rem;">
+                                            Color de botones activos, links y detalles visuales.
+                                        </p>
+                                        <div class="color-picker-wrapper">
+                                            <input type="color" id="prefAccentColor" value="#0ea5e9" class="native-color-picker">
+                                            <div class="color-preview" id="accentPreview" style="background-color: #0ea5e9;"></div>
+                                            <span class="color-hex" id="accentHex">#0ea5e9</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Background Color picker -->
+                                    <div class="form-group" style="flex: 1;">
+                                        <label>Color de Fondo del Panel</label>
+                                        <p style="font-size: 0.75rem; color: var(--text-sec); margin-bottom: 0.8rem;">
+                                            Tonalidad principal detrás de las tarjetas.
+                                        </p>
+                                        <div class="color-picker-wrapper">
+                                            <input type="color" id="prefBgColor" value="#0b1a2b" class="native-color-picker">
+                                            <div class="color-preview" id="bgPreview" style="background-color: #0b1a2b;"></div>
+                                            <span class="color-hex" id="bgHex">#0b1a2b</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; text-align: right;">
+                                    <button class="btn btn-outline" id="resetUIBtn" style="margin-right: 1rem;">
+                                        Colores por Defecto
+                                    </button>
+                                    <button class="btn btn-primary" id="saveUIBtn">
+                                        Aplicar y Guardar Cambios
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Hidden element to trigger downloads -->
+    <a id="downloadAnchor" style="display:none"></a>
+
+    <!-- Toast Notifications -->
+    <div id="toast" class="toast"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
