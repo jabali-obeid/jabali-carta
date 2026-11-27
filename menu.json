@@ -108,7 +108,7 @@
             {
               "name": "Carne",
               "price": "$4.800",
-              "available": false,
+              "available": true,
               "tags": [],
               "name_en": "Beef",
               "desc": "Carne cortada a cuchillo, cebolla de verdeo y huevo duro",
@@ -117,7 +117,7 @@
             {
               "name": "Bondiola con Barbacoa",
               "price": "$4.800",
-              "available": false,
+              "available": true,
               "tags": [],
               "name_en": "BBQ Pulled Pork",
               "desc": "Bondiola desmechada con cerveza negra y salsa barbacoa",
@@ -135,7 +135,7 @@
             {
               "name": "Cuatro Quesos",
               "price": "$4.800",
-              "available": false,
+              "available": true,
               "tags": [],
               "name_en": "Four Cheese",
               "desc": "Muzzarella, queso holanda, roquefort y parmesano",
@@ -144,7 +144,7 @@
             {
               "name": "Caprese",
               "price": "$4.800",
-              "available": false,
+              "available": true,
               "tags": [],
               "name_en": "Caprese",
               "desc": "Muzzarella, tomate y albahaca",
@@ -153,7 +153,7 @@
             {
               "name": "Humita",
               "price": "$4.800",
-              "available": false,
+              "available": true,
               "tags": [],
               "name_en": "Sweet Corn",
               "desc": "Choclo y salsa blanca",
@@ -170,7 +170,7 @@
             },
             {
               "name": "Pollo al verdeo",
-              "available": false,
+              "available": true,
               "price": "$4.800",
               "tags": [],
               "name_en": "Chicken & Green Onion",
